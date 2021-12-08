@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Dic 08, 2021 alle 10:37
+-- Creato il: Dic 08, 2021 alle 11:50
 -- Versione del server: 10.3.32-MariaDB-0ubuntu0.20.04.1
 -- Versione PHP: 7.4.3
 
@@ -28,10 +28,12 @@ SET time_zone = "+00:00";
 -- Struttura della tabella `Impianti`
 --
 
-CREATE TABLE `Impianti` (
+DROP TABLE IF EXISTS `Impianti`;
+CREATE TABLE IF NOT EXISTS `Impianti` (
   `Impianto` varchar(15) NOT NULL,
   `Aperto` tinyint(1) NOT NULL,
-  `Tipo` enum('Skilift','Seggiovia','Funivia','Ovovia') NOT NULL
+  `Tipo` enum('Skilift','Seggiovia','Funivia','Ovovia') NOT NULL,
+  PRIMARY KEY (`Impianto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -56,11 +58,13 @@ INSERT INTO `Impianti` (`Impianto`, `Aperto`, `Tipo`) VALUES
 -- Struttura della tabella `Piste`
 --
 
-CREATE TABLE `Piste` (
+DROP TABLE IF EXISTS `Piste`;
+CREATE TABLE IF NOT EXISTS `Piste` (
   `Pista` varchar(15) NOT NULL,
   `Lunghezza` double NOT NULL,
   `Aperta` tinyint(1) NOT NULL,
-  `Difficolta` enum('Blu','Rossa','Nera') NOT NULL
+  `Difficolta` enum('Blu','Rossa','Nera') NOT NULL,
+  PRIMARY KEY (`Pista`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -80,21 +84,65 @@ INSERT INTO `Piste` (`Pista`, `Lunghezza`, `Aperta`, `Difficolta`) VALUES
 ('Sas Lung', 4.6, 1, 'Rossa'),
 ('Stella Alpina', 7.1, 0, 'Rossa');
 
---
--- Indici per le tabelle scaricate
---
+-- --------------------------------------------------------
 
 --
--- Indici per le tabelle `Impianti`
+-- Struttura della tabella `Skipass`
 --
-ALTER TABLE `Impianti`
-  ADD PRIMARY KEY (`Impianto`);
+
+DROP TABLE IF EXISTS `Skipass`;
+CREATE TABLE IF NOT EXISTS `Skipass` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(20) NOT NULL,
+  `Prezzo` double NOT NULL,
+  `Durata` int(11) NOT NULL,
+  `Tipo` enum('Intero','Ridotto') NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 --
--- Indici per le tabelle `Piste`
+-- Svuota la tabella prima dell'inserimento `Skipass`
 --
-ALTER TABLE `Piste`
-  ADD PRIMARY KEY (`Pista`);
+
+TRUNCATE TABLE `Skipass`;
+--
+-- Dump dei dati per la tabella `Skipass`
+--
+
+INSERT INTO `Skipass` (`Id`, `Nome`, `Prezzo`, `Durata`, `Tipo`) VALUES
+(1, 'Giornaliero', 45, 1, 'Intero'),
+(2, 'Giornaliero ridotto', 35, 1, 'Ridotto'),
+(3, 'Tre giorni', 120, 3, 'Intero'),
+(4, 'Tre giorni', 100, 3, 'Ridotto'),
+(5, 'Settimanale', 260, 7, 'Intero'),
+(6, 'Settimanale ridotto', 210, 7, 'Ridotto');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `Utenti`
+--
+
+DROP TABLE IF EXISTS `Utenti`;
+CREATE TABLE IF NOT EXISTS `Utenti` (
+  `Username` varchar(20) NOT NULL,
+  `Password` char(64) NOT NULL,
+  `Privilegi` tinyint(1) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`Username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Svuota la tabella prima dell'inserimento `Utenti`
+--
+
+TRUNCATE TABLE `Utenti`;
+--
+-- Dump dei dati per la tabella `Utenti`
+--
+
+INSERT INTO `Utenti` (`Username`, `Password`, `Privilegi`) VALUES
+('admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', 1),
+('user', '04f8996da763b7a969b1028ee3007569eaf3a635486ddab211d512c85b9df8fb', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
