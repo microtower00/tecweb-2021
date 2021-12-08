@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Dic 08, 2021 alle 10:17
+-- Creato il: Dic 08, 2021 alle 10:37
 -- Versione del server: 10.3.32-MariaDB-0ubuntu0.20.04.1
 -- Versione PHP: 7.4.3
 
@@ -34,6 +34,22 @@ CREATE TABLE `Impianti` (
   `Tipo` enum('Skilift','Seggiovia','Funivia','Ovovia') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Svuota la tabella prima dell'inserimento `Impianti`
+--
+
+TRUNCATE TABLE `Impianti`;
+--
+-- Dump dei dati per la tabella `Impianti`
+--
+
+INSERT INTO `Impianti` (`Impianto`, `Aperto`, `Tipo`) VALUES
+('5 Torri', 0, 'Seggiovia'),
+('Civettina', 0, 'Skilift'),
+('Col Ripido', 1, 'Seggiovia'),
+('Il Veloce', 1, 'Ovovia'),
+('La Parete', 1, 'Funivia');
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +62,23 @@ CREATE TABLE `Piste` (
   `Aperta` tinyint(1) NOT NULL,
   `Difficolta` enum('Blu','Rossa','Nera') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Svuota la tabella prima dell'inserimento `Piste`
+--
+
+TRUNCATE TABLE `Piste`;
+--
+-- Dump dei dati per la tabella `Piste`
+--
+
+INSERT INTO `Piste` (`Pista`, `Lunghezza`, `Aperta`, `Difficolta`) VALUES
+('Baby', 0.8, 1, 'Blu'),
+('Diretta Valle', 2.8, 0, 'Nera'),
+('Il muro', 3.4, 1, 'Nera'),
+('Panoramica 1', 5.6, 0, 'Blu'),
+('Sas Lung', 4.6, 1, 'Rossa'),
+('Stella Alpina', 7.1, 0, 'Rossa');
 
 --
 -- Indici per le tabelle scaricate
