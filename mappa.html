@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -5,27 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keyboards" content="mappa, pista, impianto">
     <title>Mappa - Comprensorio Valle Bianca</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
+
 <body>
     <header>
         <h1>Comprensorio Valle Bianca</h1>
     </header>    
 
-    <nav id="menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="chisiamo.html">Chi siamo</a></li>
-            <li>Mappa delle piste</li>
-            <li><a href="comprensorio.html">Il nostro Comprensorio</a></li>
-            <li><a href="shop.html">Compra skipass</a></li>
-            <li><a href="comeRaggiungerci.html">Come raggiuncerci</a></li>
-            <li><a href="#">Login</a></li>
-        </ul>
-    </nav>
+    <div id="sticky">
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chisiamo.html">Chi siamo</a></li>
+                <li><a href="comprensorio.html">Il nostro Comprensorio</a></li>
+                <li><a href="#">Mappa delle piste</a></li>
+                <li><a href="shop.html">Compra skipass</a></li>
+                <li><a href="comeRaggiungerci.html">Come raggiuncerci</a></li>
+                <li class="right"><a href="#">Login</a></li>
+            </ul>
+        </nav>
 
-    <nav id="breadcrumb">
-        <p>Ti trovi in: <a href="index.html">Home</a> &gt;&gt; Mappa</p>
-    </nav>
+        <nav id="breadcrumb">
+            <p>Ti trovi in: <a href="index.html">Home</a> &gt;&gt; Mappa</p>
+        </nav>
+    </div>
 
     <h2>Mappa della Valle Bianca</h2>
 
@@ -52,5 +58,7 @@
         <area shape="circle" coords="1037,374,20" href="comprensorio.html#82" alt="pista 82">
         <area shape="circle" coords="1147,332,20" href="comprensorio.html#83" alt="pista 83">
     </map>
+
+    <footer>Creato da Michele Cazzaro, Riccardo Contin, Leonardo Speranzon</footer>
 </body>
 </html>
