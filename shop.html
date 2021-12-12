@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="valle bianca, skipass, sci, snowboard">
+    <title>Shop - Comprensorio Valle Bianca</title>
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Comprensorio Valle Bianca</h1>
+    </header>
+
+    <div id="sticky">
+        <nav id="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="chisiamo.html">Chi siamo</a></li>
+                <li><a href="comprensorio.html">Il nostro Comprensorio</a></li>
+                <li><a href="mappa.html">Mappa delle piste</a></li>
+                <li>Compra skipass</li>
+                <li><a href="comeRaggiungerci.html">Come raggiuncerci</a></li>
+                <li class="right"><a href="#">Login</a></li>
+            </ul>
+        </nav>
+        <!-- nav da riempire-->
+    
+        <nav id="breadcrumb">
+            <p>Ti trovi in: <a href="index.html">Home</a> &gt;&gt; Shop</p>
+        </nav>
+    </div>
+    <!-- nav da riempire-->
+    <h2>Compra gli skipass per le nostre piste</h2>
+    
+    <form method="GET" action="carrello.html">
+        <fieldset>
+            <legend>Durata skipass</legend>
+            <div>
+                <input type="radio" name="durata" value="1g" id="1g"/>
+                <label for="1g">Giornaliero </label>
+            </div>
+            <div>
+                <input type="radio" name="durata" value="3g" id="3g"/>
+                <label for="3g">Tre giorni </label>
+            </div>    
+            <div>
+                <input type="radio" name="durata" value="7g" id="7g"/>
+                <label for="7g">Settimanale </label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Data inizio validità</legend>
+            <input type="date" name="" id="">
+        </fieldset>
+        <fieldset>
+            <legend>Numero di persone</legend>
+            <div>
+                <label for="intero">Intero </label>
+                <input type="button" value="-">
+                <input type="number" name="intero" id="intero" disabled/>
+                <input type="button" value="+">
+            </div>
+            <div>
+                <label for="ridotto">Ridotto </label>
+                <input type="number" name="ridotto" id="ridotto"/>                
+            </div>
+        </fieldset>
+        <p>Prezzo corrente: __€ (da fare con js)</p>
+        <input type="submit" value="AGGIUNGI AL CARRELLO">
+        <input type="submit" value="AGGIUNGI E VAI AL CARRELLO">
+        
+    </form>
+
+    <footer>Creato da Michele Cazzaro, Riccardo Contin, Leonardo Speranzon</footer>
+
+</body>
+</html>
