@@ -7,7 +7,7 @@ html{
 	font-size: 100%;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	margin: auto;
-	/*max-width: 1024px;*/
+	max-width: 1024px;
 }
 
 header{
@@ -63,6 +63,33 @@ header{
 
 #breadcrumb a:visited{
 	color: #F2F5A9;
+}
+
+table, th, td{
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+table{
+	width: 80%;
+}
+
+article h4{
+	border: 1px solid black;
+	padding: 0.5em;
+	font-size: 1.1em;
+}
+
+article div{
+	border: 1px solid #000;
+	border-top: none;
+	padding: 0.5em;
+	margin-bottom: 1em;
+}
+
+article div .descrizione{
+	margin-left: 25%;
 }
 
 footer{
