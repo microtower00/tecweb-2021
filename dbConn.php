@@ -1,11 +1,11 @@
 <?php
 
 $hname= "localhost";
-$username= "";
-$password = "";
-$db_name = "";
+$username= "mcazzaro";
+$passwordDb = "Eetho5aer6ahqueJ";
+$db_name = "mcazzaro";
 
-$conn = mysqli_connect($hname, $username, $password, $db_name);
+$conn = mysqli_connect($hname, $username, $passwordDb, $db_name);
 
 if (!$conn) {
 
