@@ -1,7 +1,12 @@
 <?php
 session_start();
 include_once "login.html";
-include_once "dbConn.php";
+require_once "dbRicky.php";
+use DB\DBAccess;
+$paginaHTML = file_get_contents("comprensorio.html");
+
+$connessione = new DBAccess();
+$connessioneOK = $connessione->openDBConnection();
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
 
@@ -19,7 +24,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 
     $sql = "SELECT * FROM Utenti WHERE Username='$username'";
-    $result = mysqli_query($conn, $sql);
+    $result = $connessione->execQuery($sql);
 
 
     if (mysqli_num_rows($result) === 1) {
@@ -50,5 +55,5 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     exit();
 
 }
-$conn->close();
+$connessione->closeConnection();
 ?>
