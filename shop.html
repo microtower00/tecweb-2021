@@ -33,48 +33,49 @@
             <p>Ti trovi in: <a href="index.html">Home</a> &gt;&gt; Shop</p>
         </nav>
     </div>
-    <!-- nav da riempire-->
-    <h2>Compra gli skipass per le nostre piste</h2>
-    
-    <form method="GET" action="carrello.html">
-        <fieldset>
-            <legend>Durata skipass</legend>
-            <div>
-                <input type="radio" name="durata" value="1g" id="1g"/>
-                <label for="1g">Giornaliero </label>
-            </div>
-            <div>
-                <input type="radio" name="durata" value="3g" id="3g"/>
-                <label for="3g">Tre giorni </label>
-            </div>    
-            <div>
-                <input type="radio" name="durata" value="7g" id="7g"/>
-                <label for="7g">Settimanale </label>
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Data inizio validità</legend>
-            <input type="date" name="" id="">
-        </fieldset>
-        <fieldset>
-            <legend>Numero di persone</legend>
-            <div>
-                <label for="intero">Intero </label>
-                <input type="button" value="-">
-                <input type="number" name="intero" id="intero" disabled/>
-                <input type="button" value="+">
-            </div>
-            <div>
-                <label for="ridotto">Ridotto </label>
-                <input type="number" name="ridotto" id="ridotto"/>                
-            </div>
-        </fieldset>
-        <p>Prezzo corrente: __€ (da fare con js)</p>
-        <input type="submit" value="AGGIUNGI AL CARRELLO">
-        <input type="submit" value="AGGIUNGI E VAI AL CARRELLO">
+    <div id="content">
+        <h2>Compra gli skipass per le nostre piste</h2>
         
-    </form>
-
+        <form method="GET" action="carrello.html">
+            <fieldset >
+                <legend>Periodo skipass</legend>
+                <label for="radio-group-durata">Durata skipass:</label>
+                <div  role="radiogroup" id="radio-group-durata" aria-label="durata-skipass">
+                    <div>
+                        <input type="radio" name="durata" value="1g" id="1g"/>
+                        <label for="1g">Giornaliero </label>
+                    </div>
+                    <div>
+                        <input type="radio" name="durata" value="3g" id="3g"/>
+                        <label for="3g">Tre giorni </label>
+                    </div>    
+                    <div>
+                        <input type="radio" name="durata" value="7g" id="7g"/>
+                        <label for="7g">Settimanale </label>
+                    </div>
+                </div>
+                <label for="data-inizio">Data inizio validità</label>
+                <input type="date" name="" id="data-inizio">
+            </fieldset>
+            <fieldset>
+                <legend>Numero di personea</legend>
+                <label id="lbl-intero" for="intero" >Intero </label>
+                <div class="custom-number-input" id="intero" role="button">
+                    <input type="button" class="left" aria-label="Togli 1 skipass con tariffa intera"/><!-- commento per togliere lo spazio
+                    --><input type="number" min="0" value="1" name="intero" disabled/><!--
+                    --><input type="button" class="right" aria-label="Aggiungi 1 skipass con tariffa intera"/>
+                </div>
+                <div>
+                    <label for="ridotto">Ridotto </label>
+                    <input type="number" name="ridotto" id="ridotto"/>                
+                </div>
+            </fieldset>
+            <p>Prezzo corrente: __€ (da fare con js)</p>
+            <input type="submit" value="AGGIUNGI AL CARRELLO">
+            <input type="submit" value="AGGIUNGI E VAI AL CARRELLO">
+            
+        </form>
+    </div>
     <footer>Creato da Michele Cazzaro, Riccardo Contin, Leonardo Speranzon</footer>
 
 </body>
