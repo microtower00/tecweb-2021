@@ -42,6 +42,19 @@
             }
         }
 
+        public function isUsernameTaken($username){
+            $query = "SELECT * FROM Utenti WHERE Username='$username'";
+            $queryResult = mysqli_query($this->conn,$query) or die("Errore in isUsernameTaken: " . mysqli_error($this->conn));
+            if (mysqli_num_rows($queryResult)==0){
+                return false;
+            }
+            return true;
+        }
+
+        public function execQuery($query){
+            return mysqli_query($this->conn,$query);
+        }
+
         /*public function insertNewCharacter($nome,$colore,$peso,$potenza,$ab,$abr,$absw,$abs,$descrizione){
             $stringaQuery = "INSERT INTO personaggi(nome,colore,peso,potenza,descrizione,angry_birds,angry_birds_rio,angry_birds_star_wars,angry_birds_space) 
                             VALUES (\"$nome\",\"$colore\",$peso,\"$potenza\",\"$descrizione\",$ab,$abr,$absw,$abs)";

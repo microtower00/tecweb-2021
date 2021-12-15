@@ -1,6 +1,11 @@
 <?php
 include_once "register.html";
-include_once "dbConn.php";
+require_once "dbRicky.php";
+use DB\DBAccess;
+$paginaHTML = file_get_contents("comprensorio.html");
+
+$connessione = new DBAccess();
+$connessioneOK = $connessione->openDBConnection();
 
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripetiPassword'])) {
     if($_POST['password'] == $_POST['ripetiPassword']){
@@ -17,16 +22,12 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripe
         $username = valida($_POST['username']);
         $pass = valida($_POST['password']);
      
-     
-        $query = "SELECT * FROM Utenti WHERE Username='$username'";
-        $result = mysqli_query($conn, $query);
-     
         
-        if (mysqli_num_rows($result)==0) {
+        if (!$connessione->isUsernameTaken($username)) {
             //se non c'é nessun utente con questo usrname
             $hash = password_hash($pass, PASSWORD_DEFAULT);
             $query = "INSERT INTO `Utenti` (`Username`, `Password`, `Privilegi`) VALUES ('$username', '$hash', '0');";
-            $result = mysqli_query($conn, $query);
+            $result = $connessione->execQuery($query);
             if (!$result) {
                 //se si verifica un errore
                 echo "<p>Si é verificato un errore, riprovare piú tardi</p>";
@@ -45,5 +46,5 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripe
     echo "form non riempito";
 
 }
-$conn->close();
+$connessione->closeConnection();
 ?>
