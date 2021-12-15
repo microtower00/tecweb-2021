@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Creato il: Dic 15, 2021 alle 18:46
+-- Creato il: Dic 15, 2021 alle 19:03
 -- Versione del server: 10.3.32-MariaDB-0ubuntu0.20.04.1
 -- Versione PHP: 7.4.3
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `Piste` (
   `numero` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
-  `difficoltà` varchar(10) NOT NULL,
+  `difficoltà` enum('Blu','Rossa','Nera') NOT NULL,
   `lunghezza` int(11) NOT NULL,
   `dislivello` int(11) NOT NULL,
   `descrizione` longtext DEFAULT NULL,
