@@ -47,9 +47,9 @@
                 $listaImpianti .= '<tr>';
                 
                 if ($impianto['stato'] == 0) {
-                    $stato = "Chiusa";
+                    $stato = "Chiuso";
                 } else {
-                    $stato = "Aperta";
+                    $stato = "Aperto";
                 }
                 
                 $listaImpianti .= '<td>' . $impianto['numero'] . '</td>
