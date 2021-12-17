@@ -42,6 +42,22 @@
             }
         }
 
+        public function getImpiantiList(){
+            $query = "SELECT * FROM Impianti ORDER BY numero ASC";
+            $queryResult = mysqli_query($this->conn,$query) or die("Errore in getImpiantiList: " . mysqli_error($this->conn));
+    
+            if (mysqli_num_rows($queryResult) == 0) {
+                return null;
+            } else {
+                $result = array();
+                while ($row = mysqli_fetch_assoc($queryResult)) {
+                    array_push($result,$row);
+                }
+                $queryResult->free();
+                return $result;
+            }
+        }
+
         public function isUsernameTaken($username){
             $query = "SELECT * FROM Utenti WHERE Username='$username'";
             $queryResult = mysqli_query($this->conn,$query) or die("Errore in isUsernameTaken: " . mysqli_error($this->conn));

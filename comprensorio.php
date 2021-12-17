@@ -9,9 +9,13 @@
 
     $piste = ""; //dati grezzi dal DB
     $listaPiste = ""; //codice html da dare in output
+    
+    $impianti = "";
+    $listaImpianti = "";
 
     if ($connessioneOK) {
         $piste = $connessione->getPisteList();
+        $impianti = $connessione->getImpiantiList();
         $connessione->closeConnection();
         if ($piste != null) {
             $listaPiste = '<tbody>';
@@ -36,9 +40,38 @@
         } else {
             $listaPiste = "<p>Non ci sono informazioni relative alle piste.</p>";
         }
+
+        if ($impianti != null) {
+            $listaImpianti = '<tbody>';
+            foreach ($impianti as $impianto) {
+                $listaImpianti .= '<tr>';
+                
+                if ($impianto['stato'] == 0) {
+                    $stato = "Chiusa";
+                } else {
+                    $stato = "Aperta";
+                }
+                
+                $listaImpianti .= '<td>' . $impianto['numero'] . '</td>
+                                <td>' . $impianto['nome'] . '</td>
+                                <td>' . $impianto['tipo'] . '</td>
+                                <td>' . $impianto['lunghezza'] . '</td>
+                                <td>' . $impianto['dislivello'] . '</td>
+                                <td>' . $stato . '</td>';  
+                                $listaImpianti .= '</tr>';                                  
+            }
+            $listaImpianti .= '</tbody>';
+        } else {
+            $listaImpianti = "<p>Non ci sono informazioni relative agli impianti.</p>";
+        }
     } else {
         $listaPiste = "<p>I sistemi al momento sono non disponibili, riprova più tardi.</p>";
+        $listaImpianti = "<p>I sistemi al momento sono non disponibili, riprova più tardi.</p>";
     }
 
-    echo str_replace("['Piste']",$listaPiste,$paginaHTML);
+
+    $cercataArray = array("['Piste']","['Impianti']");
+    $sostitutaArray = array($listaPiste,$listaImpianti);
+    
+    echo str_replace($cercataArray,$sostitutaArray,$paginaHTML);
 ?>
