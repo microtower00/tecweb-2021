@@ -1,14 +1,20 @@
 <?php
 session_start();
-include_once "login.html";
+//include_once "login.html";
 require_once "dbRicky.php";
 use DB\DBAccess;
-$paginaHTML = file_get_contents("comprensorio.html");
+
+$paginaHTML = file_get_contents("login.html");
+$search = array("['ValUsername']","['Errore']");
+$replaceError="";
+$replaceUser="";
 
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
+
+    $replaceUser=$_POST['username'];
 
     function valida($data){
        $data = trim($data);
@@ -32,28 +38,31 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         if ($row['Username'] === $username && password_verify($pass, $row['Password'])) {
             
             //Si puó togliere volendo
-            echo "Logged in!";
+            $replaceError="Logged in!";
 
             //setto variabili di sessione
             $_SESSION['Username'] = $row['Username'];
             $_SESSION['Privilegi'] = $row['Privilegi'];
 
-            //header("Location: index.html");
-
-            exit();
+            //exit();
 
         }else{
-            //Username o password sbagliati
-            exit();
+            $replaceError="Username o password non corretti";
+            //exit();
         }
     }else{
-        //username o password sbagliati 
-        exit();
+        $replaceUser = "";
+        $replaceError="Username o password non corretti";
+        //exit();
     }
 }else{
-    //form non riempito
-    exit();
+    $replaceError="";
+    //exit();
 
 }
+
 $connessione->closeConnection();
+
+echo str_replace($search, array($replaceUser,$replaceError), $paginaHTML);
+
 ?>
