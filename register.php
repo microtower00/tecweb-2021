@@ -1,14 +1,20 @@
 <?php
-include_once "register.html";
+//include_once "register.html";
 require_once "dbRicky.php";
 use DB\DBAccess;
-$paginaHTML = file_get_contents("comprensorio.html");
+$paginaHTML = file_get_contents("register.html");
+$replaceMsg="";
+$replaceUser="";
 
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
 
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripetiPassword'])) {
+
     if($_POST['password'] == $_POST['ripetiPassword']){
+
+
+        $replaceUser=$_POST['username'];
 
         function valida($data){
             $data = trim($data);
@@ -30,21 +36,21 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripe
             $result = $connessione->execQuery($query);
             if (!$result) {
                 //se si verifica un errore
-                echo "<p>Si é verificato un errore, riprovare piú tardi</p>";
+                $replaceMsg =  "Si é verificato un errore, riprovare piú tardi";
             }else{
                 //tutto bene
-                //non credo vada bene inserire in questo modo il feedback
-                echo "<p>Registrato con successo</p>";
-                header("Location: login.php");
+                $replaceMsg = "Registrato con successo";
             }
         }else{
             //username giá utilizzato
-            echo "<p>Username giá in uso</p>";
+            $replaceMsg = "Username giá in uso";
         }
+    }else{
+        $replaceMsg="Password diverse";
     }
-}else{
-    echo "form non riempito";
-
+}else{//form non riempito
+    $replaceMsg = "";
 }
+echo str_replace(array("['UsrVal']","['UsrMsg']"),array($replaceUser,$replaceMsg),$paginaHTML);
 $connessione->closeConnection();
 ?>
