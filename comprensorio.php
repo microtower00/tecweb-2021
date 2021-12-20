@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    require_once "utils.php";
     require_once "dbRicky.php";
     use DB\DBAccess;
 
@@ -70,8 +72,8 @@
     }
 
 
-    $cercataArray = array("['Piste']","['Impianti']");
-    $sostitutaArray = array($listaPiste,$listaImpianti);
+    $cercataArray = array("['Piste']","['Impianti']","['LinkDashboard']");
+    $sostitutaArray = array($listaPiste,$listaImpianti,Utils::checkPriv()?"<a href='dashboard.php'>Dasboard Admin</a>":"");
     
     echo str_replace($cercataArray,$sostitutaArray,$paginaHTML);
 ?>
