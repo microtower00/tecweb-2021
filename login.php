@@ -1,13 +1,14 @@
 <?php
 session_start();
 //include_once "login.html";
+require_once "utils.php";
 require_once "dbRicky.php";
 use DB\DBAccess;
 
 $paginaHTML = file_get_contents("login.html");
-$search = array("['ValUsername']","['Errore']");
 $replaceError="";
 $replaceUser="";
+$replaceLink="";
 
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
@@ -16,17 +17,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
     $replaceUser=$_POST['username'];
 
-    function valida($data){
-       $data = trim($data);
-       $data = stripslashes($data);
-       $data = htmlspecialchars($data);
-       $data = strip_tags($data);
-       return $data;
-    }
-
     //validazione credenziali
-    $username = valida($_POST['username']);
-    $pass = valida($_POST['password']);
+    $username = Utils::valida($_POST['username']);
+    $pass = Utils::valida($_POST['password']);
 
 
     $sql = "SELECT * FROM Utenti WHERE Username='$username'";
@@ -38,12 +31,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         if ($row['Username'] === $username && password_verify($pass, $row['Password'])) {
             
             //Si puó togliere volendo
-            $replaceError="Logged in!";
+            
 
             //setto variabili di sessione
             $_SESSION['Username'] = $row['Username'];
             $_SESSION['Privilegi'] = $row['Privilegi'];
-
+            $replaceError="Logged in!";
             //exit();
 
         }else{
@@ -62,7 +55,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 }
 
 $connessione->closeConnection();
+if (Utils::checkPriv()){
+    $replaceLink = "<li class='right'><a href='dashboard.php'>Dashboard Admin</a></li>";
+}
 
-echo str_replace($search, array($replaceUser,$replaceError), $paginaHTML);
+echo str_replace(array("['ValUsername']","['Errore']","['LinkDashboard']"), array($replaceUser,$replaceError,$replaceLink), $paginaHTML);
 
 ?>
