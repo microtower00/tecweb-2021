@@ -1,4 +1,5 @@
 <?php
+session_start();
 //include_once "register.html";
 require_once "utils.php";
 require_once "dbRicky.php";
@@ -48,7 +49,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripe
 
 
 if (Utils::checkPriv()){
-    $replaceLink = "<li class='right'><a href='dashboard.php'>Dashboard Admin</a></li>";
+    $replaceLink = "<a class='right' href='dashboard.php'>Dashboard Admin</a>";
 }
 
 echo str_replace(array("['UsrVal']","['UsrMsg']","['LinkDashboard']"),array($replaceUser,$replaceMsg,$replaceLink),$paginaHTML);
