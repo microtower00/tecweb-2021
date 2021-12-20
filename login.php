@@ -56,7 +56,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 $connessione->closeConnection();
 if (Utils::checkPriv()){
-    $replaceLink = "<li class='right'><a href='dashboard.php'>Dashboard Admin</a></li>";
+    $replaceLink = "<a class='right' href='dashboard.php'>Dashboard Admin</a>";
 }
 
 echo str_replace(array("['ValUsername']","['Errore']","['LinkDashboard']"), array($replaceUser,$replaceError,$replaceLink), $paginaHTML);

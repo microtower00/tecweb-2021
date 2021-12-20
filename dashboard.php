@@ -8,6 +8,6 @@ if(!Utils::checkPriv()){
     die("Pagina riservata ad amministratori");
     //echo "Plebeo";
 }else
-    echo "PLEBEOOSalve adminOOO";
+    echo "Salve admin";
 echo $paginaHTML
 ?>
