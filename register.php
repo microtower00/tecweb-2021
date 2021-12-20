@@ -1,10 +1,12 @@
 <?php
 //include_once "register.html";
+require_once "utils.php";
 require_once "dbRicky.php";
 use DB\DBAccess;
 $paginaHTML = file_get_contents("register.html");
 $replaceMsg="";
 $replaceUser="";
+$replaceLink="";
 
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
@@ -15,18 +17,10 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripe
 
 
         $replaceUser=$_POST['username'];
-
-        function valida($data){
-            $data = trim($data);
-            $data = stripslashes($data);
-            $data = htmlspecialchars($data);
-            $data = strip_tags($data);
-            return $data;
-        }
      
         //validazione credenziali
-        $username = valida($_POST['username']);
-        $pass = valida($_POST['password']);
+        $username = Utils::valida($_POST['username']);
+        $pass = Utils::valida($_POST['password']);
      
         
         if (!$connessione->isUsernameTaken($username)) {
@@ -51,6 +45,12 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripe
 }else{//form non riempito
     $replaceMsg = "";
 }
-echo str_replace(array("['UsrVal']","['UsrMsg']"),array($replaceUser,$replaceMsg),$paginaHTML);
+
+
+if (Utils::checkPriv()){
+    $replaceLink = "<li class='right'><a href='dashboard.php'>Dashboard Admin</a></li>";
+}
+
+echo str_replace(array("['UsrVal']","['UsrMsg']","['LinkDashboard']"),array($replaceUser,$replaceMsg,$replaceLink),$paginaHTML);
 $connessione->closeConnection();
 ?>
