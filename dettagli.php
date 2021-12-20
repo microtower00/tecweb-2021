@@ -16,7 +16,7 @@
         if ($piste != null) {
             $listaPiste = '';
             foreach ($piste as $pista) {
-                $listaPiste .= '<article>';
+                $listaPiste .= '<div class="pista">';
 
                 if ($pista['stato'] == 0) {
                     $stato = "Chiusa";
@@ -26,12 +26,14 @@
                 
                 $listaPiste .= '<a id="' . $pista['numero'] . '"></a>
                                 <h4>' . $pista['nome'] . '</h4>
-                                <div>
+                                <div class="dati">
                                     <p>Difficoltà: ' . $pista['difficoltà'] . '</p>
                                     <p>Stato: ' . $stato . '</p>
-                                    <p class="descrizione">' . $pista['descrizione'] . '</p>
+                                </div>
+                                <div class="descrizione">
+                                    <p>' . $pista['descrizione'] . '</p>
                                 </div>';  
-                                $listaPiste .= '</article>';                                  
+                                $listaPiste .= '</div>';                                  
             }
         } else {
             $listaPiste = "<p>Non ci sono informazioni relative alle piste.</p>";
