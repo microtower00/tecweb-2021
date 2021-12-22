@@ -37,7 +37,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $_SESSION['Username'] = $row['Username'];
             $_SESSION['Privilegi'] = $row['Privilegi'];
             $replaceError="Logged in!";
-            //exit();
+            usleep(1*1000*1000);
+            header("Location: index.php");
 
         }else{
             $replaceError="Username o password non corretti";
@@ -60,5 +61,4 @@ if (Utils::checkPriv()){
 }
 
 echo str_replace(array("['ValUsername']","['Errore']","['LinkDashboard']"), array($replaceUser,$replaceError,$replaceLink), $paginaHTML);
-
 ?>
