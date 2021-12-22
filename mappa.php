@@ -2,6 +2,6 @@
 session_start();
 require_once "utils.php";
 
-$pagina = file_get_contents("home.html");
+$pagina = file_get_contents("mappa.html");
 echo str_replace("['LinkDashboard']",Utils::checkPriv()?"<a class='right' href='dashboard.php'>Dasboard Admin</a>":"", $pagina);
 ?>
