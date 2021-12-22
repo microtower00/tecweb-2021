@@ -73,7 +73,7 @@
 
 
     $cercataArray = array("['Piste']","['Impianti']","['LinkDashboard']");
-    $sostitutaArray = array($listaPiste,$listaImpianti,Utils::checkPriv()?"<a href='dashboard.php'>Dasboard Admin</a>":"");
+    $sostitutaArray = array($listaPiste,$listaImpianti,Utils::checkPriv()?"<a class='right' href='dashboard.php'>Dasboard Admin</a>":"");
     
     echo str_replace($cercataArray,$sostitutaArray,$paginaHTML);
 ?>
