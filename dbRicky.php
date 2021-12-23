@@ -71,9 +71,9 @@
             return mysqli_query($this->conn,$query);
         }
 
-        /*public function insertNewCharacter($nome,$colore,$peso,$potenza,$ab,$abr,$absw,$abs,$descrizione){
-            $stringaQuery = "INSERT INTO personaggi(nome,colore,peso,potenza,descrizione,angry_birds,angry_birds_rio,angry_birds_star_wars,angry_birds_space) 
-                            VALUES (\"$nome\",\"$colore\",$peso,\"$potenza\",\"$descrizione\",$ab,$abr,$absw,$abs)";
+        public function insertNewPista($numero,$nome,$difficolta,$lunghezza,$dislivello,$stato){
+            $stringaQuery = "INSERT INTO Piste(numero,nome,difficolta,lunghezza,dislivello,stato) 
+                            VALUES (\"$numero\",\"$nome\",\"$difficolta\",$lunghezza,$dislivello,$stato)";
 
             $risultato = mysqli_query($this->conn,$stringaQuery) or die (mysqli_error($this->conn));
 
@@ -82,7 +82,20 @@
             } else {
                 return false;
             }
-        }*/
+        }
+
+        public function insertNewImpianto($numero,$nome,$tipo,$lunghezza,$dislivello,$stato){
+            $stringaQuery = "INSERT INTO Impianti(numero,nome,difficolta,lunghezza,dislivello,stato) 
+                            VALUES (\"$numero\",\"$nome\",\"$tipo\",$lunghezza,$dislivello,$stato)";
+
+            $risultato = mysqli_query($this->conn,$stringaQuery) or die (mysqli_error($this->conn));
+
+            if (mysqli_affected_rows($this->conn) > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
     }
 

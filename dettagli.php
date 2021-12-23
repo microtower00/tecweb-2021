@@ -25,7 +25,7 @@
                 }
                 
                 $listaPiste .= '<a id="' . $pista['numero'] . '"></a>
-                                <h4>' . $pista['nome'] . '</h4>
+                                <h4>' . $pista['numero'] . ' - ' . $pista['nome'] . '</h4>
                                 <div class="dati">
                                     <p>Difficoltà: ' . $pista['difficoltà'] . '</p>
                                     <p>Stato: ' . $stato . '</p>
