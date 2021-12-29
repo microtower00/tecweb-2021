@@ -59,6 +59,9 @@ $connessione->closeConnection();
 if (Utils::checkPriv()){
     $replaceLink = "<a class='right' href='dashboard.php'>Dashboard Admin</a>";
 }
-
-echo str_replace(array("['ValUsername']","['Errore']","['LinkDashboard']"), array($replaceUser,$replaceError,$replaceLink), $paginaHTML);
+$find = array("['ValUsername']","['Errore']","['LinkLogin']","['LinkDashboard']");
+$replaceDashboard = Utils::checkPriv()?"<a class='right' href='dashboard.php'>Dasboard Admin</a>":"";
+$replaceLogin = isset($_SESSION['Privilegi'])?"<a class='right' href='logout.php'>Logout</a>":"<a class='right' href='login.php'>Login</a>";
+$replace = array($replaceUser,$replaceError,$replaceLogin,$replaceDashboard);
+echo str_replace($find,$replace,$paginaHTML);
 ?>

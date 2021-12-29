@@ -1,5 +1,7 @@
 <?php
+session_start();
     require_once "dbRicky.php";
+    require_once "utils.php";
     use DB\DBAccess;
 
     $paginaHTML = file_get_contents("dettagli.html");
@@ -41,6 +43,9 @@
     } else {
         $listaPiste = "<p>I sistemi al momento sono non disponibili, riprova più tardi.</p>";
     }
-
-    echo str_replace("['Dettagli Piste']",$listaPiste,$paginaHTML);
+    $find = array("['Dettagli Piste']","['LinkLogin']","['LinkDashboard']");
+    $replaceDashboard = Utils::checkPriv()?"<a class='right' href='dashboard.php'>Dasboard Admin</a>":"";
+    $replaceLogin = isset($_SESSION['Privilegi'])?"<a class='right' href='logout.php'>Logout</a>":"<a class='right' href='login.php'>Login</a>";
+    $replace = array($listaPiste,$replaceDashboard,$replaceLogin);
+    echo str_replace($find,$replace,$paginaHTML);
 ?>
