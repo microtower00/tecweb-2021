@@ -46,6 +46,6 @@ session_start();
     $find = array("['Dettagli Piste']","['LinkLogin']","['LinkDashboard']");
     $replaceDashboard = Utils::checkPriv()?"<a class='right' href='dashboard.php'>Dasboard Admin</a>":"";
     $replaceLogin = isset($_SESSION['Privilegi'])?"<a class='right' href='logout.php'>Logout</a>":"<a class='right' href='login.php'>Login</a>";
-    $replace = array($listaPiste,$replaceDashboard,$replaceLogin);
+    $replace = array($listaPiste,$replaceLogin,$replaceDashboard);
     echo str_replace($find,$replace,$paginaHTML);
 ?>

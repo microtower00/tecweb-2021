@@ -72,8 +72,9 @@
     }
 
 
-    $cercataArray = array("['Piste']","['Impianti']","['LinkDashboard']");
-    $sostitutaArray = array($listaPiste,$listaImpianti,Utils::checkPriv()?"<a class='right' href='dashboard.php'>Dasboard Admin</a>":"");
-    
-    echo str_replace($cercataArray,$sostitutaArray,$paginaHTML);
+    $find = array("['Piste']","['Impianti']","['LinkDashboard']","['LinkLogin']");
+    $replaceDashboard = Utils::checkPriv()?"<a class='right' href='dashboard.php'>Dasboard Admin</a>":"";
+    $replaceLogin = isset($_SESSION['Privilegi'])?"<a class='right' href='logout.php'>Logout</a>":"<a class='right' href='login.php'>Login</a>";
+    $replace = array($listaPiste,$listaImpianti,$replaceDashboard,$replaceLogin);
+    echo str_replace($find, $replace, $paginaHTML);
 ?>
