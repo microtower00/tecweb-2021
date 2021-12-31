@@ -18,11 +18,11 @@
     <div id="sticky">
         <nav id="menu">
             <a href="index.php">Home</a>
-            <a href="chisiamo.html">Chi siamo</a>
+            <a href="chisiamo.php">Chi siamo</a>
             <a href="comprensorio.php">Il nostro Comprensorio</a>
-            <a href="mappa.html">Mappa delle piste</a>
-            <a href="shop.html">Compra skipass</a>
-            <a href="comeRaggiungerci.html">Come raggiuncerci</a>
+            <a href="mappa.php">Mappa delle piste</a>
+            <a href="shop.php">Compra skipass</a>
+            <a href="comeRaggiungerci.php">Come raggiuncerci</a>
             <a class="right" href="login.php">Login</a>
         </nav>
     
@@ -32,23 +32,26 @@
     </div>
     <div id="content">
         <h2>Carrello</h2>
-        <article><!--forse meglio div che p-->
-            <p class="tipo-skipass">Skipass settimanale</p>
-            <p class="durata">Adulti</p>
-            <p class="data-inizio">Valido dal 22/12/2021</p>
-            <p class="quantità">3</p>
-            <p class="prezzo">76€</p>
+        <article class="articolo-carrello"><!--forse meglio div che p-->
+            <div class="intestazione">3x Skipass settimanale</div>
+            <div class="corpo">
+                <div>Intero</div>
+                <div>Valido dal 20/12/2021 al 27/12/2021</div>
+            </div>
+            <div class="prezzo">Prezzo: 345€</div>
         </article>
-        <article><!--forse meglio div che p-->
-            <p class="tipo-skipass">Skipass giornaliero</p>
-            <p class="durata">Ridotto</p>
-            <p class="data-inizio">Valido dal 30/12/2021</p>
-            <p class="quantità">1</p>
-            <p class="prezzo">31€</p>
+        <article class="articolo-carrello"><!--forse meglio div che p-->
+            <div class="intestazione">3x Skipass 3 giorni</div>
+            <div class="corpo">
+                <div>Ridotto</div>
+                <div>Valido dal 22/06/2021 al 25/06/2021</div>
+            </div>
+            <div class="prezzo">Prezzo: 122€</div>
         </article>
         <p>Totale: __€</p>
         <button>PRENOTA</button>
     </div>
+
     <footer>Creato da Michele Cazzaro, Riccardo Contin, Leonardo Speranzon</footer>
 
 </body>

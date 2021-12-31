@@ -33,8 +33,8 @@
     </div>
     <div id="content">
         <h2>Compra gli skipass per le nostre piste</h2>
-        
-        <form method="GET" action="carrello.html">
+        <a href="carrello.html" id="link-carrello">Vai al carrello</a>
+        <form method="GET" action="carrello.html" id="form-shop">
             <fieldset >
                 <legend>Periodo skipass</legend>
                 <label for="radio-group-durata">Durata skipass:</label>
@@ -55,17 +55,23 @@
                 <label for="data-inizio">Data inizio validità</label>
                 <input type="date" name="" id="data-inizio">
             </fieldset>
-            <fieldset>
+            <fieldset id="fs_num_skip">
                 <legend>Numero di persone</legend>
-                <label id="lbl-intero" for="intero" >Intero </label>
-                <div class="custom-number-input" id="intero" role="button">
-                    <input type="button" class="left" aria-label="Togli 1 skipass con tariffa intera"/><!-- commento per togliere lo spazio
-                    --><input type="number" min="0" value="1" name="intero" disabled/><!--
-                    --><input type="button" class="right" aria-label="Aggiungi 1 skipass con tariffa intera"/>
+                <div>
+                    <label id="lbl-intero" for="intero" >Intero </label>
+                    <div class="custom-number-input" id="intero" role="button">
+                        <input type="button" class="left" aria-label="Togli 1 skipass con tariffa intera"/><!-- commento per togliere lo spazio
+                        --><input type="number" min="0" value="1" name="intero" disabled/><!--
+                        --><input type="button" class="right" aria-label="Aggiungi 1 skipass con tariffa intera"/>
+                    </div>
                 </div>
                 <div>
-                    <label for="ridotto">Ridotto </label>
-                    <input type="number" name="ridotto" id="ridotto"/>                
+                    <label id="lbl-ridotto" for="ridotto" >Ridotto </label>
+                    <div class="custom-number-input" id="intero" role="button">
+                        <input type="button" class="left" aria-label="Togli 1 skipass con tariffa ridotta"/><!-- commento per togliere lo spazio
+                        --><input type="number" min="0" value="1" name="ridotto" disabled/><!--
+                        --><input type="button" class="right" aria-label="Aggiungi 1 skipass con tariffa ridotta"/>
+                    </div>
                 </div>
             </fieldset>
             <p>Prezzo corrente: __€ (da fare con js)</p>

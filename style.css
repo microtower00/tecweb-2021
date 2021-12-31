@@ -144,7 +144,13 @@ table{
 /*--------------------------------
 	SHOP
 --------------------------------*/
-form{
+
+#link-carrello{
+	text-align: right;
+	display: block;
+}
+
+#form-shop{
 	margin: auto;
 	max-width: max(400px,50%);
 }
@@ -155,16 +161,22 @@ form{
 	margin-bottom: 1em;
 }
 
-fieldset{
+#form-shop fieldset{
 	padding: .5em;
 }
 
 
-#lbl-intero{
-	/*Qualcosa per centrarlo verticalmente*/
+#fs_num_skip>div{
+	margin: .5em;
+}
+
+.custom-number-input::before{
+	display: inline-block;
+	height: 3em;
+	vertical-align: middle;
 }
 .custom-number-input{
-	display: inline;
+	display: inline-block;
 }
 
 .custom-number-input *{
@@ -173,7 +185,7 @@ fieldset{
 	
 	border-color: lightgray;
 	border-width: 1px;
-	vertical-align: top;
+	vertical-align: middle;
 
 }
 .custom-number-input input[type="number"]{
@@ -201,6 +213,37 @@ fieldset{
 	border-bottom-right-radius: 5px;
 	border-top-right-radius: 5px;
 }
+
+
+/*--------------------------------
+	Carrello
+--------------------------------*/
+
+.articolo-carrello{
+	margin: auto;
+	max-width: max(400px,50%);
+
+	padding: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+	border:solid;
+	border-radius: 10px;
+	border-width:1px;
+}
+.articolo-carrello .intestazione{
+	font-size: 140%;
+	font-weight: bold;
+}
+.articolo-carrello .corpo{
+	text-indent: 1.5em;
+}
+.articolo-carrello .prezzo{
+	text-align: right;
+	margin-right: 1em;
+	font-size: 120%;
+}
+
 
 /*--------------------------------
 	Dashboard
