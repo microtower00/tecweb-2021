@@ -1,5 +1,17 @@
 <?php
 class Utils{
+    public static function validaData($date, $format = 'Y-m-d'){
+        $d = DateTime::createFromFormat($format, $date);
+        return $d && $d->format($format) == $date;
+    }
+    public static function dataAggiungiGiorni($date,$giorni, $format= 'Y-m-d'){
+        $d = DateTime::createFromFormat($format, $date);
+        return $d->modify("+$giorni day")->format($format);
+    }
+    public static function riformaData($date, $format_in = 'Y-m-d', $format_out='d/m/Y'){
+        $d = DateTime::createFromFormat($format_in, $date);
+        return $d->format($format_out);
+    }
 
     public static function valida($data){
         $data = trim($data);

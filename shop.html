@@ -33,27 +33,27 @@
     </div>
     <div id="content">
         <h2>Compra gli skipass per le nostre piste</h2>
-        <a href="carrello.html" id="link-carrello">Vai al carrello</a>
-        <form method="GET" action="carrello.html" id="form-shop">
+        <a href="carrello.php" id="link-carrello">Vai al carrello (['Numero-Skipass'])</a>
+        <form method="GET" action="aggiungiSkipass.php" id="form-shop">
             <fieldset >
                 <legend>Periodo skipass</legend>
                 <label for="radio-group-durata">Durata skipass:</label>
-                <div  role="radiogroup" id="radio-group-durata" aria-label="durata-skipass">
+                <div  role="radiogroup" id="radio-group-durata">
                     <div>
-                        <input type="radio" name="durata" value="1g" id="1g"/>
+                        <input type="radio" name="durata" value="1" id="1g" ['Checked-1g'] />
                         <label for="1g">Giornaliero </label>
                     </div>
                     <div>
-                        <input type="radio" name="durata" value="3g" id="3g"/>
+                        <input type="radio" name="durata" value="3" id="3g" ['Checked-3g']/>
                         <label for="3g">Tre giorni </label>
                     </div>    
                     <div>
-                        <input type="radio" name="durata" value="7g" id="7g"/>
+                        <input type="radio" name="durata" value="7" id="7g" ['Checked-7g']/>
                         <label for="7g">Settimanale </label>
                     </div>
                 </div>
                 <label for="data-inizio">Data inizio validità</label>
-                <input type="date" name="" id="data-inizio">
+                <input type="date" name="data-inizio" value="['DataInizioVal']" id="data-inizio">
             </fieldset>
             <fieldset id="fs_num_skip">
                 <legend>Numero di persone</legend>
@@ -61,7 +61,7 @@
                     <label id="lbl-intero" for="intero" >Intero </label>
                     <div class="custom-number-input" id="intero" role="button">
                         <input type="button" class="left" aria-label="Togli 1 skipass con tariffa intera"/><!-- commento per togliere lo spazio
-                        --><input type="number" min="0" value="1" name="intero" disabled/><!--
+                        --><input type="number" min="0" value="['InteroVal']" name="intero"/><!--
                         --><input type="button" class="right" aria-label="Aggiungi 1 skipass con tariffa intera"/>
                     </div>
                 </div>
@@ -69,14 +69,14 @@
                     <label id="lbl-ridotto" for="ridotto" >Ridotto </label>
                     <div class="custom-number-input" id="intero" role="button">
                         <input type="button" class="left" aria-label="Togli 1 skipass con tariffa ridotta"/><!-- commento per togliere lo spazio
-                        --><input type="number" min="0" value="1" name="ridotto" disabled/><!--
+                        --><input type="number" min="0" value="['RidottoVal']" name="ridotto"/><!--
                         --><input type="button" class="right" aria-label="Aggiungi 1 skipass con tariffa ridotta"/>
                     </div>
                 </div>
             </fieldset>
             <p>Prezzo corrente: __€ (da fare con js)</p>
-            <input type="submit" value="AGGIUNGI AL CARRELLO">
-            <input type="submit" value="AGGIUNGI E VAI AL CARRELLO">
+            <button type="submit" name="carrello" value="0">AGGIUNGI AL CARRELLO</button>
+            <button type="submit" name="carrello" value="1">AGGIUNGI E VAI AL CARRELLO</button>
             
         </form>
     </div>
