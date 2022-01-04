@@ -39,6 +39,7 @@ class Utils{
                     ['LinkLogin']
                     ['LinkDashboard']
                 </nav>";
+                
         switch ($page){
             case "index.php":
                 $replace[0] = "class = 'active'";

@@ -14,11 +14,8 @@ $pagina = file_get_contents("shop.html");
 
 
 //CREA LA NAVBAR
-$find = array("['LinkDashboard']","['LinkLogin']");
-$replaceDashboard = Utils::checkPriv()?"<a class='right' href='dashboard.php'>Dasboard Admin</a>":"";
-$replaceLogin = isset($_SESSION['Privilegi'])?"<a class='right' href='logout.php'>Logout</a>":"<a class='right' href='login.php'>Login</a>";
-$replace = array($replaceDashboard,$replaceLogin);
-$pagina= str_replace($find, $replace, $pagina);
+$curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
+$pagina = str_replace("[Menu]",Utils::buildNav($curPageName),$pagina);
 
 //INSERISCE IL NUMERO DI SKIPASS NEL CARRELLO
 $sql='SELECT COALESCE(SUM(quantita), 0) AS num_skipass FROM Carrelli WHERE utente="'.$_SESSION['Username'].'";';

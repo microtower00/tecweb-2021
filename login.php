@@ -56,12 +56,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 }
 
 $connessione->closeConnection();
-if (Utils::checkPriv()){
-    $replaceLink = "<a class='right' href='dashboard.php'>Dashboard Admin</a>";
-}
-$find = array("['ValUsername']","['Errore']","['LinkLogin']","['LinkDashboard']");
-$replaceDashboard = Utils::checkPriv()?"<a class='right' href='dashboard.php'>Dasboard Admin</a>":"";
-$replaceLogin = isset($_SESSION['Privilegi'])?"<a class='right' href='logout.php'>Logout</a>":"<a class='right' href='login.php'>Login</a>";
-$replace = array($replaceUser,$replaceError,$replaceLogin,$replaceDashboard);
-echo str_replace($find,$replace,$paginaHTML);
+
+
+$find = array("['ValUsername']","['Errore']");
+$replace = array($replaceUser,$replaceError);
+$paginaHTML = str_replace($find,$replace,$paginaHTML);
+
+$curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
+echo str_replace("[Menu]",Utils::buildNav($curPageName),$paginaHTML);
 ?>
