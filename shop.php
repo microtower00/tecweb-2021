@@ -17,6 +17,9 @@ $pagina = file_get_contents("shop.html");
 $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
 $pagina = str_replace("[Menu]",Utils::buildNav($curPageName),$pagina);
 
+//INSERISCE IL MINIMO PER LA DATA DEGLI SKIPASS
+$pagina= str_replace("['DataOggi']", date('Y-m-d'), $pagina);
+
 //INSERISCE IL NUMERO DI SKIPASS NEL CARRELLO
 $sql='SELECT COALESCE(SUM(quantita), 0) AS num_skipass FROM Carrelli WHERE utente="'.$_SESSION['Username'].'";';
 $result=$connessione->execQuery($sql);

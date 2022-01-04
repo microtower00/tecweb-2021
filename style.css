@@ -10,6 +10,12 @@ html{
 	/*max-width: 1024px;*/
 }
 
+
+.error-message{
+	color: red;
+	
+}
+
 /*--------------------------------
 	Header, navbar e breadcrumb
 --------------------------------*/

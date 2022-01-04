@@ -4,15 +4,54 @@ require_once "utils.php";
 require_once "dbRicky.php";
 use DB\DBAccess;
 
+$err=array();
+
+
+function valida(){
+    global $err;
+    if(isset($_GET['durata'])){
+        $durata=$_GET['durata'];
+        if(!($durata==1 || $durata==3 || $durata==7))
+            $err[] = "La durata dello skipass non è valida.";
+    }else
+        $err[] = "Non è stata inserita la durata dello skipass.";
+
+    if(isset($_GET['data-inizio'])){
+        $data=$_GET['data-inizio'];
+        if(Utils::validaData($data, 'Y-m-d')){
+            if(date($data)<date("Y-m-d"))
+                $err[] = "La data selezionata è già passata";
+        }else
+            $err[] = "Formato data non valido";
+    }else
+        $err[] = "Non è stata inserita la durata dello skipass.";
+
+    //Almeno un tipo di skipass deve essere impostato (0 conta come non inserito)
+    if((!isset($_GET['intero']) || $_GET['intero']==0) && (!isset($_GET['ridotto']) || $_GET['ridotto']==0))
+        $err[] = "Non è stato inserito nessun tipo di skipass da comprare.";
+    
+    if(isset($_GET['intero'])){
+        $n_interi=$_GET['intero'];
+        if($n_interi<0 || (int)$n_interi!=$n_interi)
+            $err[] = "Il numero di skipass interi non è valido";
+    }
+    if(isset($_GET['ridotto'])){
+        $n_ridotti=$_GET['ridotto'];
+        if($n_ridotti<0 || (int)$n_ridotti!=$n_ridotti)
+            $err[] = "Il numero di skipass ridotti non è valido";
+    }
+
+    return empty($err);
+}
 
 
 $connessione = new DBAccess();
 $connessione->openDBConnection();
 
-if(isset($_GET['durata'],$_GET['data-inizio']) && (isset($_GET['intero']) || isset($_GET['ridotto'])) &&
-        Utils::validaData($_GET['data-inizio'], 'Y-m-d')){
+if(valida()){
             
-    if(isset($_GET['intero']) && $_GET['intero']>0){
+    if(isset($_GET['intero'])){
+        echo "INTERI +".$_GET['intero'];
         $sql = 'INSERT INTO Carrelli(utente,tipo_skipass,durata_skipass,data_inizio,quantita)
                 VALUES  ("'.$_SESSION['Username'].'","Intero",'.$_GET['durata'].',"'.$_GET['data-inizio'].'",'.$_GET['intero'].');';
         if($connessione->execQuery($sql) === FALSE){
@@ -23,7 +62,8 @@ if(isset($_GET['durata'],$_GET['data-inizio']) && (isset($_GET['intero']) || iss
         }
     }
 
-    if(isset($_GET['ridotto']) && $_GET['ridotto']>0){
+    if(isset($_GET['ridotto'])){
+        echo "RIDOTTI +".$_GET['ridotto'];
         $sql = 'INSERT INTO Carrelli(utente,tipo_skipass,durata_skipass,data_inizio,quantita)
                 VALUES ("'.$_SESSION['Username'].'","Ridotto",'.$_GET['durata'].',"'.$_GET['data-inizio'].'",'.$_GET['ridotto'].')';
         if($connessione->execQuery($sql) === FALSE){
@@ -41,10 +81,14 @@ if(isset($_GET['durata'],$_GET['data-inizio']) && (isset($_GET['intero']) || iss
         $link_arg = preg_replace('~(\?|&)carrello=[^&]*~','$1',$link_arg);
         $link_arg = preg_replace('~(\?|&)intero=[^&]*~','$1',$link_arg);
         $link_arg = preg_replace('~(\?|&)ridotto=[^&]*~','$1',$link_arg);
-        header('Location: shop.php?'.$link_arg);
+       header('Location: shop.php?'.$link_arg);
     }
 }else{
     $link_arg=$_SERVER['QUERY_STRING'];     
     $link_arg = preg_replace('~(\?|&)carrello=[^&]*~','$1',$link_arg);
+    $link_arg = $link_arg.'&'.http_build_query($err, 'err');
+    //var_dump($link_arg);
     header('Location: shop.php?'.$link_arg);
 }
+//echo "<br/>";
+//print_r($err);
