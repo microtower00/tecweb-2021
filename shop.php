@@ -21,7 +21,7 @@ $replace = array($replaceDashboard,$replaceLogin);
 $pagina= str_replace($find, $replace, $pagina);
 
 //INSERISCE IL NUMERO DI SKIPASS NEL CARRELLO
-$sql='SELECT SUM(quantita) AS num_skipass FROM Carrelli WHERE utente="'.$_SESSION['Username'].'";';
+$sql='SELECT COALESCE(SUM(quantita), 0) AS num_skipass FROM Carrelli WHERE utente="'.$_SESSION['Username'].'";';
 $result=$connessione->execQuery($sql);
 $pagina= str_replace("['Numero-Skipass']", $result->fetch_assoc()['num_skipass'], $pagina);
 

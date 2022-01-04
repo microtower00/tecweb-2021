@@ -8,9 +8,10 @@
     <title>Shop - Comprensorio Valle Bianca</title>
     
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="shop.js"></script>
 </head>
 
-<body>
+<body onload="loaded()">
     <header>
         <h1>Comprensorio Valle Bianca</h1>
     </header>
@@ -59,20 +60,21 @@
                 <legend>Numero di persone</legend>
                 <div>
                     <label id="lbl-intero" for="intero" >Intero </label>
-                    <div class="custom-number-input" id="intero" role="button">
-                        <input type="button" class="left" aria-label="Togli 1 skipass con tariffa intera"/><!-- commento per togliere lo spazio
+                    <div class="custom-number-input-unloaded" id="intero" role="button">
+                        <input type="button" class="left" onclick="removeOne('intero')" aria-label="Togli 1 skipass con tariffa intera"/><!-- commento per togliere lo spazio
                         --><input type="number" min="0" value="['InteroVal']" name="intero"/><!--
-                        --><input type="button" class="right" aria-label="Aggiungi 1 skipass con tariffa intera"/>
+                        --><input type="button" class="right" onclick="addOne('intero')" aria-label="Aggiungi 1 skipass con tariffa intera"/>
                     </div>
                 </div>
                 <div>
                     <label id="lbl-ridotto" for="ridotto" >Ridotto </label>
-                    <div class="custom-number-input" id="intero" role="button">
-                        <input type="button" class="left" aria-label="Togli 1 skipass con tariffa ridotta"/><!-- commento per togliere lo spazio
+                    <div class="custom-number-input-unloaded" id="ridotto" role="button">
+                        <input type="button" class="left" onclick="removeOne('ridotto')" aria-label="Togli 1 skipass con tariffa ridotta"/><!-- commento per togliere lo spazio
                         --><input type="number" min="0" value="['RidottoVal']" name="ridotto"/><!--
-                        --><input type="button" class="right" aria-label="Aggiungi 1 skipass con tariffa ridotta"/>
+                        --><input type="button" class="right" onclick="addOne('ridotto')" aria-label="Aggiungi 1 skipass con tariffa ridotta"/>
                     </div>
                 </div>
+                <button type="button" onclick="switchCss()">switch css</button>
             </fieldset>
             <p>Prezzo corrente: __€ (da fare con js)</p>
             <button type="submit" name="carrello" value="0">AGGIUNGI AL CARRELLO</button>

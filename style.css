@@ -178,6 +178,19 @@ table{
 	width: 4em;
 }
 
+.custom-number-input-unloaded{
+	display: inline;
+}
+.custom-number-input-unloaded input[type="number"]{
+	height: 1.5em;
+	width: 3em;
+	text-align: center;
+	font-size: 110%;
+}
+.custom-number-input-unloaded input[type="button"]{
+	display: none;
+}
+
 .custom-number-input::before{
 	display: inline-block;
 	height: 3em;
