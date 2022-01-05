@@ -6,6 +6,11 @@
 
     $paginaHTML = file_get_contents("html/modificaComprensorio.html");
 
+    if(!Utils::checkPriv()){
+        header("Location: index.php");
+        die("Pagina riservata ad amministratori");
+    }
+
     //CREA LA NAVBAR
     $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
     $paginaHTML = str_replace("[Menu]",Utils::buildNav($curPageName),$paginaHTML);
