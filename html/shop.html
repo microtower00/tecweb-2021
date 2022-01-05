@@ -8,7 +8,7 @@
     <title>Shop - Comprensorio Valle Bianca</title>
     
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="shop.js"></script>
+    <script src="js/shop.js"></script>
 </head>
 
 <body onload="loaded()">
@@ -26,7 +26,7 @@
     <div id="content">
         <h2>Compra gli skipass per le nostre piste</h2>
         <a href="carrello.php" id="link-carrello">Vai al carrello (['Numero-Skipass'])</a>
-        <form method="GET" action="aggiungiSkipass.php" id="form-shop" onsubmit="return validaForm()">
+        <form method="GET" action="php_vari/aggiungiSkipass.php" id="form-shop" onsubmit="return validaForm()">
             <fieldset >
                 <legend>Periodo skipass</legend>
                 <label for="radio-group-durata">Durata skipass:</label>

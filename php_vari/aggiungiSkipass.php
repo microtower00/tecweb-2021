@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once "utils.php";
-require_once "dbRicky.php";
+require_once "../utils.php";
+require_once "../dbRicky.php";
 use DB\DBAccess;
 
 $err=array();
@@ -50,7 +50,7 @@ $connessione->openDBConnection();
 
 if(valida()){
             
-    if(isset($_GET['intero'])){
+    if(isset($_GET['intero']) && isset($_GET['intero'])!=0){
         echo "INTERI +".$_GET['intero'];
         $sql = 'INSERT INTO Carrelli(utente,tipo_skipass,durata_skipass,data_inizio,quantita)
                 VALUES  ("'.$_SESSION['Username'].'","Intero",'.$_GET['durata'].',"'.$_GET['data-inizio'].'",'.$_GET['intero'].');';
@@ -62,7 +62,7 @@ if(valida()){
         }
     }
 
-    if(isset($_GET['ridotto'])){
+    if(isset($_GET['ridotto']) && isset($_GET['ridotto'])!=0){
         echo "RIDOTTI +".$_GET['ridotto'];
         $sql = 'INSERT INTO Carrelli(utente,tipo_skipass,durata_skipass,data_inizio,quantita)
                 VALUES ("'.$_SESSION['Username'].'","Ridotto",'.$_GET['durata'].',"'.$_GET['data-inizio'].'",'.$_GET['ridotto'].')';
@@ -75,20 +75,20 @@ if(valida()){
     }
 
     if(isset($_GET['carrello']) && $_GET['carrello'])
-        header('Location: carrello.php');
+        header('Location: ../carrello.php');
     else{
         $link_arg=$_SERVER['QUERY_STRING'];     
         $link_arg = preg_replace('~(\?|&)carrello=[^&]*~','$1',$link_arg);
         $link_arg = preg_replace('~(\?|&)intero=[^&]*~','$1',$link_arg);
         $link_arg = preg_replace('~(\?|&)ridotto=[^&]*~','$1',$link_arg);
-       header('Location: shop.php?'.$link_arg);
+       header('Location: ../shop.php?'.$link_arg);
     }
 }else{
     $link_arg=$_SERVER['QUERY_STRING'];     
     $link_arg = preg_replace('~(\?|&)carrello=[^&]*~','$1',$link_arg);
     $link_arg = $link_arg.'&'.http_build_query($err, 'err');
     //var_dump($link_arg);
-    header('Location: shop.php?'.$link_arg);
+    header('Location: ../shop.php?'.$link_arg);
 }
 //echo "<br/>";
 //print_r($err);

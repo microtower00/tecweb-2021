@@ -70,6 +70,9 @@
         public function execQuery($query){
             return mysqli_query($this->conn,$query);
         }
+        public function execMultiQuery($query){
+            return mysqli_multi_query($this->conn,$query);
+        }
 
         public function insertNewPista($numero,$nome,$difficolta,$lunghezza,$dislivello,$stato){
             $stringaQuery = "INSERT INTO Piste(numero,nome,difficolta,lunghezza,dislivello,stato) 
@@ -95,6 +98,10 @@
             } else {
                 return false;
             }
+        }
+
+        public function getErrors(){
+            return $this->conn->error;
         }
 
     }

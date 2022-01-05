@@ -20,6 +20,7 @@ function switchCss(){
     attivi=!attivi
 }
 
+//ATTIVA IL NUMBER INPUT CON I BOTTONI
 function loaded(){
     var els = document.getElementsByClassName("custom-number-input-unloaded")
     while(els.length>0){
@@ -30,6 +31,7 @@ function loaded(){
     attivi=true
 }
 
+//BOTTONI - e +
 function addOne(idInput){
     document.getElementById("form-shop").elements[idInput].value=parseInt(document.getElementById("form-shop").elements[idInput].value)+1
 }
@@ -39,10 +41,11 @@ function removeOne(idInput){
         document.getElementById("form-shop").elements[idInput].value=val-1
 }
 
+
 function validaForm(){
     console.log(document.getElementById("form-shop").elements["intero"].value)
     if(document.getElementById("form-shop").elements["intero"].value == 0 &&
-            document.getElementById("form-shop").elements["intero"].value == 0){
+            document.getElementById("form-shop").elements["ridotto"].value == 0){
         console.log("OOOOOOOOOO")
         document.getElementById("ns-errors").innerText="Aggiungi almeno uno skipass"
 

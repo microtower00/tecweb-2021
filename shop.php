@@ -9,7 +9,7 @@ use DB\DBAccess;
 $connessione = new DBAccess();
 $connessione->openDBConnection();
 
-$pagina = file_get_contents("shop.html");
+$pagina = file_get_contents("html/shop.html");
 
 
 

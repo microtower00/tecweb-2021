@@ -10,14 +10,12 @@ $connessione = new DBAccess();
 $connessione->openDBConnection();
 
 
-$pagina = file_get_contents("carrello.html");
+$pagina = file_get_contents("html/carrello.html");
 
 
-$find = array("['LinkDashboard']","['LinkLogin']");
-$replaceDashboard = Utils::checkPriv()?"<a class='right' href='dashboard.php'>Dasboard Admin</a>":"";
-$replaceLogin = isset($_SESSION['Privilegi'])?"<a class='right' href='logout.php'>Logout</a>":"<a class='right' href='login.php'>Login</a>";
-$replace = array($replaceDashboard,$replaceLogin);
-$pagina= str_replace($find, $replace, $pagina);
+//CREA LA NAVBAR
+$curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
+$pagina = str_replace("[Menu]",Utils::buildNav($curPageName),$pagina);
 
 
 $articolo_singolo=  "<article class=\"articolo-carrello\">
