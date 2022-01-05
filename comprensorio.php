@@ -4,7 +4,7 @@
     require_once "dbRicky.php";
     use DB\DBAccess;
 
-    $paginaHTML = file_get_contents("comprensorio.html");
+    $paginaHTML = file_get_contents("html/comprensorio.html");
 
     $connessione = new DBAccess();
     $connessioneOK = $connessione->openDBConnection();

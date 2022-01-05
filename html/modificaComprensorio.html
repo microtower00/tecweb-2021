@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="valle bianca, skipass, sci, snowboard">
+    <title>Dashboard Admin - Comprensorio Valle Bianca</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+    <script src="js/modificaComprensorio.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Comprensorio Valle Bianca</h1>
+    </header>
+
+    <div id="sticky">
+        [Menu]
+    
+        <div id="breadcrumb">
+            <p>Ti trovi in: <a href="index.php">Home</a> &gt;&gt; <a href="dashboard.php">Dashboard</a> &gt;&gt; Comprensorio</p>
+        </div>
+    </div>
+
+    <div id="content">
+        <h2>Comprensorio</h2>
+
+        <div id=gridButtons>
+            <button onclick="mostraFieldset('piste-chiuse')">Piste Chiuse</button>
+            <button onclick="mostraFieldset('piste-aperte')">Piste Aperte</button>
+            <button onclick="mostraFieldset('impianti-chiusi')">Impianti Chiusi</button>
+            <button onclick="mostraFieldset('impianti-aperti')">Impianti Aperti</button>   
+        </div>
+
+        <form method="GET" action="modificaStato.php" id="form-comprensorio">
+            <fieldset id="piste-chiuse">
+                <legend>Piste chiuse</legend>
+                <label for="checkbox-group-durata">Apri piste:</label>
+                <div  role="checkbox" id="checkbox-group-durata" aria-label="durata-skipass">
+
+                    <table title="Piste">
+                        <caption>Piste chiuse</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Numero</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Difficoltà</th>
+                                <th scope="col">Stato</th>
+                            </tr>				
+                        </thead>
+                        ['PisteChiuse']
+                    </table>
+                </div>
+
+                <input type="submit" name="apriP" value="Apri pista/e">
+                <input type="reset" name="annulla" value="Annulla">
+            </fieldset>
+            <fieldset id="piste-aperte">
+                <legend>Piste aperte</legend>
+                <label for="checkbox-group-durata">Chiudi piste:</label>
+                <div  role="checkbox" id="checkbox-group-durata" aria-label="durata-skipass">
+
+                    <table title="Piste">
+                        <caption>Piste aperte</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Numero</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Difficoltà</th>
+                                <th scope="col">Stato</th>
+                            </tr>				
+                        </thead>
+                        ['PisteAperte']
+                    </table>
+                </div>
+
+                <input type="submit" name="chiudiP" value="Chiudi pista/e">
+                <input type="reset" name="annulla" value="Annulla">
+            </fieldset>
+            <fieldset id="impianti-chiusi">
+                <legend>Impianti chiusi</legend>
+                <label for="checkbox-group-durata">Apri impianti:</label>
+                <div  role="checkbox" id="checkbox-group-durata" aria-label="durata-skipass">
+
+                    <table title="Piste">
+                        <caption>Impianti chiusi</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Numero</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Stato</th>
+                            </tr>				
+                        </thead>
+                        ['ImpiantiChiusi']
+                    </table>
+                </div>
+                <input type="submit" name="apriI" value="Apri impianto/i">
+                <input type="reset" name="annulla" value="Annulla">
+            </fieldset>
+            <fieldset id="impianti-aperti">
+                <legend>Impianti aperti</legend>
+                <label for="checkbox-group-durata">Chiudi impianti:</label>
+                <div  role="checkbox" id="checkbox-group-durata" aria-label="durata-skipass">
+
+                    <table title="Piste">
+                        <caption>Impianti aperti</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Numero</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Stato</th>
+                            </tr>				
+                        </thead>
+                        ['ImpiantiAperti']
+                    </table>
+                </div>
+                <input type="submit" name="chiudiI" value="Chiudi impianto/i">
+                <input type="reset" name="annulla" value="Annulla">
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+</html>

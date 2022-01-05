@@ -288,7 +288,39 @@ img{
 	Dashboard
 --------------------------------*/
 
+#gridA{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding-top: 2em;
+    width: 80%;
+    margin: auto;
+}
 
+#gridA a{
+	padding: 5em;
+}
+
+/*--------------------------------
+	modificaComprensorio
+--------------------------------*/
+
+#gridButtons{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding-top: 2em;
+    width: 80%;
+    margin: auto;
+}
+
+button{
+	padding: 5em;
+}
+
+#piste-chiuse,#piste-aperte,#impianti-chiusi,#impianti-aperti{
+	display: none;
+}
 
 /*--------------------------------
 	Footer

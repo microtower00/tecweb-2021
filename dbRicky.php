@@ -104,6 +104,18 @@
             return $this->conn->error;
         }
 
+        public function updateState($tipo,$numero,$stato){
+            $stringaQuery = "UPDATE $tipo SET stato = $stato WHERE numero = \"$numero\"";
+
+            $risultato = mysqli_query($this->conn,$stringaQuery) or die (mysqli_error($this->conn));
+
+            if (mysqli_affected_rows($this->conn) > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
     }
 
 ?>

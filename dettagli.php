@@ -4,7 +4,7 @@ session_start();
     require_once "utils.php";
     use DB\DBAccess;
 
-    $paginaHTML = file_get_contents("dettagli.html");
+    $paginaHTML = file_get_contents("html/dettagli.html");
 
     $connessione = new DBAccess();
     $connessioneOK = $connessione->openDBConnection();
