@@ -1,3 +1,15 @@
+
+
+
+
+:root {
+	--grigietto: #bbd2f0;
+	--nero: #000000;
+	--bianco: #FFFFFF;
+	--azz1: #152b5a;
+	--giallo: #4da9ff;
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -5,9 +17,14 @@
 
 html{
 	font-size: 100%;
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-family: "Helvetica", sans-serif;
 	margin: auto;
+	background-color: var(--grigietto);
 	/*max-width: 1024px;*/
+}
+
+body{
+	color : var(--nero);
 }
 
 
@@ -31,21 +48,23 @@ header h1{
 	position:-webkit-sticky;
 	position: sticky;
 	top: 0;
+	margin-bottom:1em;
 }
 
 #menu{
 	font-size: 1.1em;
-	background-color:cyan;
+	background-color:var(--giallo);
 	display: flow-root;
 }
 
 #menu a{
 	padding: 1.3em;
 	float: left;
+	color: var(--nero)
 }
 
 #menu a.active{
-	background-color: darkcyan;
+	background-color: var(--azz1);
 	color: white;
 }
 
@@ -53,9 +72,20 @@ header h1{
 	float: right;
 }
 
-@media screen and (max-width: 1090px) {
-	#sticky {position: inherit;}
-	#menu {display: grid; text-align: center;}
+#breadcrumb{
+	margin: 0;
+    font-size: 1.1em;
+	padding: 0.3em 1.3em;
+	background-color:var(--bianco);
+	color:var(--nero);
+}
+
+#breadcrumb a:link{
+	color: var(--azz1);
+}
+
+#breadcrumb a:visited{
+	color: var(--giallo);
 }
 
 /* nel caso la nav bar si volesse fare con ul e li
@@ -82,22 +112,89 @@ header h1{
     padding: 14px;
 }*/
 
-#breadcrumb{
-	margin: 0;
-    font-size: 1.1em;
-	padding: 0.3em 1.3em;
-	background-color:cadetblue;
-	color:black;
+/*=======================
+	Generali
+=======================*/
+ol > li{
+	margin-left:2em;
 }
 
-#breadcrumb a:link{
-	color: #D8D8D8;
+#content{
+	margin:auto;
+	width: 80%;
+	max-width: 1024px;
 }
 
-#breadcrumb a:visited{
-	color: #F2F5A9;
+#content>p{
+	padding: 10px;;
+}
+@media screen and (max-width: 1090px) {
+	#sticky {position: inherit;}
+	#menu {display: grid; text-align: center;}
+}
+.pageTitle{
+	margin:auto;
+	text-align: center;
+	font-weight: bold;
+}
+.centerImg {
+	display: block;
+	margin: auto;
+	width: 70%;
+}
+figcaption.centerImg {
+	margin: auto;
+	width: 70%;
+	padding: 5px;
+	font-weight: lighter;
+	font-size: 0.9em;
+}
+/*--------------------------------
+	Login/Register/Forms
+--------------------------------*/
+.formInput{
+	margin: 1.5em auto auto;
+	text-align: center;
+	width: 100%;
 }
 
+.formInput>p{
+	margin-bottom: 0.7em;
+}
+input[type=text], input[type=password] {
+	box-sizing: border-box;
+	border:0;
+	box-shadow:0 0 15px 4px rgba(0,0,0,0.2);
+
+	width: 50%;
+	padding: 0.5em;
+	margin: 0.5em 0;
+}
+
+input[type=text]:hover{
+	transition: .3s --grigietto;
+}
+
+input{
+	font-size: inherit;
+	font-family: inherit; 
+}
+button {
+	/* Rimuove apparenza di default */
+	appearance:none;
+	-webkit-appearance:none;
+	
+	padding:10px;
+	margin:10px;
+	border:none;
+	background-color:var(--azz1);
+	color:#fff;
+	font-weight:600;
+	border-radius:5px;
+	width:50%;
+	height: 50px;
+  
+  }
 /*--------------------------------
 	Tabelle
 --------------------------------*/

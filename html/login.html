@@ -23,21 +23,20 @@
             <p>Ti trovi in: <a href="index.php">Home</a> &gt;&gt; Login</p>
         </div>
     </div>
+    <div id="content">
+        <h2 class="pageTitle">Login</h2>
+        <form class="formInput" action="" method="post">
+            <p>Inserisci le credenziali</p>
+            <input type="text" name="username" placeholder="Username" value="['ValUsername']" onblur="checkUsername()" required><br>
 
-    <form action="" method="post">
+            <input type="password" name="password" placeholder="Password" onblur="" required><br> 
 
-        <h2>Login</h2>
-
-        <label>User Name</label>
-        <input type="text" name="username" placeholder="Username" value="['ValUsername']" onblur="checkUsername()" required><br>
-
-        <label>Password</label>
-        <input type="password" name="password" placeholder="Password" onblur="" required><br> 
-
-        <button type="submit">Login</button>
-        <p id="error">['Errore']</p>
-    </form>
-    <p>Non sei ancora registrato? Registrati <a href="register.php">qui</a></p>
+            <button type="submit">Login</button>
+            <p id="error">['Errore']</p>
+        </form>
+        <p>Non sei ancora registrato? Registrati <a href="register.php">qui</a></p>
+    </div>
+    
     <footer>Creato da Michele Cazzaro, Riccardo Contin, Leonardo Speranzon</footer>
 
 </body>

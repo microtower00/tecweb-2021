@@ -17,39 +17,26 @@
     </header>
 
     <div id="sticky">
-        <nav id="menu">
-            <ul>
-                <a href="index.php">Home</a>
-                <a href="chisiamo.php">Chi siamo</a>
-                <a href="comprensorio.html">Il nostro Comprensorio</a>
-                <a href="mappa.php">Mappa delle piste</a>
-                <a href="shop.php">Compra skipass</a>
-                <a href="comeRaggiungerci.php">Come raggiuncerci</a>
-                ['LinkLogin']
-                ['LinkDashboard']
-            </ul>
-        </nav>
+        [Menu]
     
         <div id="breadcrumb">
             <p>Ti trovi in: <a href="index.php">Home</a> &gt;&gt; <a href="login.php">Login</a> &gt;&gt; Registrati</p>
         </div>
     </div>
+    <div id="content">
+        <h2 class="pageTitle">Registrazione</h2>
+        <form class="formInput" action="" method="post">
+            <p>Registrati inserendo i dati</p>
+            <input id="usrInput" type="text" name="username" placeholder="Username" value="['UsrVal']" onblur="checkUsername()" required><br>
 
-    <form action="" method="post">
-
-        <h2>Registrazione</h2>
-
-        <label for="username">Inserici lo username</label>
-        <input id="usrInput" type="text" name="username" placeholder="Username" value="['UsrVal']" onblur="checkUsername()" required><br>
-
-        <label for="password">Inserisci la password</label>
-        <input id="pwdInput" type="password" name="password" placeholder="Password" onblur="checkPassword()" required><br> 
-        
-        <label for="ripetiPassword">Ripeti la password</label>
-        <input type="password" name="ripetiPassword" placeholder="Password" onblur="checkPassword()" required><br> 
-        <p id='error'>['UsrMsg']</p>
-        <button type="submit">Login</button>
-    </form>
+            <input id="pwdInput" type="password" name="password" placeholder="Password" onblur="checkPassword()" required><br> 
+            
+            <input type="password" name="ripetiPassword" placeholder="Ripeti la password" onblur="checkPassword()" required><br> 
+            <p id='error'>['UsrMsg']</p>
+            <button type="submit">Registrati</button>
+        </form>
+    </div>
+    
     <footer>Creato da Michele Cazzaro, Riccardo Contin, Leonardo Speranzon</footer>
 
 </body>
