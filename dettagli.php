@@ -1,7 +1,7 @@
 <?php
 session_start();
-    require_once "dbRicky.php";
-    require_once "utils.php";
+    require_once "php_vari/dbRicky.php";
+    require_once "php_vari/utils.php";
     use DB\DBAccess;
 
     $paginaHTML = file_get_contents("html/dettagli.html");

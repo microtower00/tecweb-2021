@@ -1,10 +1,10 @@
 <?php
 session_start();
-//include_once "register.html";
-require_once "utils.php";
-require_once "dbRicky.php";
+//include_once "html/register.html";
+require_once "php_vari/utils.php";
+require_once "php_vari/dbRicky.php";
 use DB\DBAccess;
-$paginaHTML = file_get_contents("register.html");
+$paginaHTML = file_get_contents("html/register.html");
 $replaceMsg="";
 $replaceUser="";
 $replaceLink="";

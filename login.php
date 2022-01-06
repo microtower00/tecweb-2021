@@ -1,11 +1,11 @@
 <?php
 session_start();
-//include_once "login.html";
-require_once "utils.php";
-require_once "dbRicky.php";
+//include_once "html/login.html";
+require_once "php_vari/utils.php";
+require_once "php_vari/dbRicky.php";
 use DB\DBAccess;
 
-$paginaHTML = file_get_contents("login.html");
+$paginaHTML = file_get_contents("html/login.html");
 $replaceError="";
 $replaceUser="";
 $replaceLink="";

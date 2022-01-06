@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once "utils.php";
-require_once "dbRicky.php";
+require_once "php_vari/utils.php";
+require_once "php_vari/dbRicky.php";
 use DB\DBAccess;
 
 

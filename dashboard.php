@@ -1,7 +1,7 @@
 <?php
     session_start();
-    require_once "utils.php";
-    $paginaHTML = file_get_contents("dashboard.html");
+    require_once "php_vari/utils.php";
+    $paginaHTML = file_get_contents("html/dashboard.html");
 
     if(!Utils::checkPriv()){
         header("Location: index.php");

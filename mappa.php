@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "utils.php";
+require_once "php_vari/utils.php";
 
 $pagina = file_get_contents("html/mappa.html");
 $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 

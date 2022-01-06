@@ -32,7 +32,7 @@ if ($connessioneOK) {
         }
     }
     $connessione->closeConnection();
-    header('Location: modificaComprensorio.php');
+    header('Location: ../modificaComprensorio.php');
 }
 
 ?>
