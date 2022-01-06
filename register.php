@@ -48,10 +48,10 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripe
 }
 
 //sostituzioni
-$find = array("['UsrVal']","['UsrMsg']","['LinkDashboard']","['LinkLogin']");
-$replaceDashboard = Utils::checkPriv()?"<a class='right' href='dashboard.php'>Dasboard Admin</a>":"";
-$replaceLogin = isset($_SESSION['Privilegi'])?"<a class='right' href='logout.php'>Logout</a>":"<a class='right' href='login.php'>Login</a>";
-$replace = array($replaceUser,$replaceMsg,$replaceDashboard, $replaceLogin);
-echo str_replace($find,$replace,$paginaHTML);
+$find = array("['UsrVal']","['UsrMsg']");
+$replace = array($replaceUser,$replaceMsg);
+$paginaHTML = str_replace($find,$replace,$paginaHTML);
+$curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
+echo str_replace("[Menu]",Utils::buildNav($curPageName),$paginaHTML);
 $connessione->closeConnection();
 ?>

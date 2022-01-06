@@ -43,9 +43,7 @@ session_start();
     } else {
         $listaPiste = "<p>I sistemi al momento sono non disponibili, riprova più tardi.</p>";
     }
-    $find = array("['Dettagli Piste']");
-    $replace = array($listaPiste,$replaceLogin,$replaceDashboard);
-    $paginaHTML = str_replace($find,$replace,$paginaHTML);
+    $paginaHTML = str_replace("['Dettagli Piste']",$listaPiste,$paginaHTML);
 
     $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
     echo str_replace("[Menu]",Utils::buildNav($curPageName),$paginaHTML);
