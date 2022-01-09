@@ -6,8 +6,9 @@
 	--grigietto: #bbd2f0;
 	--nero: #000000;
 	--bianco: #FFFFFF;
-	--azz1: #152b5a;
-	--giallo: #4da9ff;
+	--blu: #152b5a;
+	--azz1: #4da9ff;
+	--azz2: #81c2ff;
 }
 
 * {
@@ -53,7 +54,7 @@ header h1{
 
 #menu{
 	font-size: 1.1em;
-	background-color:var(--giallo);
+	background-color:var(--azz1);
 	display: flow-root;
 }
 
@@ -64,8 +65,12 @@ header h1{
 }
 
 #menu a.active{
-	background-color: var(--azz1);
+	background-color: var(--blu);
 	color: white;
+}
+
+#menu a:hover:not(.active) {
+	background-color: var(--azz2);
 }
 
 #menu a.right{
@@ -81,11 +86,11 @@ header h1{
 }
 
 #breadcrumb a:link{
-	color: var(--azz1);
+	color: var(--blu);
 }
 
 #breadcrumb a:visited{
-	color: var(--giallo);
+	color: var(--azz1);
 }
 
 /* nel caso la nav bar si volesse fare con ul e li
@@ -142,6 +147,7 @@ ol > li{
 	margin: auto;
 	width: 70%;
 }
+
 figcaption.centerImg {
 	margin: auto;
 	width: 70%;
@@ -161,6 +167,7 @@ figcaption.centerImg {
 .formInput>p{
 	margin-bottom: 0.7em;
 }
+
 input[type=text], input[type=password] {
 	box-sizing: border-box;
 	border:0;
@@ -171,23 +178,27 @@ input[type=text], input[type=password] {
 	margin: 0.5em 0;
 }
 
+/*
 input[type=text]:hover{
 	transition: .3s --grigietto;
-}
+}*/
 
-input{
+input, button{
 	font-size: inherit;
 	font-family: inherit; 
 }
+button, input[type=button]{
+	cursor: pointer;
+}
 button {
-	/* Rimuove apparenza di default */
-	appearance:none;
+	/* Rimuove apparenza di default 
+	*/appearance:none;
 	-webkit-appearance:none;
 	
 	padding:10px;
 	margin:10px;
 	border:none;
-	background-color:var(--azz1);
+	background-color:var(--blu);
 	color:#fff;
 	font-weight:600;
 	border-radius:5px;
