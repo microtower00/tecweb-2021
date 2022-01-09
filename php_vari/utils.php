@@ -28,16 +28,29 @@ class Utils{
 
      public static function buildNav($page){
         $find = array("['attrIndex']","['attrChisiamo']","['attrComprensorio']","['attrMappa']","['attrShop']","['attrComeraggiungerci']","['LinkLogin']","['LinkDashboard']");
-        $replace = array("href='index.php'","href='chisiamo.php'","href='comprensorio.php'","href='mappa.php'","href='shop.php'","href='comeRaggiungerci.php'","<a href='login.php' class='right'>Login</a>","");
+        $replace = array("href='index.php'","href='chisiamo.php'","href='comprensorio.php'","href='mappa.php'","href='shop.php'","href='comeRaggiungerci.php'","<li><a href='login.php' class='right'>Login</a></li>","");
         $data = "<nav id='menu'>
-                    <a ['attrIndex']>Home</a>
-                    <a ['attrChisiamo']>Chi siamo</a>
-                    <a ['attrComprensorio']>Il nostro Comprensorio</a>
-                    <a ['attrMappa']>Mappa delle piste</a>
-                    <a ['attrShop']>Compra skipass</a>
-                    <a ['attrComeraggiungerci']>Come raggiuncerci</a>
-                    ['LinkLogin']
-                    ['LinkDashboard']
+                <h1>Valle Bianca Ski</h1>
+                <div class='pulsanteMenu'>
+                    <a href='#'>
+                        <span class='barra'></span>
+                        <span class='barra'></span>
+                        <span class='barra'></span>
+                    </a>
+                </div>
+                    <ul>
+                        <li><a ['attrIndex']>Home</a></li>
+                        <li><a ['attrChisiamo']>Chi siamo</a></li>
+                        <li><a ['attrComprensorio']>Il nostro Comprensorio</a></li>
+                        <li><a ['attrMappa']>Mappa delle piste</a></li>
+                        <li><a ['attrShop']>Compra skipass</a></li>
+                        <li><a ['attrComeraggiungerci']>Come raggiuncerci</a></li>
+                        <div class='right'>
+                            ['LinkLogin']
+                        </div>
+                            ['LinkDashboard']
+                        
+                    </ul>
                 </nav>";
                 
         switch ($page){
@@ -60,14 +73,14 @@ class Utils{
                 $replace[5] = "class = 'active'";
                 break;
             case "login.php":
-                $replace[6] = "<a class='active right'>Login</a>";
+                $replace[6] = "<li><a class='active right'>Login</a></li>";
                 break;
         }
 
         if(isset($_SESSION['Privilegi'])){
-            $replace[6] = "<a href='logout.php' class='right'>Logout</a>";
+            $replace[6] = "<li><a href='logout.php' class='right'>Logout</a></li>";
             if(Utils::checkPriv()){
-                $replace[7]="<a href='dashboard.php' class='right'>Dashboard Admin</a>";
+                $replace[7]="<li><a href='dashboard.php' class=''>Dashboard Admin</a></li>";
             }
         }
             $data = str_replace($find,$replace,$data);
