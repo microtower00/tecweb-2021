@@ -21,12 +21,12 @@ class Utils{
         return $data;
      }
 
-     public static function checkPriv(){
+    public static function checkPriv(){
         if(isset($_SESSION['Privilegi']))
             return $_SESSION['Privilegi']=="1";
-     }
+    }
 
-     public static function buildNav($page){
+    public static function buildNav($page){
         $find = array("['attrIndex']","['attrChisiamo']","['attrComprensorio']","['attrMappa']","['attrShop']","['attrComeraggiungerci']","['LinkLogin']","['LinkDashboard']");
         $replace = array("href='index.php'","href='chisiamo.php'","href='comprensorio.php'","href='mappa.php'","href='shop.php'","href='comeRaggiungerci.php'","<li class='right'><a href='login.php' class='right'>Login</a></li>","");
         $data = "<nav id='menu'>
@@ -39,12 +39,12 @@ class Utils{
                     </a>
                 </div>
                     <ul>
-                        <li><a ['attrIndex']>Home</a></li>
+                        <li><a id='home'['attrIndex']>Home</a></li>
                         <li><a ['attrChisiamo']>Chi siamo</a></li>
-                        <li><a ['attrComprensorio']>Il nostro Comprensorio</a></li>
-                        <li><a ['attrMappa']>Mappa delle piste</a></li>
-                        <li><a ['attrShop']>Compra skipass</a></li>
-                        <li><a ['attrComeraggiungerci']>Come raggiuncerci</a></li>
+                        <li><a id='comprensorio'['attrComprensorio']>Il nostro Comprensorio</a></li>
+                        <li><a id='mappa'['attrMappa']>Mappa delle piste</a></li>
+                        <li><a id='shop'['attrShop']>Compra skipass</a></li>
+                        <li><a id='bus'['attrComeraggiungerci']>Come raggiuncerci</a></li>
                             ['LinkLogin']
                             ['LinkDashboard']
                         
@@ -83,8 +83,15 @@ class Utils{
         }
             $data = str_replace($find,$replace,$data);
             return $data;
-     }
+    }
 
+    public static function globalImports(){
+        $css="<link rel='stylesheet' type='text/css' media='screen' href='style.css' />";
+        $scriptMenu="<script src='js/menu.js'></script>";
+        $cssTablet="<link rel='stylesheet' type='text/css' media='screen and (max-width: 1090px), only screen and (max-width:1090px)' href='tablet.css' />";
+        $cssMini="<link rel='stylesheet' type='text/css' media='screen and (max-width: 600px), only screen and (max-width:600px)' href='mini.css' />";
+        return $css."\n".$cssTablet."\n".$cssMini."\n".$scriptMenu;
+    }
 }
 
 ?>

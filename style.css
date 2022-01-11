@@ -57,6 +57,7 @@ header h1{
 
 	font-size: 1.1em;
 	background-color:var(--azz1);
+	
 }
 
 #menu h1{
@@ -121,21 +122,6 @@ header h1{
 
 #menu ul.active{display: flex;}
 
-@media screen and (max-width: 1024px) {
-	.pulsanteMenu {
-		display: block;
-	}
-	#menu ul {
-		display: none;
-		flex-direction: column;
-	}
-	
-	#menu div.right{margin-left: inherit;}
-	#menu {
-		flex-direction: column;
-		align-items: flex-start;
-	}
-}
 
 #breadcrumb{
 	margin: 0;

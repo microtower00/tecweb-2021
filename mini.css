@@ -1,0 +1,48 @@
+body{
+    margin-bottom: 10em;
+}
+
+#menu{
+    position: fixed;
+    text-align: center; 
+    bottom:0;
+}
+
+#menu #home{
+    background-image: url(icon/icons8-home-page-30.png);
+    background-repeat: no-repeat;
+    text-indent: -999999em;
+    background-position: center;
+}
+
+#menu #home.active{
+    background-image: url(icon/icons8-home-page-48.png);
+    background-repeat: no-repeat;
+    text-indent: -999999em;
+    background-position: center;
+}
+
+#menu #comprensorio{
+    background-image: url(icon/icons8-sci-50.png);
+    background-repeat: no-repeat;
+    text-indent: -999999em;
+    background-position: center;
+}
+
+#menu #mappa{
+    display: none;
+}
+
+#menu #shop{
+    background-image: url(icon/icons8-biglietto-50.png);
+    background-repeat: no-repeat;
+    text-indent: -999999em;
+    background-position: center;
+}
+
+#menu #bus{
+    background-image: url(icon/icons8-autobus-30.png);
+    background-repeat: no-repeat;
+    text-indent: -999999em;
+    background-position: center;
+}

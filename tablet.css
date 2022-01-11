@@ -1,0 +1,13 @@
+.pulsanteMenu {
+    display: block;
+}
+#menu ul {
+    display: none;
+    flex-direction: column;
+}
+
+#menu div.right{margin-left: inherit;}
+#menu {
+    flex-direction: column;
+    align-items: flex-start;
+}
