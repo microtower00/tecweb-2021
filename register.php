@@ -52,6 +52,7 @@ $find = array("['UsrVal']","['UsrMsg']");
 $replace = array($replaceUser,$replaceMsg);
 $paginaHTML = str_replace($find,$replace,$paginaHTML);
 $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
-echo str_replace("[Menu]",Utils::buildNav($curPageName),$paginaHTML);
+$paginaHTML = str_replace("[Menu]",Utils::buildNav($curPageName),$paginaHTML);
+echo str_replace("['Imports']", Utils::globalImports(),$paginaHTML);
 $connessione->closeConnection();
 ?>

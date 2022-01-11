@@ -16,6 +16,7 @@ $pagina = file_get_contents("html/shop.html");
 //CREA LA NAVBAR
 $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
 $pagina = str_replace("[Menu]",Utils::buildNav($curPageName),$pagina);
+$pagina = str_replace("['Imports']", Utils::globalImports(),$pagina);
 
 //INSERISCE IL MINIMO PER LA DATA DEGLI SKIPASS
 $pagina= str_replace("['DataOggi']", date('Y-m-d'), $pagina);
