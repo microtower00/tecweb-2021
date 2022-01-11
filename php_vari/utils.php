@@ -28,7 +28,7 @@ class Utils{
 
      public static function buildNav($page){
         $find = array("['attrIndex']","['attrChisiamo']","['attrComprensorio']","['attrMappa']","['attrShop']","['attrComeraggiungerci']","['LinkLogin']","['LinkDashboard']");
-        $replace = array("href='index.php'","href='chisiamo.php'","href='comprensorio.php'","href='mappa.php'","href='shop.php'","href='comeRaggiungerci.php'","<li><a href='login.php' class='right'>Login</a></li>","");
+        $replace = array("href='index.php'","href='chisiamo.php'","href='comprensorio.php'","href='mappa.php'","href='shop.php'","href='comeRaggiungerci.php'","<li class='right'><a href='login.php' class='right'>Login</a></li>","");
         $data = "<nav id='menu'>
                 <h1>Valle Bianca Ski</h1>
                 <div class='pulsanteMenu'>
@@ -45,9 +45,7 @@ class Utils{
                         <li><a ['attrMappa']>Mappa delle piste</a></li>
                         <li><a ['attrShop']>Compra skipass</a></li>
                         <li><a ['attrComeraggiungerci']>Come raggiuncerci</a></li>
-                        <div class='right'>
                             ['LinkLogin']
-                        </div>
                             ['LinkDashboard']
                         
                     </ul>
@@ -73,14 +71,14 @@ class Utils{
                 $replace[5] = "class = 'active'";
                 break;
             case "login.php":
-                $replace[6] = "<li><a class='active right'>Login</a></li>";
+                $replace[6] = "<li class='right'><a class='active right'>Login</a></li>";
                 break;
         }
 
         if(isset($_SESSION['Privilegi'])){
-            $replace[6] = "<li><a href='logout.php' class='right'>Logout</a></li>";
+            $replace[6] = "<li class='right'><a href='logout.php' class='right'>Logout</a></li>";
             if(Utils::checkPriv()){
-                $replace[7]="<li><a href='dashboard.php' class=''>Dashboard Admin</a></li>";
+                $replace[7]="<li ><a href='dashboard.php' class=''>Dashboard Admin</a></li>";
             }
         }
             $data = str_replace($find,$replace,$data);

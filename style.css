@@ -96,7 +96,7 @@ header h1{
 }
 
 /* Allinea a destra Login e Dashboard */
-#menu div.right{
+#menu li.right{
 	margin-left: auto;
 }
 
