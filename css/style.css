@@ -229,7 +229,7 @@ button {
 	*/appearance:none;
 	-webkit-appearance:none;
 	
-	padding:10px;
+	/*padding:10px;*/
 	margin:10px;
 	border:none;
 	background-color:var(--blu);
@@ -239,7 +239,18 @@ button {
 	width:50%;
 	height: 50px;
   
-  }
+	vertical-align: middle;
+}
+
+button:disabled{
+	border: 1px solid #999999;
+	background-color: #cccccc;
+	color: #666666;
+
+	cursor: default;
+  
+}
+
 /*--------------------------------
 	Tabelle
 --------------------------------*/
@@ -383,6 +394,13 @@ table{
 	border-top-right-radius: 5px;
 }
 
+#shop-submits{
+	display: flex;
+	flex-wrap: wrap;
+}
+#shop-submits button{
+	flex: 1 10em;
+}
 
 /*--------------------------------
 	Carrello
@@ -413,6 +431,21 @@ table{
 	font-size: 120%;
 }
 
+
+#totale{
+	max-width: max(400px,50%);
+	margin: auto;
+	margin-bottom: 10px;
+}
+#bottone-compra{
+	display: block;
+
+	width:100%;
+	max-width: max(400px,50%);
+
+	margin: auto;
+	margin-bottom: 10px;
+}
 
 /*--------------------------------
 	Mappa

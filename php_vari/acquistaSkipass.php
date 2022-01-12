@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once "../utils.php";
-require_once "../dbRicky.php";
+require_once "utils.php";
+require_once "dbRicky.php";
 use DB\DBAccess;
 
 if(!isset($_SESSION['Username']))

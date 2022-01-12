@@ -43,10 +43,8 @@ function removeOne(idInput){
 
 
 function validaForm(){
-    console.log(document.getElementById("form-shop").elements["intero"].value)
     if(document.getElementById("form-shop").elements["intero"].value == 0 &&
             document.getElementById("form-shop").elements["ridotto"].value == 0){
-        console.log("OOOOOOOOOO")
         document.getElementById("ns-errors").innerText="Aggiungi almeno uno skipass"
 
         return false
