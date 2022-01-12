@@ -31,7 +31,7 @@ class Utils{
         $replace = array("href='index.php'","href='chisiamo.php'","href='comprensorio.php'","href='mappa.php'","href='shop.php'","href='comeRaggiungerci.php'","<li class='right'><a href='login.php' class='right'>Login</a></li>","");
         $data = "<nav id='menu'>
                 <h1>Valle Bianca Ski</h1>
-                <div class='pulsanteMenu'>
+                <div class='pulsanteMenu' onclick='toggleMenu()'>
                     <a href='#'>
                         <span class='barra'></span>
                         <span class='barra'></span>
