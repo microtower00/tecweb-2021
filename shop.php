@@ -21,10 +21,22 @@ $pagina = str_replace("['Imports']", Utils::globalImports(),$pagina);
 //INSERISCE IL MINIMO PER LA DATA DEGLI SKIPASS
 $pagina= str_replace("['DataOggi']", date('Y-m-d'), $pagina);
 
-//INSERISCE IL NUMERO DI SKIPASS NEL CARRELLO
-$sql='SELECT COALESCE(SUM(quantita), 0) AS num_skipass FROM Carrelli WHERE utente="'.$_SESSION['Username'].'";';
-$result=$connessione->execQuery($sql);
-$pagina= str_replace("['Numero-Skipass']", $result->fetch_assoc()['num_skipass'], $pagina);
+if(isset($_SESSION['Username'])){
+    //INSERISCE IL NUMERO DI SKIPASS NEL CARRELLO
+    $sql='SELECT COALESCE(SUM(quantita), 0) AS num_skipass FROM Carrelli WHERE utente="'.$_SESSION['Username'].'";';
+    $result=$connessione->execQuery($sql);
+    $pagina= str_replace(
+        "['Numero-Skipass']", 
+        '<a href="carrello.php" id="link-carrello">Vai al carrello ('.$result->fetch_assoc()['num_skipass'].')</a>',
+        $pagina);
+    
+    $pagina= str_replace("['ShopDisabled']", '', $pagina);
+}else{
+    //DISABILITA I PULSANTI DI AGGIUNTA AL CARRELLO
+    $pagina= str_replace("['ShopDisabled']", 'disabled', $pagina);
+
+    $pagina= str_replace("['Numero-Skipass']", '', $pagina);
+}
 
 //RISELEZIONA I RADIO BUTTON
 $find=array("['Checked-1g']","['Checked-3g']","['Checked-7g']");

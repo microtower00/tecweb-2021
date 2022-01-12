@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if(!isset($_SESSION["Username"])){
+    header('Location: shop.php');
+}
+
 require_once "php_vari/utils.php";
 require_once "php_vari/dbRicky.php";
 use DB\DBAccess;
@@ -16,7 +21,7 @@ $pagina = file_get_contents("html/carrello.html");
 //CREA LA NAVBAR
 $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
 $pagina = str_replace("[Menu]",Utils::buildNav($curPageName),$pagina);
-$pagina = str_replace("['Imports']", Utils::globalImports());
+$pagina = str_replace("['Imports']", Utils::globalImports(),$pagina);
 
 $pagina = Utils::skipNavBtn($pagina);
 

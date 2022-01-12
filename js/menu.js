@@ -1,5 +1,5 @@
 //const bottoneMenu = document.getElementsByClassName("pulsanteMenu")[0];
 
-document.getElementsByClassName("pulsanteMenu")[0].addEventListener('click', () => {
+function toggleMenu(){
     document.querySelector("#menu ul").classList.toggle("active")
-})
+}

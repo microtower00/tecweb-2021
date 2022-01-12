@@ -31,7 +31,7 @@ class Utils{
         $replace = array("href='index.php'","href='chisiamo.php'","href='comprensorio.php'","href='mappa.php'","href='shop.php'","href='comeRaggiungerci.php'","<li class='right'><a href='login.php' class='right'>Login</a></li>","");
         $data = "<nav id='menu'>
                 <h1>Valle Bianca Ski</h1>
-                <div class='pulsanteMenu'>
+                <div class='pulsanteMenu' onclick='toggleMenu()'>
                     <a href='#'>
                         <span class='barra'></span>
                         <span class='barra'></span>
@@ -86,10 +86,10 @@ class Utils{
     }
 
     public static function globalImports(){
-        $css="<link rel='stylesheet' type='text/css' media='screen' href='style.css' />";
+        $css="<link rel='stylesheet' type='text/css' media='screen' href='css/style.css' />";
         $scriptMenu="<script src='js/menu.js'></script>";
-        $cssTablet="<link rel='stylesheet' type='text/css' media='screen and (max-width: 1090px), only screen and (max-width:1090px)' href='tablet.css' />";
-        $cssMini="<link rel='stylesheet' type='text/css' media='screen and (max-width: 600px), only screen and (max-width:600px)' href='mini.css' />";
+        $cssTablet="<link rel='stylesheet' type='text/css' media='screen and (min-width: 601px) and (max-width: 1090px), only screen and (min-width: 601px) and (max-width:1090px)' href='css/tablet.css' />";
+        $cssMini="<link rel='stylesheet' type='text/css' media='screen and (max-width: 600px), only screen and (max-width:600px)' href='css/mini.css' />";
         return $css."\n".$cssTablet."\n".$cssMini."\n".$scriptMenu;
     }
 

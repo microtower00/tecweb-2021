@@ -26,7 +26,7 @@
     </div>
     <main id="content">
         <h2 class="pageTitle">Compra gli skipass per le nostre piste</h2>
-        <a href="carrello.php" id="link-carrello">Vai al carrello (['Numero-Skipass'])</a>
+        ['Numero-Skipass']
         <form method="GET" action="php_vari/aggiungiSkipass.php" id="form-shop" onsubmit="return validaForm()">
             <fieldset >
                 <legend>Periodo skipass</legend>
@@ -68,11 +68,13 @@
                     </div>
                 </div>
                 <p id="ns-errors" class="error-message"></p>
-                <button type="button" onclick="switchCss()">switch css</button>
+                <!--button type="button" onclick="switchCss()">switch css</button-->
             </fieldset>
             <p>Prezzo corrente: __€ (da fare con js)</p>
-            <button type="submit" name="carrello" value="0">AGGIUNGI AL CARRELLO</button>
-            <button type="submit" name="carrello" value="1">AGGIUNGI E VAI AL CARRELLO</button>
+            <div id="shop-submits">
+                <button type="submit" name="carrello" value="0" ['ShopDisabled']>AGGIUNGI AL CARRELLO</button>
+                <button type="submit" name="carrello" value="1" ['ShopDisabled']>AGGIUNGI E VAI AL CARRELLO</button> 
+            </div>
             
         </form>
     </div>
