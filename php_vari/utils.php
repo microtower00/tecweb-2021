@@ -92,6 +92,10 @@ class Utils{
         $cssMini="<link rel='stylesheet' type='text/css' media='screen and (max-width: 600px), only screen and (max-width:600px)' href='mini.css' />";
         return $css."\n".$cssTablet."\n".$cssMini."\n".$scriptMenu;
     }
+
+    public static function skipNavBtn($html){
+        return str_replace("['BtnSkip']", "<a class='skip-nav' href='#content'>Salta il menu</a>",$html); 
+    }
 }
 
 ?>

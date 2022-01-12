@@ -5,6 +5,7 @@ session_start();
     use DB\DBAccess;
 
     $paginaHTML = file_get_contents("html/dettagli.html");
+    $paginaHTML = Utils::skipNavBtn($paginaHTML);
 
     $connessione = new DBAccess();
     $connessioneOK = $connessione->openDBConnection();

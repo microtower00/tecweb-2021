@@ -10,7 +10,7 @@ $connessione = new DBAccess();
 $connessione->openDBConnection();
 
 $pagina = file_get_contents("html/shop.html");
-
+$pagina = Utils::skipNavBtn($pagina);
 
 
 //CREA LA NAVBAR

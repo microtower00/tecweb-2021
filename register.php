@@ -53,6 +53,7 @@ $replace = array($replaceUser,$replaceMsg);
 $paginaHTML = str_replace($find,$replace,$paginaHTML);
 $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
 $paginaHTML = str_replace("[Menu]",Utils::buildNav($curPageName),$paginaHTML);
+$paginaHTML = Utils::skipNavBtn($paginaHTML);
 echo str_replace("['Imports']", Utils::globalImports(),$paginaHTML);
 $connessione->closeConnection();
 ?>

@@ -18,6 +18,8 @@ $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/
 $pagina = str_replace("[Menu]",Utils::buildNav($curPageName),$pagina);
 $pagina = str_replace("['Imports']", Utils::globalImports());
 
+$pagina = Utils::skipNavBtn($pagina);
+
 
 $articolo_singolo=  "<article class=\"articolo-carrello\">
                 <p class=\"intestazione\">['Quantita']x Skipass ['Durata']</p>

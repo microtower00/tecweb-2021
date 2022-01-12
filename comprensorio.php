@@ -5,7 +5,7 @@
     use DB\DBAccess;
 
     $paginaHTML = file_get_contents("html/comprensorio.html");
-
+    $paginaHTML = Utils::skipNavBtn($paginaHTML);
     $connessione = new DBAccess();
     $connessioneOK = $connessione->openDBConnection();
 

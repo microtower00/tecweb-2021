@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    ['BtnSkip']
     <header>
         <h1>Comprensorio Valle Bianca</h1>
     </header>    
@@ -23,51 +24,53 @@
             <p>Ti trovi in: <a href="index.php">Home</a> &gt;&gt; Mappa</p>
         </div>
     </div>
+    <main id="content">
+        <h2 class="pageTitle">Mappa della Valle Bianca</h2>
 
-    <h2 class="pageTitle">Mappa della Valle Bianca</h2>
+        <p>
+            La mappa è interattiva, andando con il puntatore sopra il numero leggerai il nome della pista o dell'impianto.
+            In aggiunta cliccando su un numero di una pista potrai leggere una piccola descrizione di quest'ultima.
+        </p>
+    
+        <img id="mappa" src="img/Cermis1.jpg" alt="mappa della Valle Bianca" usemap="#mappaValle" width="1325" height="839">
+    
+        <map name="mappaValle">
+            <area shape="circle" coords="435,645,20" href="dettagli.php#72" alt="pista 72" title="Campo Scuola Valle Bianca">
+            <area shape="circle" coords="832,359,20" href="dettagli.php#73" alt="pista 73" title="Carlo Donei">
+            <area shape="circle" coords="709,646,20" href="dettagli.php#74" alt="pista 74" title="Via del Bosco">
+            <area shape="circle" coords="1015,250,20" href="dettagli.php#75" alt="pista 75" title="	Forcella Bombasel">
+            <area shape="circle" coords="920,444,20" href="dettagli.php#76" alt="pista 76" title="Prafiorì-Costabella">
+            <area shape="circle" coords="749,261,20" href="dettagli.php#77" alt="pista 77" title="Lagorai">
+            <area shape="circle" coords="823,319,20" href="dettagli.php#78" alt="pista 78" title="Variante dei Cirmi">
+            <area shape="circle" coords="878,349,20" href="dettagli.php#79" alt="pista 79" title="Costabella">
+            <area shape="circle" coords="984,327,20" href="dettagli.php#80" alt="pista 80" title="Olimpia">
+            <area shape="circle" coords="645,488,20" href="dettagli.php#81" alt="pista 81" title="Olimpia 2">
+            <area shape="circle" coords="1037,374,20" href="dettagli.php#82" alt="pista 82" title="Prafiorì">
+            <area shape="circle" coords="1147,332,20" href="dettagli.php#83" alt="pista 83" title="Salera">
+            <area shape="circle" coords="898,470,20" href="dettagli.php#84" alt="pista 84" title="Costabella-Prafiorì">
+            <area shape="circle" coords="568,383,20" href="dettagli.php#85" alt="pista 85" title="Campo Scuola Cermis">
+            <area shape="circle" coords="673,423,20" href="dettagli.php#86" alt="pista 86" title="Lagorai-Costabella">
+            <area shape="circle" coords="250,675,20" href="dettagli.php#87" alt="pista 87" title="Olimpia 3">
+            <area shape="circle" coords="1048,309,20" href="dettagli.php#88" alt="pista 88" title="Busabella">
+    
+            <area shape="circle" coords="67,745,20" alt="impianto 1" title="Valle Bianca">
+            <area shape="circle" coords="352,680,20" alt="impianto 1a" title="Valle Bianca Piste">
+            <area shape="circle" coords="483,529,20" alt="impianto 2" title="Cermis">
+            <area shape="circle" coords="856,410,20" alt="impianto 3" title="Costabella">
+            <area shape="circle" coords="738,337,20" alt="impianto 4" title="Lagorai">
+            <area shape="circle" coords="1041,412,20" alt="impianto 5" title="Prafiorì">
+            <area shape="circle" coords="571,351,20" alt="impianto 6" title="Baby Skilift">
+        </map>
+    
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/jquery.rwdImageMaps.min.js"></script>
+        <script>
+            $(document).ready(function(e) {
+            $('img[usemap]').rwdImageMaps();
+            });
+        </script>
+    </main>
 
-    <p>
-        La mappa è interattiva, andando con il puntatore sopra il numero leggerai il nome della pista o dell'impianto.
-        In aggiunta cliccando su un numero di una pista potrai leggere una piccola descrizione di quest'ultima.
-    </p>
-
-    <img id="mappa" src="img/Cermis1.jpg" alt="mappa della Valle Bianca" usemap="#mappaValle" width="1325" height="839">
-
-    <map name="mappaValle">
-        <area shape="circle" coords="435,645,20" href="dettagli.php#72" alt="pista 72" title="Campo Scuola Valle Bianca">
-        <area shape="circle" coords="832,359,20" href="dettagli.php#73" alt="pista 73" title="Carlo Donei">
-        <area shape="circle" coords="709,646,20" href="dettagli.php#74" alt="pista 74" title="Via del Bosco">
-        <area shape="circle" coords="1015,250,20" href="dettagli.php#75" alt="pista 75" title="	Forcella Bombasel">
-        <area shape="circle" coords="920,444,20" href="dettagli.php#76" alt="pista 76" title="Prafiorì-Costabella">
-        <area shape="circle" coords="749,261,20" href="dettagli.php#77" alt="pista 77" title="Lagorai">
-        <area shape="circle" coords="823,319,20" href="dettagli.php#78" alt="pista 78" title="Variante dei Cirmi">
-        <area shape="circle" coords="878,349,20" href="dettagli.php#79" alt="pista 79" title="Costabella">
-        <area shape="circle" coords="984,327,20" href="dettagli.php#80" alt="pista 80" title="Olimpia">
-        <area shape="circle" coords="645,488,20" href="dettagli.php#81" alt="pista 81" title="Olimpia 2">
-        <area shape="circle" coords="1037,374,20" href="dettagli.php#82" alt="pista 82" title="Prafiorì">
-        <area shape="circle" coords="1147,332,20" href="dettagli.php#83" alt="pista 83" title="Salera">
-        <area shape="circle" coords="898,470,20" href="dettagli.php#84" alt="pista 84" title="Costabella-Prafiorì">
-        <area shape="circle" coords="568,383,20" href="dettagli.php#85" alt="pista 85" title="Campo Scuola Cermis">
-        <area shape="circle" coords="673,423,20" href="dettagli.php#86" alt="pista 86" title="Lagorai-Costabella">
-        <area shape="circle" coords="250,675,20" href="dettagli.php#87" alt="pista 87" title="Olimpia 3">
-        <area shape="circle" coords="1048,309,20" href="dettagli.php#88" alt="pista 88" title="Busabella">
-
-        <area shape="circle" coords="67,745,20" alt="impianto 1" title="Valle Bianca">
-        <area shape="circle" coords="352,680,20" alt="impianto 1a" title="Valle Bianca Piste">
-        <area shape="circle" coords="483,529,20" alt="impianto 2" title="Cermis">
-        <area shape="circle" coords="856,410,20" alt="impianto 3" title="Costabella">
-        <area shape="circle" coords="738,337,20" alt="impianto 4" title="Lagorai">
-        <area shape="circle" coords="1041,412,20" alt="impianto 5" title="Prafiorì">
-        <area shape="circle" coords="571,351,20" alt="impianto 6" title="Baby Skilift">
-    </map>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/jquery.rwdImageMaps.min.js"></script>
-    <script>
-        $(document).ready(function(e) {
-        $('img[usemap]').rwdImageMaps();
-        });
-    </script>
 
     <footer>Creato da Michele Cazzaro, Riccardo Contin, Leonardo Speranzon</footer>
 </body>
