@@ -372,13 +372,13 @@ table{
 }
 .custom-number-input input[type="button"].left{	
 	border-right: none;
-	background-image: url("img/minus.png");
+	background-image: url("../icon/minus.png");
 	border-bottom-left-radius: 5px;
 	border-top-left-radius: 5px;
 }
 .custom-number-input input[type="button"].right{	
 	border-left: none;
-	background-image: url("img/plus.png");
+	background-image: url("../icon/plus.png");
 	border-bottom-right-radius: 5px;
 	border-top-right-radius: 5px;
 }

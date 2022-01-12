@@ -86,10 +86,10 @@ class Utils{
     }
 
     public static function globalImports(){
-        $css="<link rel='stylesheet' type='text/css' media='screen' href='style.css' />";
+        $css="<link rel='stylesheet' type='text/css' media='screen' href='css/style.css' />";
         $scriptMenu="<script src='js/menu.js'></script>";
-        $cssTablet="<link rel='stylesheet' type='text/css' media='screen and (max-width: 1090px), only screen and (max-width:1090px)' href='tablet.css' />";
-        $cssMini="<link rel='stylesheet' type='text/css' media='screen and (max-width: 600px), only screen and (max-width:600px)' href='mini.css' />";
+        $cssTablet="<link rel='stylesheet' type='text/css' media='screen and (min-width: 601px) and (max-width: 1090px), only screen and (min-width: 601px) and (max-width:1090px)' href='css/tablet.css' />";
+        $cssMini="<link rel='stylesheet' type='text/css' media='screen and (max-width: 600px), only screen and (max-width:600px)' href='css/mini.css' />";
         return $css."\n".$cssTablet."\n".$cssMini."\n".$scriptMenu;
     }
 }
