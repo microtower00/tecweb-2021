@@ -13,25 +13,40 @@ body{
     width: 100%;
 }
 
-#menu #home{
-    background-image: url(../icon/icons8-home-page-30.png);
+#menu h1{
+    display: none;
+}
+
+#menu ul li a{
+    width: 2.5em;
+    height: 2.5em;
     background-repeat: no-repeat;
     text-indent: -999999em;
     background-position: center;
+}
+
+#menu #home{
+    background-image: url(../icon/icons8-home-page-60_nera.png); 
 }
 
 #menu #home.active{
-    background-image: url(../icon/icons8-home-page-48.png);
-    background-repeat: no-repeat;
-    text-indent: -999999em;
-    background-position: center;
+    background-image: url(../icon/icons8-home-page-60_bianca.png);
+}
+
+#menu #info{
+    background-image: url(../icon/icons8-info-quadrato-60_nera.png); 
+}
+
+#menu #info.active{
+    background-image: url(../icon/icons8-info-quadrato-60_bianca.png);
 }
 
 #menu #comprensorio{
-    background-image: url(../icon/icons8-sci-50.png);
-    background-repeat: no-repeat;
-    text-indent: -999999em;
-    background-position: center;
+    background-image: url(../icon/icons8-sci-60_nera.png);
+}
+
+#menu #comprensorio.active{
+    background-image: url(../icon/icons8-sci-60_bianca.png);
 }
 
 #menu #mappa{
@@ -39,17 +54,31 @@ body{
 }
 
 #menu #shop{
-    background-image: url(../icon/icons8-biglietto-50.png);
-    background-repeat: no-repeat;
-    text-indent: -999999em;
-    background-position: center;
+    background-image: url(../icon/icons8-biglietto-60_nera.png);
+}
+
+#menu #shop.active{
+    background-image: url(../icon/icons8-biglietto-60_bianca.png);
 }
 
 #menu #bus{
-    background-image: url(../icon/icons8-autobus-30.png);
-    background-repeat: no-repeat;
-    text-indent: -999999em;
-    background-position: center;
+    background-image: url(../icon/icons8-autobus-60_nera.png);
+}
+
+#menu #bus.active{
+    background-image: url(../icon/icons8-autobus-60_bianca.png);
+}
+
+#menu #login{
+    background-image: url(../icon/icons8-login-arrotondato-60_nera.png);
+}
+
+#menu #login.active.right{
+    background-image: url(../icon/icons8-login-arrotondato-60_bianca.png);
+}
+
+#menu #logout{
+    background-image: url(../icon/icons8-logout-arrotondato-sinistra-60_nera.png);
 }
 
 a.linkScroll{

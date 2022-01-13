@@ -28,7 +28,7 @@ class Utils{
 
     public static function buildNav($page){
         $find = array("['attrIndex']","['attrChisiamo']","['attrComprensorio']","['attrMappa']","['attrShop']","['attrComeraggiungerci']","['LinkLogin']","['LinkDashboard']");
-        $replace = array("href='index.php'","href='chisiamo.php'","href='comprensorio.php'","href='mappa.php'","href='shop.php'","href='comeRaggiungerci.php'","<li class='right'><a href='login.php' class='right'>Login</a></li>","");
+        $replace = array("href='index.php'","href='chisiamo.php'","href='comprensorio.php'","href='mappa.php'","href='shop.php'","href='comeRaggiungerci.php'","<li class='right'><a id='login' href='login.php' class='right'>Login</a></li>","");
         $data = "<nav id='menu'>
                 <h1>Valle Bianca Ski</h1>
                 <div class='pulsanteMenu' onclick='toggleMenu()'>
@@ -40,7 +40,7 @@ class Utils{
                 </div>
                     <ul>
                         <li><a id='home'['attrIndex']>Home</a></li>
-                        <li><a ['attrChisiamo']>Chi siamo</a></li>
+                        <li><a id='info' ['attrChisiamo']>Chi siamo</a></li>
                         <li><a id='comprensorio'['attrComprensorio']>Il nostro Comprensorio</a></li>
                         <li><a id='mappa'['attrMappa']>Mappa delle piste</a></li>
                         <li><a id='shop'['attrShop']>Compra skipass</a></li>
@@ -71,12 +71,12 @@ class Utils{
                 $replace[5] = "class = 'active'";
                 break;
             case "login.php":
-                $replace[6] = "<li class='right'><a class='active right'>Login</a></li>";
+                $replace[6] = "<li class='right'><a id='login' class='active right'>Login</a></li>";
                 break;
         }
 
         if(isset($_SESSION['Privilegi'])){
-            $replace[6] = "<li class='right'><a href='logout.php' class='right'>Logout</a></li>";
+            $replace[6] = "<li class='right'><a id='logout' href='logout.php' class='right'>Logout</a></li>";
             if(Utils::checkPriv()){
                 $replace[7]="<li ><a href='dashboard.php' class=''>Dashboard Admin</a></li>";
             }
