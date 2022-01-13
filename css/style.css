@@ -185,7 +185,6 @@ ol > li{
 
 #content{
 	margin:auto;
-	width: 80%;
 	max-width: 1024px;
 }
 
@@ -481,6 +480,10 @@ img{
 	height: auto;
 	margin-left: 5%;
 	margin-top: 2em;
+}
+
+#mappaNascosta{
+	display: none;
 }
 
 /*--------------------------------

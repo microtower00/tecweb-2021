@@ -18,11 +18,12 @@ body{
 }
 
 #menu ul li a{
-    width: 2.5em;
-    height: 2.5em;
+    width: 2em;
+    height: 2em;
     background-repeat: no-repeat;
     text-indent: -999999em;
     background-position: center;
+    background-size: 50%;
 }
 
 #menu #home{
@@ -83,4 +84,9 @@ body{
 
 a.linkScroll{
     bottom: 7.5rem;
+}
+
+#mappaNascosta{
+    display: block;
+    margin-bottom: 2em;
 }
