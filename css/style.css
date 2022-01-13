@@ -77,12 +77,14 @@ header h1{
 
 	font-size: 1.1em;
 	background-color:var(--azz1);
+
 	
 }
 
 #menu h1{
 	font-size: 1.5rem;
 	margin: .8rem;
+	text-align: center;
 }
 
 #menu ul{
@@ -101,6 +103,7 @@ header h1{
 
 #menu ul li a{
 	text-decoration: none;
+	text-align: center;
 	padding: 1em;
 	display: block;
 	color: var(--nero)
@@ -306,7 +309,8 @@ table{
 
 .pista h4{
 	padding: 0.5em;
-	font-size: 1.1em;
+	font-size: 2em;
+	padding-top: 3em;
 	border-bottom: 1px solid black;
 }
 
@@ -520,38 +524,6 @@ img{
 /*--------------------------------
 	Footer
 --------------------------------*/
-a.linkScroll{
-	display: block;
-	position:-webkit-sticky;
-	position: fixed;
-	bottom: .7rem;
-	left: .7rem;
-	width: 3.5rem;
-	height: 3.5rem;
-
-	padding: .3rem;
-	background-color: var(--blu);
-	border-radius: .25rem;
-	color: var(--grigietto);
-
-	background-image: url(../icon/icons8-thick-arrow-pointing-up-48.png);
-    background-repeat: no-repeat;
-	background-size: 48px;
-
-    text-indent: -999999em;
-    background-position: center;
-
-	transform: translateX(-120%);
-	/*pointer-events: none;
-	opacity: 0;*/
-	transition: transform .325s;
-}
-
-a.linkScroll.active{
-	/*pointer-events: auto;
-	opacity: 1;*/
-	transform: translateX(0);
-}
 footer{
 	clear: both;
 	text-align: center;
