@@ -25,6 +25,8 @@ $pagina = str_replace("['Imports']", Utils::globalImports(),$pagina);
 
 $pagina = Utils::skipNavBtn($pagina);
 
+$pagina = Utils::addScrollBtn($pagina);
+
 
 $articolo_singolo=  "<article class=\"articolo-carrello\">
                 <p class=\"intestazione\">['Quantita']x Skipass ['Durata']</p>

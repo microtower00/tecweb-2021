@@ -96,6 +96,10 @@ class Utils{
     public static function skipNavBtn($html){
         return str_replace("['BtnSkip']", "<a class='skip-nav' href='#content'>Salta il menu</a>",$html); 
     }
+
+    public static function addScrollBtn($html){
+        return str_replace("['BtnScroll']","<a class='linkScroll' href='#top'>Scroll to top</a>",$html);
+    }
 }
 
 ?>

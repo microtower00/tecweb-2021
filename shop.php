@@ -11,6 +11,7 @@ $connessione->openDBConnection();
 
 $pagina = file_get_contents("html/shop.html");
 $pagina = Utils::skipNavBtn($pagina);
+$pagina = Utils::addScrollBtn($pagina);
 
 
 //CREA LA NAVBAR

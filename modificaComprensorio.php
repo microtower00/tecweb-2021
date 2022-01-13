@@ -6,6 +6,7 @@
 
     $paginaHTML = file_get_contents("html/modificaComprensorio.html");
     $paginaHTML = Utils::skipNavBtn($paginaHTML);
+    $paginaHTML = Utils::addScrollBtn($paginaHTML);
 
     if(!Utils::checkPriv()){
         header("Location: index.php");

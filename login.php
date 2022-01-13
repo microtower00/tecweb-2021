@@ -63,6 +63,7 @@ $replace = array($replaceUser,$replaceError);
 $paginaHTML = str_replace($find,$replace,$paginaHTML);
 
 $paginaHTML = Utils::skipNavBtn($paginaHTML);
+$paginaHTML = Utils::addScrollBtn($paginaHTML);
 $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
 $paginaHTML = str_replace("[Menu]",Utils::buildNav($curPageName),$paginaHTML);
 echo str_replace("['Imports']", Utils::globalImports(),$paginaHTML);

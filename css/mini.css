@@ -47,3 +47,7 @@ body{
     text-indent: -999999em;
     background-position: center;
 }
+
+a.linkScroll{
+    bottom: 7.5rem;
+}
