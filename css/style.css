@@ -524,6 +524,39 @@ img{
 /*--------------------------------
 	Footer
 --------------------------------*/
+a.linkScroll{
+	display: block;
+	position:-webkit-sticky;
+	position: fixed;
+	bottom: .7rem;
+	left: .7rem;
+	width: 3.5rem;
+	height: 3.5rem;
+
+	padding: .3rem;
+	background-color: var(--blu);
+	border-radius: .25rem;
+	color: var(--grigietto);
+
+	background-image: url(../icon/icons8-thick-arrow-pointing-up-48.png);
+    background-repeat: no-repeat;
+	background-size: 48px;
+
+    text-indent: -999999em;
+    background-position: center;
+
+	transform: translateX(-120%);
+	/*pointer-events: none;
+	opacity: 0;*/
+	transition: transform .325s;
+}
+
+a.linkScroll.active{
+	/*pointer-events: auto;
+	opacity: 1;*/
+	transform: translateX(0);
+}
+
 footer{
 	clear: both;
 	text-align: center;
