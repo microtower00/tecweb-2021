@@ -13,7 +13,7 @@ body{
     width: 100%;
 }
 
-#menu h1{
+#menu h2{
     display: none;
 }
 
@@ -50,7 +50,7 @@ body{
     background-image: url(../icon/icons8-sci-60_bianca.png);
 }
 
-#menu #mappa{
+#menu #mappaIcon{
     display: none;
 }
 

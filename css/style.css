@@ -81,7 +81,7 @@ header h1{
 	
 }
 
-#menu h1{
+#menu h2{
 	font-size: 1.5rem;
 	margin: .8rem;
 	text-align: center;
@@ -495,8 +495,7 @@ img{
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
     padding-top: 2em;
-    width: 80%;
-    margin: auto;
+	justify-items: center;
 }
 
 #gridA a{
@@ -512,16 +511,41 @@ img{
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
     padding-top: 2em;
-    width: 80%;
-    margin: auto;
+	justify-items: center;
 }
 
 #gridButtons button{
-	padding: 5em;
+	width: 80%;
 }
 
 #piste-chiuse,#piste-aperte,#impianti-chiusi,#impianti-aperti{
 	display: none;
+}
+
+input[type=submit],input[type=reset]{
+	cursor: pointer;
+
+	appearance:none;
+	-webkit-appearance:none;
+	
+	/*padding:10px;*/
+	border:none;
+	background-color:var(--blu);
+	color:#fff;
+	font-weight:600;
+	border-radius:5px;
+	width:25%;
+	height: 50px;
+  
+	vertical-align: middle;
+}
+
+input[type=submit]{
+	margin-left: 15%;
+}
+
+input[type=reset]{
+	margin-left: 20%;
 }
 
 /*--------------------------------
