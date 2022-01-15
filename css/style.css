@@ -244,6 +244,8 @@ figcaption.centerImg {
 	grid-row: 2;
 	margin: auto;
 	text-align: center;
+	border: 1px solid black;
+	border-radius: 10px;
 }
 
 #grid2Img1{
