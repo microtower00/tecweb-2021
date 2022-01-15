@@ -27,7 +27,7 @@
     <main id="content">
         <h2 class="pageTitle">Compra gli skipass per le nostre piste</h2>
         ['Numero-Skipass']
-        <form method="GET" action="php_vari/aggiungiSkipass.php" id="form-shop" onsubmit="return validaForm()">
+        <form method="GET" action="php_vari/aggiungiSkipass.php" id="form-shop" onsubmit="return validaForm()" onchange="calcolaPrezzo()">
             <fieldset >
                 <legend>Periodo skipass</legend>
                 <label for="radio-group-durata">Durata skipass:</label>
