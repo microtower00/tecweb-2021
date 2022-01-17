@@ -29,14 +29,14 @@ class Utils{
     public static function buildNav($page){
         $find = array("['attrIndex']","['attrChisiamo']","['attrComprensorio']","['attrMappa']","['attrShop']","['attrComeraggiungerci']","['LinkLogin']","['LinkDashboard']");
         $replace = array("href='index.php'","href='chisiamo.php'","href='comprensorio.php'","href='mappa.php'","href='shop.php'","href='comeRaggiungerci.php'","<li class='right'><a id='login' href='login.php' class='right'>Login</a></li>","");
-        $data = "<nav id='menu'>
+        $data = "<nav aria-label='Menu principale' id='menu'>
                 <h2>Valle Bianca Ski</h2>
                 <div class='pulsanteMenu' onclick='toggleMenu()'>
-                    <a href='#'>
+                    
                         <span class='barra'></span>
                         <span class='barra'></span>
                         <span class='barra'></span>
-                    </a>
+                    
                 </div>
                     <ul>
                         <li><a id='home' ['attrIndex']>Home</a></li>
@@ -95,11 +95,11 @@ class Utils{
     }
 
     public static function skipNavBtn($html){
-        return str_replace("['BtnSkip']", "<a class='skip-nav' href='#content'>Salta il menu</a>",$html); 
+        return str_replace("['BtnSkip']", "<nav aria-label='Salta al contenuto'><a class='skip-nav' href='#content'>Salta il menu</a></nav>",$html); 
     }
 
     public static function addScrollBtn($html){
-        return str_replace("['BtnScroll']","<a class='linkScroll' href='#top'>Scroll to top</a>",$html);
+        return str_replace("['BtnScroll']","<nav aria-label='Torna su'><a class='linkScroll' href='#top'>Torna all'inzio</a></nav>",$html);
     }
 }
 
