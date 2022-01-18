@@ -28,14 +28,18 @@
         <h2 class="pageTitle">Registrazione</h2>
         <form class="formInput" action="" method="post">
             <p>Registrati inserendo i dati</p>
-            <input id="usrInput" type="text" name="username" placeholder="Username" value="['UsrVal']" onblur="checkUsername()" required><br>
+            <label class='richiesto' for="usrInput">Username*</label>
+            <input id="usrInput" type="text" name="username" placeholder="" value="['UsrVal']" onblur="checkUsername()" required><br>
 
-            <input id="pwdInput" type="password" name="password" placeholder="Password" onblur="checkPassword()" required><br> 
+            <label class='richiesto' for="pwdInput">Password*</label>
+            <input id="pwdInput" type="password" name="password" placeholder="" onblur="checkPassword()" required><br> 
             
-            <input type="password" name="ripetiPassword" placeholder="Ripeti la password" onblur="checkPassword()" required><br> 
-            <p id='error'>['UsrMsg']</p>
-            <button type="submit">Registrati</button>
+            <label class='richiesto' for="pwdInput2">Ripeti la password*</label>
+            <input id="pwdInput2" type="password" name="ripetiPassword" placeholder="" onblur="checkPassword()" required><br> 
+            <p class='error-message' id='error'>['UsrMsg']</p>
+            <button id="btnConfirm" type="submit">Registrati</button>
         </form>
+        <p>I campi marcati con * sono obbligatori.</p>
     </main>
     ['BtnScroll']
     <footer>Creato da Michele Cazzaro, Riccardo Contin, Leonardo Speranzon</footer>

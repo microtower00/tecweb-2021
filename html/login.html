@@ -27,14 +27,16 @@
     <main id="content">
         <h2 class="pageTitle">Login</h2>
         <form class="formInput" action="" method="post">
-            <p>Inserisci le credenziali</p>
+            <!--<p>Inserisci le credenziali</p>-->
+            <label for="username">Username*</label>
+            <input id='username' type="text" name="username" placeholder="" value="['ValUsername']" onblur="checkUsername()" required><br>
             
-            <input id='username' type="text" name="username" placeholder="obbligatorio*" value="['ValUsername']" onblur="checkUsername()" required><br>
-            
+            <label for="password">Password*</label>
             <input id='password' type="password" name="password" placeholder="" onblur="" required><br>
-            <button type="submit">Login</button>
-            <p id="error">['Errore']</p>
+            <button id="btnConfirm" type="submit">Login</button>
+            <p class='error-message' id="error">['Errore']</p>
         </form>
+        <p>I campi marcati con * sono obbligatori.</p>
         <p>Non sei ancora registrato? Registrati <a href="register.php">qui</a></p>
     </main>
     ['BtnScroll']

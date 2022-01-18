@@ -289,7 +289,11 @@ figcaption.centerImg {
 .formInput>p{
 	margin-bottom: 0.7em;
 }
-
+.formInput label{
+	font-size: 0.8rem;
+	display: block;
+	
+}
 input[type=text], input[type=password] {
 	box-sizing: border-box;
 	border:0;
@@ -297,7 +301,7 @@ input[type=text], input[type=password] {
 
 	width: 50%;
 	padding: 0.5em;
-	margin: 0.5em 0;
+	margin: 0.3rem 0 1rem;
 }
 
 /*
