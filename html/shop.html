@@ -28,7 +28,7 @@
         <h2 class="pageTitle">Compra gli skipass per le nostre piste</h2>
         ['Numero-Skipass']
         <form method="GET" action="php_vari/aggiungiSkipass.php" id="form-shop" onsubmit="return validaForm()" onchange="calcolaPrezzo()">
-            <fieldset >
+            <fieldset>
                 <legend>Periodo skipass</legend>
                 <label for="radio-group-durata">Durata skipass:</label>
                 <div  role="radiogroup" id="radio-group-durata">
@@ -53,18 +53,18 @@
                 <legend>Numero di persone</legend>
                 <div>
                     <label id="lbl-intero" for="intero" >Intero </label>
-                    <div class="custom-number-input-unloaded" id="intero" role="button">
-                        <input type="button" class="left" onclick="removeOne('intero')" aria-label="Togli 1 skipass con tariffa intera"/><!-- commento per togliere lo spazio
-                        --><input type="number" min="0" value="['InteroVal']" name="intero" required/><!--
-                        --><input type="button" class="right" onclick="addOne('intero')" aria-label="Aggiungi 1 skipass con tariffa intera"/>
+                    <div class="custom-number-input-unloaded">
+                        <input type="button" class="left" onclick="removeOne('intero')" value="Togli 1 skipass con tariffa intera"><!-- commento per togliere lo spazio
+                        --><input type="number" min="0" value="['InteroVal']"  id="intero" name="intero" required/><!--
+                        --><input type="button" class="right" onclick="addOne('intero')" value="Aggiungi 1 skipass con tariffa intera"/>
                     </div>
                 </div>
                 <div>
                     <label id="lbl-ridotto" for="ridotto" >Ridotto </label>
-                    <div class="custom-number-input-unloaded" id="ridotto" role="button">
-                        <input type="button" class="left" onclick="removeOne('ridotto')" aria-label="Togli 1 skipass con tariffa ridotta"/><!-- commento per togliere lo spazio
-                        --><input type="number" min="0" value="['RidottoVal']" name="ridotto"/><!--
-                        --><input type="button" class="right" onclick="addOne('ridotto')" aria-label="Aggiungi 1 skipass con tariffa ridotta"/>
+                    <div class="custom-number-input-unloaded">
+                        <input type="button" class="left" onclick="removeOne('ridotto')" value="Togli 1 skipass con tariffa ridotta"/><!-- commento per togliere lo spazio
+                        --><input type="number" min="0" value="['RidottoVal']" id="ridotto" name="ridotto"/><!--
+                        --><input type="button" class="right" onclick="addOne('ridotto')" value="Aggiungi 1 skipass con tariffa ridotta"/>
                     </div>
                 </div>
                 <p id="ns-errors" class="error-message"></p>
