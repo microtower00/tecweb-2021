@@ -379,7 +379,7 @@ table{
 	margin-bottom: 1em;
 	border: 1px solid black;
 	border-radius: 10px;
-	height: 11em;
+	/*height: 11em;*/
 }
 
 .pista:target{
@@ -397,7 +397,7 @@ table{
 .pista div{
 	display: table-cell;
 	padding: 0.5em;
-	height: 5.7em;
+	/*height: 5.7em;*/
 }
 
 .pista div.dati{

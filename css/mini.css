@@ -82,6 +82,10 @@ body{
     background-image: url(../icon/icons8-logout-arrotondato-sinistra-60_nera.png);
 }
 
+#menu #dashboard{
+    display: none;
+}
+
 a.linkScroll{
     bottom: 7.5rem;
 }

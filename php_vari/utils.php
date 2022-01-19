@@ -78,7 +78,7 @@ class Utils{
         if(isset($_SESSION['Privilegi'])){
             $replace[6] = "<li class='right'><a id='logout' href='logout.php' class='right'>Logout</a></li>";
             if(Utils::checkPriv()){
-                $replace[7]="<li ><a href='dashboard.php' class=''>Dashboard Admin</a></li>";
+                $replace[7]="<li ><a id='dashboard' href='dashboard.php' class=''>Dashboard Admin</a></li>";
             }
         }
             $data = str_replace($find,$replace,$data);
