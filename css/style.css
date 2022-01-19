@@ -3,6 +3,7 @@
 	--nero: #000000;
 	--bianco: #FFFFFF;
 	--blu: #152b5a;
+	--blu1: #25468d;
 	--azz1: #4da9ff;
 	--azz2: #81c2ff;
 }
@@ -574,23 +575,34 @@ img{
 }
 
 #gridA a{
-	padding: 5em;
+	padding: 3em;
+	margin-bottom: 5em;
 
 	cursor: pointer;
 
 	appearance:none;
 	-webkit-appearance:none;
-	
-	/*padding:10px;*/
+
 	border:none;
 	background-color:var(--blu);
 	color:#fff;
 	font-weight:600;
 	border-radius:5px;
 	width:25%;
-	height: 50px;
+	text-decoration: none;
   
 	vertical-align: middle;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+}
+
+
+#gridA a:hover{
+	background-color: var(--blu1);
 }
 
 /*--------------------------------
