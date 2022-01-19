@@ -379,18 +379,25 @@ table{
 	margin-bottom: 1em;
 	border: 1px solid black;
 	border-radius: 10px;
+	height: 11em;
+}
+
+.pista:target{
+	position: relative;
+	z-index: 1;
+	background-color:var(--azz2);
 }
 
 .pista h4{
 	padding: 0.5em;
 	font-size: 2em;
-	padding-top: 3em;
 	border-bottom: 1px solid black;
 }
 
 .pista div{
 	display: table-cell;
 	padding: 0.5em;
+	height: 5.7em;
 }
 
 .pista div.dati{

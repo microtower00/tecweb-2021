@@ -74,32 +74,6 @@
             return mysqli_multi_query($this->conn,$query);
         }
 
-        public function insertNewPista($numero,$nome,$difficolta,$lunghezza,$dislivello,$stato){
-            $stringaQuery = "INSERT INTO Piste(numero,nome,difficolta,lunghezza,dislivello,stato) 
-                            VALUES (\"$numero\",\"$nome\",\"$difficolta\",$lunghezza,$dislivello,$stato)";
-
-            $risultato = mysqli_query($this->conn,$stringaQuery) or die (mysqli_error($this->conn));
-
-            if (mysqli_affected_rows($this->conn) > 0) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        public function insertNewImpianto($numero,$nome,$tipo,$lunghezza,$dislivello,$stato){
-            $stringaQuery = "INSERT INTO Impianti(numero,nome,difficolta,lunghezza,dislivello,stato) 
-                            VALUES (\"$numero\",\"$nome\",\"$tipo\",$lunghezza,$dislivello,$stato)";
-
-            $risultato = mysqli_query($this->conn,$stringaQuery) or die (mysqli_error($this->conn));
-
-            if (mysqli_affected_rows($this->conn) > 0) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-
         public function getErrors(){
             return $this->conn->error;
         }

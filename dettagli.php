@@ -20,7 +20,7 @@ session_start();
         if ($piste != null) {
             $listaPiste = '';
             foreach ($piste as $pista) {
-                $listaPiste .= '<div class="pista">';
+                $listaPiste .= '<div id="' . $pista['numero'] . '" class="pista">';
 
                 if ($pista['stato'] == 0) {
                     $stato = "Chiusa";
@@ -28,8 +28,7 @@ session_start();
                     $stato = "Aperta";
                 }
                 
-                $listaPiste .= '<a id="' . $pista['numero'] . '"></a>
-                                <h4>' . $pista['numero'] . ' - ' . $pista['nome'] . '</h4>
+                $listaPiste .= '<h4>' . $pista['numero'] . ' - ' . $pista['nome'] . '</h4>
                                 <div class="dati">
                                     <p>Difficoltà: ' . $pista['difficoltà'] . '</p>
                                     <p>Stato: ' . $stato . '</p>
