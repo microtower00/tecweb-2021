@@ -84,9 +84,17 @@ header h1{
 }
 
 #menu h2{
-	font-size: 1.5rem;
-	margin: .8rem;
-	text-align: center;
+	text-indent: -99999999999em;
+	display: block;
+	overflow: hidden;
+	background-image: url("../icon/icons8-mountain-96.png");
+	background-repeat: no-repeat;
+	background-size: 75px;
+	background-position: center center;
+
+	width: 90px;
+	height: 90px;
+
 }
 
 #menu ul{
@@ -106,12 +114,22 @@ header h1{
 #menu ul li a{
 	text-decoration: none;
 	text-align: center;
-	padding: 1em;
+	padding: .6em;
 	display: flex;
 	color: var(--nero);
 	height: 2.5em;
 	justify-content: center;
 	align-items: center;
+	border: solid #152b5a;
+	border-radius: 10px;
+	margin: 0 .2em 0;
+	background-color: var(--azz1);
+}
+
+#menu ul li a:visited{
+	border: none;
+	color: var(--blu);
+	background-color: var(--azz2);
 }
 
 
@@ -122,7 +140,7 @@ header h1{
 }
 
 #menu a:hover:not(.active) {
-	background-color: var(--azz2);
+	background-color: #c6e4ff;
 }
 
 /* Allinea a destra Login e Dashboard */
@@ -161,11 +179,11 @@ header h1{
 }
 
 #breadcrumb a:link{
-	color: var(--blu);
+	color: var(--blu1);
 }
 
 #breadcrumb a:visited{
-	color: var(--azz1);
+	color: var(--blu);
 }
 
 /* nel caso la nav bar si volesse fare con ul e li
@@ -690,15 +708,16 @@ a.linkScroll{
     background-position: center;
 
 	transform: translateX(-120%);
-	/*pointer-events: none;
-	opacity: 0;*/
 	transition: transform .325s;
 }
 
 a.linkScroll.active{
-	/*pointer-events: auto;
-	opacity: 1;*/
 	transform: translateX(0);
+}
+
+a.linkScroll:focus{
+	border-color: rgb(253, 137, 60);
+	border-style: solid;
 }
 
 footer{
