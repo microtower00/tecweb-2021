@@ -1,5 +1,7 @@
 
 var attivi=false
+var prezzi
+
 function switchCss(){
     if(attivi){
         var els = document.getElementsByClassName("custom-number-input")
@@ -29,6 +31,16 @@ function loaded(){
         els[0].className="custom-number-input"
     }
     attivi=true
+
+
+
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        prezzi=JSON.parse(this.responseText)
+    }
+    xhttp.open("GET", "php_vari/prezziSkipassJson.php", true);
+    xhttp.send();
 }
 
 //BOTTONI - e +
@@ -61,18 +73,11 @@ function calcolaPrezzo(){
     var n_rid = document.getElementById("form-shop").elements["ridotto"].value
 
     var p_int=0,p_rid=0
-    switch(durata){
-        case "1":
-            p_int=2;p_rid=1
-            break;
-        case "3":
-            p_int=4;p_rid=2
-            break;
-        case "7":
-            p_int=8;p_rid=4
-            break;
-    }
+    p_int=prezzi['Intero'][durata]
+    p_rid=prezzi['Ridotto'][durata]
 
-    document.getElementById('prezzo-corrente').innerText= n_int*p_int + n_rid*p_rid
+    var prezzo =n_int*p_int + n_rid*p_rid
+
+    document.getElementById('prezzo-corrente').innerText= isNaN(prezzo) ? "--" : prezzo
     
 }

@@ -26,7 +26,7 @@ else{
     $connessione->execMultiQuery($sql);
 
     echo $sql;
-    echo "<br/><br/>";
-    echo ($connessione->getErrors());
+    /*echo "<br/><br/>";
+    echo ($connessione->getErrors());*/
     header('Location: ../carrello.php');
 }

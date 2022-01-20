@@ -73,7 +73,7 @@
 
         #form-mod{
             /*width:max(600px,50%);*/
-            width:25em;
+            width:30em;
             margin: auto;
         }
         
@@ -97,6 +97,7 @@
             width: 60%;
             
             padding: .5em;
+            background: white;
         }
         #form-mod input[type="submit"]{
             box-sizing: border-box;
@@ -147,25 +148,25 @@
         </table>
 
         <h2>Modifica prezzi</h2>
-        <form id="form-mod" action="">
+        <form id="form-mod" action="php_vari/cambiaPrezzoSkipass.php">
             <div>
-                <label for="">Durata:</label><!--
-                --><select name="" id="">
+                <label for="durata">Durata:</label><!--
+                --><select name="durata" id="durata">
                     <option value="1">Giornaliero</option>
                     <option value="3">3 giorni</option>
                     <option value="7">Settimanale</option>
                 </select>
             </div>
             <div>
-                <label for="">Tipo:</label><!--
-                --><select name="" id="">
-                    <option value="1">Intero</option>
-                    <option value="3">Ridotto</option>
+                <label for="tipo">Tipo:</label><!--
+                --><select name="tipo" id="tipo">
+                    <option value="intero">Intero</option>
+                    <option value="ridotto">Ridotto</option>
                 </select>
             </div>
             <div>
-                <label for="">Prezzo:</label><!--
-                --><input type="number" value="['num-def']" step="any"/>
+                <label for="nuovo-prezzo">Prezzo:</label><!--
+                --><input name="nuovo-prezzo" id="nuovo-prezzo" type="number" value="['num-def']" step="any"/>
             </div>
             <input type="submit" value="Modifica Prezzo"/>
         </form>

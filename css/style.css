@@ -431,8 +431,15 @@ table{
 
 #form-shop fieldset{
 	padding: .5em;
+	margin-bottom: .5em;
+	
+	border-radius: 15px;
+	border-style: inset;
+	border-width: 2px;
 }
-
+#form-shop legend{
+	margin-left: 1em;
+}
 
 #fs_num_skip>div{
 	margin: .5em 0 .5em 0;
