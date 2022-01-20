@@ -1,6 +1,5 @@
 <?php
 session_start();
-//include_once "html/login.html";
 require_once "php_vari/utils.php";
 require_once "php_vari/dbRicky.php";
 use DB\DBAccess;
@@ -30,16 +29,19 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $row = mysqli_fetch_assoc($result);
         if ($row['Username'] === $username && password_verify($pass, $row['Password'])) {
             
-            //Si puó togliere volendo
+            
             
 
             //setto variabili di sessione
             $_SESSION['Username'] = $row['Username'];
             $_SESSION['Privilegi'] = $row['Privilegi'];
-            $replaceError="Logged in!";
-            usleep(1*1000*1000);
-            header("Location: index.php");
-
+            if(Utils::checkPriv()){
+                $replaceError="Ti sei loggato, verrai portato alla dashboard tra 3 secondi.";
+                $paginaHTML = str_replace("['Imports']","<meta http-equiv='refresh' content='3;url=./dashboard.php' />['Imports']",$paginaHTML);
+            }else{
+                $replaceError="Ti sei loggato, verrai portato alla home tra 3 secondi.";
+                $paginaHTML = str_replace("['Imports']","<meta http-equiv='refresh' content='3;url=./index.php' />['Imports']",$paginaHTML);
+            }
         }else{
             $replaceError="Username o password non corretti";
             //exit();
@@ -67,4 +69,6 @@ $paginaHTML = Utils::addScrollBtn($paginaHTML);
 $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
 $paginaHTML = str_replace("[Menu]",Utils::buildNav($curPageName),$paginaHTML);
 echo str_replace("['Imports']", Utils::globalImports(),$paginaHTML);
+if($replaceError=="Logged in!"){
+}
 ?>

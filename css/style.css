@@ -365,7 +365,14 @@ button:disabled{
 	cursor: default;
   
 }
-
+/*--------------------------------
+	Logout
+--------------------------------*/
+.msgLogout{
+	text-align: center;
+	font-size: 2em;
+	padding-top: 1em;
+}
 /*--------------------------------
 	Tabelle
 --------------------------------*/
