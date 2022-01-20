@@ -15,7 +15,7 @@ $connessioneOK = $connessione->openDBConnection();
 if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripetiPassword'])) {
     $exp = "/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=.\-_*!?])([a-zA-Z0-9@#$%^&+=*.\-_!?]){8,}$|^$/";
     $expUsr = "/^[a-zA-Z0-9_\.]{5,20}$|^$/";
-    if(!(preg_match($_POST['password'],$exp) || preg_match($_POST['ripetiPassword'],$exp) || preg_match($_POST['username'],$expUsr))){
+    if(!(preg_match($exp,$_POST['password']) || preg_match($exp, $_POST['ripetiPassword']) || preg_match($expUsr, $_POST['username']))){
         $replaceMsg = "Username o password non validi.";
     }
     else if($_POST['password'] == $_POST['ripetiPassword']){
