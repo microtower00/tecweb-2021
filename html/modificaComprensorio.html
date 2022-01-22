@@ -39,9 +39,8 @@
         <form method="GET" action="php_vari/modificaStato.php" id="form-comprensorio">
             <fieldset id="piste-chiuse">
                 <legend>Piste chiuse</legend>
-                <label for="checkbox-group-durata">Apri piste:</label>
-                <div  role="checkbox" id="checkbox-group-durata" aria-label="durata-skipass">
-
+                <label for="checkbox-group-aperturaPiste">Apri piste:</label>
+                <div  role="checkbox" id="checkbox-group-aperturaPiste" aria-label="piste-chiuse">
                     <table title="Piste">
                         <caption>Piste chiuse</caption>
                         <thead>
@@ -56,15 +55,13 @@
                         ['PisteChiuse']
                     </table>
                 </div>
-
                 <input type="submit" name="apriP" value="Apri pista/e">
                 <input type="reset" name="annulla" value="Annulla">
             </fieldset>
             <fieldset id="piste-aperte">
                 <legend>Piste aperte</legend>
-                <label for="checkbox-group-durata">Chiudi piste:</label>
-                <div  role="checkbox" id="checkbox-group-durata" aria-label="durata-skipass">
-
+                <label for="checkbox-group-chiusuraPiste">Chiudi piste:</label>
+                <div  role="checkbox" id="checkbox-group-chiusuraPiste" aria-label="piste-aperte">
                     <table title="Piste">
                         <caption>Piste aperte</caption>
                         <thead>
@@ -79,16 +76,14 @@
                         ['PisteAperte']
                     </table>
                 </div>
-
                 <input type="submit" name="chiudiP" value="Chiudi pista/e">
                 <input type="reset" name="annulla" value="Annulla">
             </fieldset>
             <fieldset id="impianti-chiusi">
                 <legend>Impianti chiusi</legend>
-                <label for="checkbox-group-durata">Apri impianti:</label>
-                <div  role="checkbox" id="checkbox-group-durata" aria-label="durata-skipass">
-
-                    <table title="Piste">
+                <label for="checkbox-group-aperturaImpianti">Apri impianti:</label>
+                <div  role="checkbox" id="checkbox-group-aperturaImpianti" aria-label="impianti-chiusi">
+                    <table title="Impianti">
                         <caption>Impianti chiusi</caption>
                         <thead>
                             <tr>
@@ -107,10 +102,9 @@
             </fieldset>
             <fieldset id="impianti-aperti">
                 <legend>Impianti aperti</legend>
-                <label for="checkbox-group-durata">Chiudi impianti:</label>
-                <div  role="checkbox" id="checkbox-group-durata" aria-label="durata-skipass">
-
-                    <table title="Piste">
+                <label for="checkbox-group-chiusuraImpianti">Chiudi impianti:</label>
+                <div  role="checkbox" id="checkbox-group-chiusuraImpianti" aria-label="impianti-aperti">
+                    <table title="Impianti">
                         <caption>Impianti aperti</caption>
                         <thead>
                             <tr>
