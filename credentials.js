@@ -1,5 +1,6 @@
 var charsPwd = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=.\-_*!?])([a-zA-Z0-9@#$%^&+=*.\-_!?]){8,}$|^$/;
 var charsUsr = /^[a-zA-Z0-9_\.]{5,20}$|^$/;
+var mailRegex = /^[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$/;
 
 function checkUsername(){
     //elem.focus() non va!!!
@@ -31,4 +32,18 @@ function checkPassword(){
         document.getElementById('btnConfirm').disabled=false;
     }
 
+}
+
+function checkEmail(){
+    var elem = document.getElementById("emailInput")
+    var validMail = elem.value.match(mailRegex);
+    if(!validMail){
+        elem.focus();
+        document.getElementById('error').innerHTML = "La mail non é valida. Ricontrollare";
+        document.getElementById('btnConfirm').disabled=true;
+
+    }else{
+        document.getElementById('error').innerHTML = "";
+        document.getElementById('btnConfirm').disabled=false;
+    }
 }
