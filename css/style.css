@@ -660,9 +660,13 @@ img{
 	width: 80%;
 }
 
-#piste-chiuse,#piste-aperte,#impianti-chiusi,#impianti-aperti{
-	display: none;
+#gridButtons button:hover{
+	background-color: var(--blu1);
 }
+
+/*#piste-chiuse,#piste-aperte,#impianti-chiusi,#impianti-aperti{
+	display: none;
+}*/
 
 input[type=submit],input[type=reset]{
 	cursor: pointer;
@@ -688,6 +692,10 @@ input[type=submit]{
 
 input[type=reset]{
 	margin-left: 20%;
+}
+
+input[type=submit]:hover,input[type=reset]:hover{
+	background-color: var(--blu1);
 }
 
 /*--------------------------------
