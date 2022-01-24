@@ -56,6 +56,8 @@ a.skip-nav:focus{
 
 header{
     text-align: center;
+	/*position: sticky;
+	top: 0;*/
 }
 
 header h1{
@@ -176,6 +178,7 @@ header h1{
 	padding: 0.3em 1.3em;
 	background-color:var(--bianco);
 	color:var(--nero);
+	text-align: left;
 }
 
 #breadcrumb a:link{
@@ -185,19 +188,6 @@ header h1{
 #breadcrumb a:visited{
 	color: var(--blu);
 }
-
-/* nel caso la nav bar si volesse fare con ul e li
-
-
-#menu ul li.right{
-	float: right;
-}
-
-#menu li a {
-    display: block;
-    text-align: center;
-    padding: 14px;
-}*/
 
 /*=======================
 	Generali
@@ -209,7 +199,6 @@ ol > li{
 #content{
 	margin:auto;
 	max-width: 1024px;
-
 	
 	margin-top: -8em;
 	padding-top: 8em;
@@ -384,6 +373,11 @@ table, th, td{
 	border: 1px solid black;
 	border-collapse: collapse;
 	text-align: center;
+	padding: 0.5em;
+}
+
+th{
+	background-color: var(--azz2);
 }
 
 tr:nth-child(even) {background: #CCC}
@@ -408,13 +402,6 @@ table{
 	margin-bottom: 1em;
 	border: 1px solid black;
 	border-radius: 10px;
-	/*height: 11em;*/
-}
-
-.pista:target{
-	position: relative;
-	z-index: 1;
-	background-color:var(--azz2);
 }
 
 .pista h4{
@@ -429,7 +416,6 @@ table{
 .pista div{
 	display: table-cell;
 	padding: 0.5em;
-	/*height: 5.7em;*/
 }
 
 .pista div.dati{
