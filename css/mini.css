@@ -142,5 +142,6 @@ a.linkScroll{
 }
 
 th,td{
-    padding: 0;;
+    padding: 0;
+    height: 4em;
 }
