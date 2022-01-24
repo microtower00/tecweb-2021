@@ -36,7 +36,7 @@
             <button onclick="mostraFieldset('impianti-aperti')">Impianti Aperti</button>   
         </div>
 
-        <form method="GET" action="php_vari/modificaStato.php" id="form-comprensorio">
+        <form method="GET" action="modificaComprensorio.php" id="form-comprensorio">
             <fieldset id="piste-chiuse">
                 <legend>Piste chiuse</legend>
                 <label for="checkbox-group-aperturaPiste">Apri piste:</label>
@@ -122,6 +122,9 @@
                 <input type="reset" name="annulla" value="Annulla">
             </fieldset>
         </form>
+
+        <p class="error-message">['Messaggio']</p>
+
     </main>
     ['BtnScroll']
     <footer>Creato da Michele Cazzaro, Riccardo Contin, Leonardo Speranzon</footer>

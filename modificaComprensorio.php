@@ -119,6 +119,53 @@
 
 
     $find = array("['PisteChiuse']","['PisteAperte']","['ImpiantiChiusi']","['ImpiantiAperti']","['Imports']");
-    $replace = array($listaPisteChiuse,$listaPisteAperte,$listaImpiantiChiusi,$listaImpiantiAperti,Utils::globalImports());
-    echo str_replace($find, $replace, $paginaHTML);
+    $replace = array($listaPisteChiuse,$listaPisteAperte,$listaImpiantiChiusi,$listaImpiantiAperti,Utils::globalImports()."['Imports']");
+    $paginaHTML = str_replace($find, $replace, $paginaHTML);
+
+    $messaggio="";
+    if (isset($_GET['apriP']) || isset($_GET['chiudiP']) || isset($_GET['apriI']) || isset($_GET['chiudiI'])) {
+        $connessione = new DBAccess();
+        $connessioneOK = $connessione->openDBConnection();
+
+        if ($connessioneOK) {
+            if (isset($_GET['apriP'])) {
+                $piste = isset($_GET['piste']) ? $_GET['piste'] : array();
+                foreach($piste as $pista) {
+                    $connessione->updateState('Piste',$pista,1);
+                    $messaggio="Operazione completata correttamente, una o più piste sono state aperte.";
+                }
+            } elseif (isset($_GET['chiudiP'])) {
+                $piste = isset($_GET['piste']) ? $_GET['piste'] : array();
+                foreach($piste as $pista) {
+                    $connessione->updateState('Piste',$pista,0);
+                    $messaggio="Operazione completata correttamente, una o più piste sono state chiuse.";
+                }
+            } elseif (isset($_GET['apriI'])) {
+                $impianti = isset($_GET['impianti']) ? $_GET['impianti'] : array();
+                foreach($impianti as $impianto) {
+                    echo $impianto;
+                    $connessione->updateState('Impianti',$impianto,1);
+                    $messaggio="Operazione completata correttamente, uno o più impianti sono stati aperti.";
+                }
+            } else {
+                $impianti = isset($_GET['impianti']) ? $_GET['impianti'] : array();
+                foreach($impianti as $impianto) {
+                    echo $impianto;
+                    $connessione->updateState('Impianti',$impianto,0);
+                    $messaggio="Operazione completata correttamente, uno o più impianti sono stati chiusi.";
+                }
+            }
+            $connessione->closeConnection();
+            $messaggio .= " Attendi 3 secondi che il database si aggiorni.";
+            $paginaHTML = str_replace("['Imports']","<meta http-equiv='refresh' content='3;url=./modificaComprensorio.php' />",$paginaHTML);
+        } else {
+            $messaggio = "Operazione fallita";
+        }
+    }else {
+        $paginaHTML = str_replace("['Imports']","",$paginaHTML);
+    }
+    $paginaHTML = str_replace("['Messaggio']",$messaggio,$paginaHTML);
+
+    echo $paginaHTML;
+
 ?>
