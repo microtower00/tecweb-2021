@@ -1,0 +1,19 @@
+.skip-nav{
+    display: none;
+}
+
+header{
+    display: none;
+}
+
+#sticky{
+    display: none;
+}
+
+.linkScroll{
+    display: none;
+}
+
+footer{
+    display: none;
+}
