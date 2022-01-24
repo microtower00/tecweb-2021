@@ -90,8 +90,9 @@ class Utils{
         $scriptMenu="<script src='js/menu.js'></script>";
         $cssTablet="<link rel='stylesheet' type='text/css' media='screen and (min-width: 601px) and (max-width: 1090px), only screen and (min-width: 601px) and (max-width:1090px)' href='css/tablet.css' />";
         $cssMini="<link rel='stylesheet' type='text/css' media='screen and (max-width: 600px), only screen and (max-width:600px)' href='css/mini.css' />";
+        $cssPrint="<link rel='stylesheet' type='text/css' media='print' href='css/print.css' />";
         $icon="<link rel='shortcut icon' type='image/png' href='icon/icons8-montagna-48.png' />";
-        return $css."\n".$cssTablet."\n".$cssMini."\n".$scriptMenu."\n".$icon;
+        return $css."\n".$cssTablet."\n".$cssMini."\n".$cssPrint."\n".$scriptMenu."\n".$icon;
     }
 
     public static function skipNavBtn($html){
