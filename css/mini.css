@@ -140,3 +140,7 @@ a.linkScroll{
 	grid-column: 1;
 	grid-row: 5;
 }
+
+th,td{
+    padding: 0;;
+}
