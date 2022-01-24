@@ -4,44 +4,6 @@
     require_once "php_vari/dbRicky.php";
     use DB\DBAccess;
 
-    /*function modificaStato(){
-        $connessione = new DBAccess();
-        $connessioneOK = $connessione->openDBConnection();
-        $messaggio="";
-
-        if ($connessioneOK) {
-            if (isset($_GET['apriP'])) {
-                $piste = isset($_GET['piste']) ? $_GET['piste'] : array();
-                foreach($piste as $pista) {
-                    $connessione->updateState('Piste',$pista,1);
-                    $messaggio="Operazione completata correttamente, una o più piste sono state aperte.";
-                }
-            } elseif (isset($_GET['chiudiP'])) {
-                $piste = isset($_GET['piste']) ? $_GET['piste'] : array();
-                foreach($piste as $pista) {
-                    $connessione->updateState('Piste',$pista,0);
-                    $messaggio="Operazione completata correttamente, una o più piste sono state chiuse.";
-                }
-            } elseif (isset($_GET['apriI'])) {
-                $impianti = isset($_GET['impianti']) ? $_GET['impianti'] : array();
-                foreach($impianti as $impianto) {
-                    echo $impianto;
-                    $connessione->updateState('Impianti',$impianto,1);
-                    $messaggio="Operazione completata correttamente, uno o più impianti sono stati aperti.";
-                }
-            } else {
-                $impianti = isset($_GET['impianti']) ? $_GET['impianti'] : array();
-                foreach($impianti as $impianto) {
-                    echo $impianto;
-                    $connessione->updateState('Impianti',$impianto,0);
-                    $messaggio="Operazione completata correttamente, uno o più impianti sono stati chiusi.";
-                }
-            }
-            $connessione->closeConnection();
-            echo str_replace("['Messaggio']",$messaggio,$paginaHTML);
-        }
-    }*/
-
     $paginaHTML = file_get_contents("html/modificaComprensorio.html");
     $paginaHTML = Utils::skipNavBtn($paginaHTML);
     $paginaHTML = Utils::addScrollBtn($paginaHTML);
