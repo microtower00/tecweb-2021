@@ -36,8 +36,7 @@
         if ($piste != null) {
             $listaPisteAperte = '<tbody>';
             $listaPisteChiuse = '<tbody>';
-            foreach ($piste as $pista) {
-                                
+            foreach ($piste as $pista) {               
                 if ($pista['stato'] == 0) {
                     $stato = "Chiusa";
                     $listaPisteChiuse .= '<tr>';
@@ -62,25 +61,23 @@
             $listaPisteChiuse .= '</tbody>';
 
             if ($listaPisteAperte == "<tbody></tbody>") {
-                $listaPisteAperte = "<p>Non ci sono informazioni relative alle piste aperte.</p>";
+                $listaPisteAperte = "<p class='error-message'>Non ci sono informazioni relative alle piste aperte.</p>";
             }else if ($listaPisteChiuse == "<tbody></tbody>") {
-                $listaPisteChiuse = "<p>Non ci sono informazioni relative alle piste chiuse.</p>";
+                $listaPisteChiuse = "<p class='error-message'>Non ci sono informazioni relative alle piste chiuse.</p>";
             }
 
         } else {
-            $listaPisteAperte = "<p>Non ci sono informazioni relative alle piste.</p>";
-            $listaPisteChiuse = "<p>Non ci sono informazioni relative alle piste.</p>";
+            $listaPisteAperte = "<p class='error-message'>Non ci sono informazioni relative alle piste.</p>";
+            $listaPisteChiuse = "<p class='error-message'>Non ci sono informazioni relative alle piste.</p>";
         }
 
         if ($impianti != null) {
             $listaImpiantiAperti = '<tbody>';
             $listaImpiantiChiusi = '<tbody>';
             foreach ($impianti as $impianto) {
-                $listaImpiantiAperti .= '<tr>';
-                $listaImpiantiChiusi .= '<tr>';
-                
                 if ($impianto['stato'] == 0) {
                     $stato = "Chiuso";
+                    $listaImpiantiChiusi .= '<tr>';
                     $listaImpiantiChiusi .= '<td><input type="checkbox" name="impianti[]" value="' . $impianto['numero'] . '" /></td>
                                 <td>' . $impianto['numero'] . '</td>
                                 <td>' . $impianto['nome'] . '</td>
@@ -89,6 +86,7 @@
                                 $listaImpiantiChiusi .= '</tr>'; 
                 } else {
                     $stato = "Aperto";
+                    $listaImpiantiAperti .= '<tr>';
                     $listaImpiantiAperti .= '<td><input type="checkbox" name="impianti[]" value="' . $impianto['numero'] . '" /></td>
                                 <td>' . $impianto['numero'] . '</td>
                                 <td>' . $impianto['nome'] . '</td>
@@ -102,19 +100,19 @@
             $listaImpiantiChiusi .= '</tbody>';
 
             if ($listaImpiantiAperti == "<tbody></tbody>") {
-                $listaImpiantiAperti = "<p>Non ci sono informazioni relative alle piste aperte.</p>";
+                $listaImpiantiAperti = "<p class='error-message'>Non ci sono informazioni relative alle piste aperte.</p>";
             }else if ($listaImpiantiChiusi == "<tbody></tbody>") {
-                $listaImpiantiChiusi = "<p>Non ci sono informazioni relative alle piste chiuse.</p>";
+                $listaImpiantiChiusi = "<p class='error-message'>Non ci sono informazioni relative alle piste chiuse.</p>";
             }
         } else {
-            $listaImpiantiAperti = "<p>Non ci sono informazioni relative agli impianti.</p>";
-            $listaImpiantiChiusi = "<p>Non ci sono informazioni relative agli impianti.</p>";
+            $listaImpiantiAperti = "<p class='error-message'>Non ci sono informazioni relative agli impianti.</p>";
+            $listaImpiantiChiusi = "<p class='error-message'>Non ci sono informazioni relative agli impianti.</p>";
         }
     } else {
-        $listaPisteAperte = "<p>I sistemi al momento sono non disponibili, riprova più tardi.</p>";
-        $listaPisteChiuse = "<p>I sistemi al momento sono non disponibili, riprova più tardi.</p>";
-        $listaImpiantiAperti = "<p>I sistemi al momento sono non disponibili, riprova più tardi.</p>";
-        $listaImpiantiChiusi = "<p>I sistemi al momento sono non disponibili, riprova più tardi.</p>";
+        $listaPisteAperte = "<p class='error-message'>I sistemi al momento sono non disponibili, riprova più tardi.</p>";
+        $listaPisteChiuse = "<p class='error-message'>I sistemi al momento sono non disponibili, riprova più tardi.</p>";
+        $listaImpiantiAperti = "<p class='error-message'>I sistemi al momento sono non disponibili, riprova più tardi.</p>";
+        $listaImpiantiChiusi = "<p class='error-message'>I sistemi al momento sono non disponibili, riprova più tardi.</p>";
     }
 
 
