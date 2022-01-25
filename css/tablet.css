@@ -4,11 +4,13 @@
 #menu ul {
     display: none;
     flex-direction: column;
+    padding: .5rem 0 .5rem;
 }
 
 #menu ul li a{
     width: 15em;
     text-align: center;
+    margin:.4rem;
 }
 
 #menu li.right{
@@ -28,4 +30,13 @@
 
 #menu #mappaIcon{
     display: none;
+}
+
+/*=============================GRID HOME===================================*/
+#grid2Img1{
+	grid-column: r1c1;
+}
+
+#grid2Text{
+	grid-column: r2c2/r2c4;
 }

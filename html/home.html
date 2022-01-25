@@ -10,7 +10,7 @@
     <title>Home - Comprensorio Valle Bianca</title>
 </head>
 
-<body id="top" onscroll="toggleScrollBtn()">
+<body onload="toggleMenu()" id="top" onscroll="toggleScrollBtn()">
 
     ['BtnSkip']
     <header>
@@ -33,7 +33,7 @@
     <main id="content">
         
         <div id="gridHome">
-            <div id="grid1Text">
+            <div id="grid1Text" class="homeTextElement">
                 <h2>Dicono di noi</h2>
                 <blockquote cite="Tomba">
                     La magia dello sci in Valle Bianca è ineguagliabile!
@@ -42,8 +42,8 @@
             </div>
             <img id="grid1Img" src="img/tomba.jpg" alt="alberto tomba">
 
-            <img id="grid2Img1" src="img/pistasci_tirata.png" alt="pista da sci tirata">
-            <div id="grid2Text">
+            <img id="grid2Img1" src="img/pistasci_tirata.jpg" alt="pista da sci tirata">
+            <div id="grid2Text" class="homeTextElement">
                 <h2>5 motivi per sciare in valle bianca</h2>
                 <ol>
                     <li>Gli ingegneri di pista lavorano ogni notte per preparare al meglio i tracciati</li>
@@ -54,14 +54,13 @@
                 </ol>
                 <p>... e se sei stanco, fermati nei nostri rifugi e recupera con i piatti gourmet tipici della Valle Bianca</p>
             </div>
-            <img id="grid2Img2" src="img/rifugio.jpg" alt="rifugio della valle bianca">
-
-            <img id="grid3Img" src="img/dolomiti-di-brenta-innevate.jpg" alt="dolomiti innevate">
-            <div id="grid3Text">
+            <!--<img id="grid2Img2" src="img/rifugio.jpg" alt="rifugio della valle bianca">-->
+            <div id="grid3Text" class="homeTextElement">
                 <h3>Dove siamo</h3>
                 <p>Il comprensorio Valle Bianca si staglia nel cuore delle Dolomiti UNESCO Heritage, incastonato tra il Monte Pelmo ed il massiccio della Marmolada</p>
-                <!--<p>Scopri <a href="comeRaggiungerci.php">come raggiuncerci</a></p>-->
             </div>
+            <img id="grid3Img" src="img/dolomiti-di-brenta-innevate.jpg" alt="dolomiti innevate"><!--<p>Scopri <a href="comeRaggiungerci.php">come raggiuncerci</a></p>-->
+
         </div>
     </main>
     
