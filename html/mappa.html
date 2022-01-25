@@ -11,7 +11,7 @@
 
 </head>
 
-<body onload="toggleMenu()" id="top" onscroll="toggleScrollBtn()" onload="mapWithJS()">
+<body onload="toggleMenu();mapWithJS();" id="top" onscroll="toggleScrollBtn()" >
     ['BtnSkip']
     <header>
         <h1>Comprensorio Valle Bianca</h1>
@@ -63,11 +63,6 @@
     
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="js/jquery.rwdImageMaps.min.js"></script>
-        <script>
-            $(document).ready(function(e) {
-            $('img[usemap]').rwdImageMaps();
-            });
-        </script>
     </main>
 
     ['BtnScroll']
