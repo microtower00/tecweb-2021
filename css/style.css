@@ -33,8 +33,10 @@ body{
 
 
 .error-message{
-	color: red;
-	
+	color: darkred;
+}
+.success-message{
+	color: darkgreen;
 }
 
 /*--------------------------------

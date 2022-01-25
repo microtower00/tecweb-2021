@@ -25,13 +25,23 @@ $connessione->openDBConnection();
 $res = $connessione->execQuery($sql);
 $prezzi=[];
 while($r = $res->fetch_assoc()){
-    if(empty($prezzi))
-        $pagina = str_replace("['num-def']",number_format($r['Prezzo'],2),$pagina);
-    $prezzi[]=number_format($r['Prezzo'],2,',',' ').'€';
+    $prezzi[]=number_format($r['Prezzo'],2,',',' ');
 }
 
 $find=["['i1']","['i3']","['i7']","['r1']","['r3']","['r7']"];
 $pagina = str_replace($find,$prezzi,$pagina);
+
+
+$feedback='';
+$tipoFeedback='';
+if(isset($_GET['err'])){
+    $feedback=$_GET['err'];
+    $tipoFeedback='error-message';
+}elseif(isset($_GET['suc'])){
+    $feedback=$_GET['suc'];
+    $tipoFeedback='success-message';
+}
+$pagina = str_replace(["['Feedback']","['TipoFeedback']"],[$feedback,$tipoFeedback],$pagina);
 
 
 echo $pagina;
