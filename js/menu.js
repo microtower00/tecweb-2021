@@ -10,3 +10,11 @@ function toggleScrollBtn(){
     else
         bottoneScroll.classList.remove('active');
 }
+
+
+function mapWithJS(){
+    document.getElementById("desc").innerHTML="La mappa è interattiva, andando con il puntatore sopra il numero leggerai il nome della pista o dell'impianto. \nIn aggiunta cliccando su un numero di una pista potrai leggere una piccola descrizione di quest'ultima."
+    
+    //Non funziona, cambia il valore e aggiunge i link, ma i link sono in posizione sbalgiata
+    //document.getElementById("mappa").setAttribute("usemap","#mappaValle")
+}

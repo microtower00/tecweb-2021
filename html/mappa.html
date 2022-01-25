@@ -11,7 +11,7 @@
 
 </head>
 
-<body id="top" onscroll="toggleScrollBtn()">
+<body onload="toggleMenu()" id="top" onscroll="toggleScrollBtn()" onload="mapWithJS()">
     ['BtnSkip']
     <header>
         <h1>Comprensorio Valle Bianca</h1>
@@ -27,12 +27,11 @@
     <main id="content">
         <h2 class="pageTitle">Mappa della Valle Bianca</h2>
 
-        <p>
-            La mappa è interattiva, andando con il puntatore sopra il numero leggerai il nome della pista o dell'impianto.
-            In aggiunta cliccando su un numero di una pista potrai leggere una piccola descrizione di quest'ultima.
+        <p id="desc">
+            Questa é la mappa del comprensorio, consultabile per orientarsi al meglio.
         </p>
     
-        <img id="mappa" src="img/Cermis1.jpg" alt="mappa della Valle Bianca" usemap="#mappaValle" width="1325" height="839">
+        <img id="mappa" src="img/Cermis1.jpg" alt="mappa della Valle Bianca" width="1325" height="839">
     
         <map name="mappaValle">
             <area shape="circle" coords="435,645,20" href="dettagli.php#72" alt="pista 72" title="Campo Scuola Valle Bianca">
