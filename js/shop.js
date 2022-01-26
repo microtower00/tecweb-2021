@@ -28,6 +28,8 @@ function loaded(){
     while(els.length>0){
         els[0].children[1].readOnly=true
         els[0].children[1].onfocus=function(){this.blur();}
+        els[0].children[1].tabIndex=-1
+        
         els[0].className="custom-number-input"
     }
     attivi=true

@@ -3,7 +3,7 @@ html{
 }
 
 body{
-    margin-bottom: 10em;
+    padding-bottom: 4em;
 }
 
 #menu{
@@ -87,7 +87,13 @@ body{
 }
 
 a.linkScroll{
-    bottom: 7.5rem;
+    bottom: 5em;
+}
+footer{
+    
+	position: static;
+	/*bottom: 0px;*/
+	width: auto;
 }
 
 #mappaNascosta{
