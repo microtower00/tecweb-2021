@@ -1,16 +1,82 @@
+\documentclass[12pt, a4paper]{article} 
 
-\documentclass{article} 
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{float}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{fancyhdr}
 
-\usepackage{amsmath} 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue,
+}
 
-\title{Relazione Progetto Tecnologie web}
+\pagestyle{fancy}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\headheight}{15pt}
+
+
+\title{Comprensorio Valle Bianca}
 \author{Leonardo Speranzon, Riccardo Contin, Michele Cazzaro}
 \date{\today}
 
 \begin{document}
-    \maketitle
-    
-    \section{Progettazione}
-    La progettazione del sito web, ci ha portato inizialmente ad analizzare i competitor
+
+    \begin{titlepage}
+        \begin{center}
+            \vspace*{1cm}
+            
+            \Huge
+            \textbf{Comprensorio Valle Bianca}
+
+            \vspace{0.5cm}
+            \LARGE
+            Relazione del progetto di Tecnologie Web
+
+            \vspace{1.5cm}
+            \Large
+            Cazzaro Michele, Contin Riccardo, Speranzon Leonardo
+        \end{center}
+            \vfill
+
+            \large
+            Indirizzi:
+            \begin{itemize}
+                \item \textbf{Indirizzo web del sito: } \url{}
+                \item \textbf{Indirizzo email del referente: } \url{}
+            \end{itemize}
+
+            \begin{table}[H]
+                \centering
+                \begin{tabular}{|c|c|c|}
+                    \hline
+                    \rowcolor[HTML]{96FFFB} 
+                    \textbf{Utente} & \textbf{Username} & \textbf{Password} \\ \hline
+                    Amministratore & admin & admin \\ \hline
+                    Utente & user & user \\ \hline
+                \end{tabular}
+                \caption{Utenti}
+            \end{table}
+        
+    \end{titlepage}
+
+    \tableofcontents
+
+    \newpage
+
+    \input{contenuti/analisi_iniziale.tex}
+    \newpage
+    \input{contenuti/progettazione.tex}
+    \newpage
+    \input{contenuti/realizzazione.tex}
+    \newpage
+    \input{contenuti/validazione_testing.tex}
 
 \end{document}
