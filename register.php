@@ -9,6 +9,7 @@ $replaceMsg="";
 $replaceUser="";
 $replaceMail="";
 $replaceLink="";
+$replaceSuccess="";
 
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
@@ -28,7 +29,6 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripe
     else if($_POST['password'] == $_POST['ripetiPassword'] && $_POST['email']==$_POST['ripetiEmail']){
         $replaceMail=$_POST['email'];
         $replaceUser=$_POST['username'];
-        echo "uguali";
      
         //validazione credenziali
         $username = Utils::valida($_POST['username']);
@@ -46,7 +46,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripe
                 $replaceMsg =  "Si é verificato un errore, riprovare piú tardi";
             }else{
                 //tutto bene
-                $replaceMsg = "Registrato con successo";
+                $replaceSuccess = "Registrato con successo";
             }
         }else{
             //username giá utilizzato
@@ -60,8 +60,8 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['ripe
 }
 
 //sostituzioni
-$find = array("['UsrVal']","['UsrMsg']", "['EmailVal']");
-$replace = array($replaceUser,$replaceMsg, $replaceMail);
+$find = array("['UsrVal']","['UsrMsg']", "['EmailVal']","['Success']");
+$replace = array($replaceUser,$replaceMsg, $replaceMail,$replaceSuccess);
 $paginaHTML = str_replace($find,$replace,$paginaHTML);
 $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1); 
 $paginaHTML = str_replace("[Menu]",Utils::buildNav($curPageName),$paginaHTML);

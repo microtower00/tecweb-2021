@@ -8,6 +8,7 @@ $paginaHTML = file_get_contents("html/login.html");
 $replaceError="";
 $replaceUser="";
 $replaceLink="";
+$replaceSuccess="";
 
 $connessione = new DBAccess();
 $connessioneOK = $connessione->openDBConnection();
@@ -36,10 +37,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $_SESSION['Username'] = $row['Username'];
             $_SESSION['Privilegi'] = $row['Privilegi'];
             if(Utils::checkPriv()){
-                $replaceError="Ti sei loggato, verrai portato alla dashboard tra 3 secondi.";
+                $replaceSuccess="Ti sei loggato, verrai portato alla dashboard tra 3 secondi.";
                 $paginaHTML = str_replace("['Imports']","<meta http-equiv='refresh' content='3;url=./dashboard.php' />['Imports']",$paginaHTML);
             }else{
-                $replaceError="Ti sei loggato, verrai portato alla home tra 3 secondi.";
+                $replaceSuccess="Ti sei loggato, verrai portato alla home tra 3 secondi.";
                 $paginaHTML = str_replace("['Imports']","<meta http-equiv='refresh' content='3;url=./index.php' />['Imports']",$paginaHTML);
             }
         }else{
@@ -60,8 +61,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 $connessione->closeConnection();
 
 
-$find = array("['ValUsername']","['Errore']");
-$replace = array($replaceUser,$replaceError);
+$find = array("['ValUsername']","['Errore']","['Success']");
+$replace = array($replaceUser,$replaceError,$replaceSuccess);
 $paginaHTML = str_replace($find,$replace,$paginaHTML);
 
 $paginaHTML = Utils::skipNavBtn($paginaHTML);

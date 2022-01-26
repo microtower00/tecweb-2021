@@ -35,6 +35,7 @@ body{
 .error-message{
 	color: darkred;
 }
+
 .success-message{
 	color: darkgreen;
 }
@@ -208,8 +209,7 @@ ol > li{
 	max-width: 1264px;
 	
 	margin-top: -8em;
-	padding-top: 8em;
-	padding-bottom: 1rem;
+	padding: 8em 3em 1em;
 
 	box-shadow:0 0 15px 4px rgba(0,0,0,0.2);
 
@@ -230,6 +230,12 @@ ol > li{
 	display: block;
 	margin: auto;
 	width: 70%;
+}
+
+img{
+	max-width: 90%;
+	width: auto;
+	height: auto;
 }
 
 figcaption.centerImg {
@@ -627,7 +633,7 @@ table{
 	Mappa
 --------------------------------*/
 
-img{
+#mappa{
 	max-width: 90%;
 	width: auto;
 	height: auto;
@@ -785,5 +791,44 @@ footer{
 	padding: 0.5em;
 }
 
+/*================================		404		===================================*/
+div.notFound{
+	padding-top: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+	vertical-align: middle;
+}
+img.notFound{
+	width: 6rem;
+	vertical-align: middle;
+}
+
+span.notFound{
+	vertical-align: middle;
+}
+
+h3.notFound{
+	display: inline;
+}
+
+a.notFound{
+	display: block;
+
+	appearance:none;
+	-webkit-appearance:none;
+	
+	padding-top:20px;
+	margin-top:.7rem;
+	margin-left:auto;
+	margin-right:auto;
+
+	border:none;
+	background-color:var(--blu);
+	color:#fff;
+	font-weight:600;
+	border-radius:5px;
+	width:20%;
+	height: 35px;
+}
 
 
