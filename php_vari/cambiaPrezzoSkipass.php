@@ -19,14 +19,16 @@ if(isset($_GET['durata'],$_GET['tipo'],$_GET['nuovo-prezzo'])){
 
     $connessione->execMultiQuery($sql);
 
+    if($connessione->getAffectedRows()==0)
+        $msg="err=Errore nel cambio del prezzo (o prezzo uguale al precedente)";
+    else
+        $msg="suc=Prezzo skipass cambiato con successo";
 
 }
 
-header('Location: ../modificaPrezzi.php');
-
-
-
-
-
+if(isset($msg))
+    header("Location: ../modificaPrezzi.php?$msg");
+else
+    header("Location: ../modificaPrezzi.php");
 
 ?>

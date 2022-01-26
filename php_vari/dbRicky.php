@@ -77,6 +77,12 @@
         public function getErrors(){
             return $this->conn->error;
         }
+        public function getErrorsNumber(){
+            return $this->conn->errno;
+        }
+        public function getAffectedRows(){
+            return $this->conn->affected_rows;
+        }
 
         public function updateState($tipo,$numero,$stato){
             $stringaQuery = "UPDATE $tipo SET stato = $stato WHERE numero = \"$numero\"";

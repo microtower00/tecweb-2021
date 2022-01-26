@@ -9,7 +9,7 @@
 
     ['Imports']
 
-    <script src="js/modificaComprensorio.js"></script>
+    <script src="js/modificaPrezzi.js"></script>
 
     <style>
         tr{
@@ -107,10 +107,14 @@
             margin-top: 10px;
             margin-bottom: 20px;
         }
+
+        #feedback{
+            text-align: center;
+        }
     </style>
 </head>
 
-<body onload="toggleMenu()" id="top" onscroll="toggleScrollBtn()">
+<body onload="toggleMenu(); caricaPrezzo();" id="top" onscroll="toggleScrollBtn()">
     ['BtnSkip']
     <header>
         <h1>Valle Bianca</h1>
@@ -135,15 +139,15 @@
             </thead>
             <tr>
                 <th scope="row">Intero</th>
-                <td data-title="Giornaliero">['i1']</td>
-                <td data-title="3 giorni">['i3']</td>
-                <td data-title="Settimanale">['i7']</td>
+                <td data-title="Giornaliero"><span id="intero-1">['i1']</span>€</td>
+                <td data-title="3 giorni"><span id="intero-3">['i3']</span>€</td>
+                <td data-title="Settimanale"><span id="intero-7">['i7']</span>€</td>
             </tr>
             <tr>
                 <th scope="row">Ridotto</th>
-                <td data-title="Giornaliero">['r1']</td>
-                <td data-title="3 giorni">['r3']</td>
-                <td data-title="Settimanale">['r7']</td>
+                <td data-title="Giornaliero"><span id="ridotto-1">['r1']</span>€</td>
+                <td data-title="3 giorni"><span id="ridotto-3">['r3']</span>€</td>
+                <td data-title="Settimanale"><span id="ridotto-7">['r7']</span>€</td>
             </tr>
         </table>
 
@@ -151,7 +155,7 @@
         <form id="form-mod" action="php_vari/cambiaPrezzoSkipass.php">
             <div>
                 <label for="durata">Durata:</label><!--
-                --><select name="durata" id="durata">
+                --><select name="durata" id="durata" onchange="caricaPrezzo()">
                     <option value="1">Giornaliero</option>
                     <option value="3">3 giorni</option>
                     <option value="7">Settimanale</option>
@@ -159,17 +163,19 @@
             </div>
             <div>
                 <label for="tipo">Tipo:</label><!--
-                --><select name="tipo" id="tipo">
+                --><select name="tipo" id="tipo" onchange="caricaPrezzo()">
                     <option value="intero">Intero</option>
                     <option value="ridotto">Ridotto</option>
                 </select>
             </div>
             <div>
                 <label for="nuovo-prezzo">Prezzo:</label><!--
-                --><input name="nuovo-prezzo" id="nuovo-prezzo" type="number" value="['num-def']" step="any"/>
+                --><input name="nuovo-prezzo" id="nuovo-prezzo" type="number"  step="any"/>
             </div>
             <input type="submit" value="Modifica Prezzo"/>
+            <p id="feedback" class="['TipoFeedback']">['Feedback']</p>
         </form>
+
 
     </main>
     ['BtnScroll']
