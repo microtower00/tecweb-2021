@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="valle bianca, skipass, sci, snowboard">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css' />
+    <link rel='stylesheet' type='text/css' media='screen and (min-width: 601px) and (max-width: 1090px), only screen and (min-width: 601px) and (max-width:1090px)' href='css/tablet.css' />
+    <link rel='stylesheet' type='text/css' media='screen and (max-width: 600px), only screen and (max-width:600px)' href='css/mini.css' />
+    <script src='js/menu.js'></script>
+    <link rel='shortcut icon' type='image/png' href='icon/icons8-montagna-48.png' />
+    
+    <title>Home - Comprensorio Valle Bianca</title>
+</head>
+
+<body onload="toggleMenu()" id="top" onscroll="toggleScrollBtn()">
+    <nav aria-label='Salta al contenuto'><a class='skip-nav' href='#content'>Salta il menu</a></nav>
+    <header>
+        <h1>Valle Bianca</h1>
+    </header>
+
+    <div id="sticky"><nav aria-label='Menu principale' id='menu'>
+        <h2>Valle Bianca Ski</h2>
+        <div class='pulsanteMenu' onclick='toggleMenu()'>
+            
+                <span class='barra'></span>
+                <span class='barra'></span>
+                <span class='barra'></span>
+            
+        </div>
+            <ul class='active'>
+                <li><a href="index.php" id='home'>Home</a></li>
+                <li><a href="chisiamo.php" id='info'>Chi siamo</a></li>
+                <li><a href="comprensorio.php" id='comprensorio'>Il nostro Comprensorio</a></li>
+                <li><a href="mappa.php" id='mappaIcon'>Mappa delle piste</a></li>
+                <li><a href="shop.php" id='shop'>Compra skipass</a></li>
+                <li><a href="comeRaggiungerci.php" id='bus'>Come raggiuncerci</a></li>
+            </ul>
+        </nav>
+        <nav aria-label='breadcrumb' id="breadcrumb">
+            <p>Ti trovi in: Pagina non trovata</p>
+        </nav>
+    </div>
+    
+    <main id="content">
+        <div class="notFound">
+            <h2>La pagina che cercavi non é stata trovata</h2>
+
+            <div class="notFound">
+                <img class="notFound" src="img/snow-avalanche.png" />
+                <span  class="notFound">Sei stato travolto, ma non preoccuparti, rimetti gli sci e riparti!</span>
+            </div>
+            
+            <a class="notFound" href="index.php">Home</a>
+        </div>
+        
+    
+    <nav aria-label='Torna su'><a class='linkScroll' href='#top'>Torna all'inzio</a></nav>
+    </main>
+    <footer>Creato da Michele Cazzaro, Riccardo Contin, Leonardo Speranzon</footer>
+    
+
+</body>
+</html>
