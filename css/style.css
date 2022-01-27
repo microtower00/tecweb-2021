@@ -243,13 +243,45 @@ ol > li{
 .centerImg {
 	display: block;
 	margin: auto;
-	width: 70%;
 }
 
+
 img{
-	max-width: 90%;
+	max-width: 100%;
 	width: auto;
 	height: auto;
+}
+
+/*-------------------------------
+	Chi Siamo
+-------------------------------*/
+.chisiamoDiv{
+	padding: 2rem;
+	margin:.5rem;
+	border: 1px solid var(--blu);
+	border-radius: 5px;
+}
+
+.gridChiSiamo{
+	display: grid;
+	grid-template-columns:1fr 1fr 1fr 1fr;
+	grid-template-areas: 
+		"r1c1 r1c2 r1c3 r1c4"
+		"r2c1 r2c2 r2c3 r2c4"
+		"r3c1 r3c2 r3c3 r3c4";
+	grid-gap: 35px;
+	justify-content: center;
+}
+.gridChiSiamo h3{
+	grid-column: 1 / span 4;
+	grid-row: auto;
+}
+
+.gridChiSiamo p{
+	grid-column: 2 / span 3;
+	grid-row: auto;
+
+	margin: auto 0 auto;
 }
 
 figcaption.centerImg {
@@ -660,6 +692,8 @@ table{
 
 #mappaNascosta{
 	display: none;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*--------------------------------
@@ -725,10 +759,10 @@ table{
 	background-color: var(--blu1);
 }
 
-#form-comprensorio fieldset{
+/*#form-comprensorio*/ fieldset{
 	padding: 1em;
 	margin: 1em;
-	border: 2px solid black;
+	border: 2px solid var(--blu);
 	border-radius: 10px;
 }
 
@@ -761,7 +795,61 @@ input[type=reset]{
 input[type=submit]:hover,input[type=reset]:hover{
 	background-color: var(--blu1);
 }
+/*=================		Come raggiungerci	==============================*/
+div.categoriaArrivo{
+	/*padding-top: .7em;*/
+	padding: 1.3rem;
+	margin:.5rem;
+	border: 1px solid var(--blu);
+	border-radius: 5px;
+}
 
+.categoriaArrivo a{
+	display: block;
+	text-align: center;
+
+	appearance:none;
+	-webkit-appearance:none;
+	
+	width: auto;
+	margin-left:auto;
+	margin-right: auto;
+	max-width: 400px;
+
+	padding-top:11px;
+	margin-top:.7rem;
+
+	border:none;
+	background-color:var(--blu);
+	color:#fff;
+	font-weight:600;
+	border-radius:4px;
+	height: 25px;
+}
+
+h3#auto{
+	background: no-repeat url(../icon/auto.png);
+	background-size: contain;
+	background-position: 10rem;
+}
+
+h3#bus{
+	background: no-repeat url(../icon/icons8-autobus-60_nera.png);
+	background-size: contain;
+	background-position: 10rem;
+}
+
+h3#treno{
+	background: no-repeat url(../icon/treno.png);
+	background-size: contain;
+	background-position: 10rem;
+}
+
+h3#aereo{
+	background: no-repeat url(../icon/aereo.png);
+	background-size: contain;
+	background-position: 10rem;
+}
 /*--------------------------------
 	Footer
 --------------------------------*/
