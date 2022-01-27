@@ -82,7 +82,10 @@ if(isset($_SESSION['Username'])){
             $link_arg = preg_replace('~(\?|&)carrello=[^&]*~','$1',$link_arg);
             $link_arg = preg_replace('~(\?|&)intero=[^&]*~','$1',$link_arg);
             $link_arg = preg_replace('~(\?|&)ridotto=[^&]*~','$1',$link_arg);
-        header('Location: ../shop.php?'.$link_arg);
+            
+            $link_arg = $link_arg.'&suc=Aggiunti al carrello '.($_GET['intero']+$_GET['ridotto']).' skipass';
+
+            header('Location: ../shop.php?'.$link_arg);
         }
     }else{
         $link_arg=$_SERVER['QUERY_STRING'];     

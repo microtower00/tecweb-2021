@@ -3,6 +3,7 @@ html{
 }
 
 body{
+	min-height: calc(100% - 4em);
     padding-bottom: 4em;
 }
 

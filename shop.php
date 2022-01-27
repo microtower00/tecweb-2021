@@ -72,6 +72,16 @@ if(isset($_GET['ridotto']))
     $replace=$_GET['ridotto'];
 $pagina = str_replace("['RidottoVal']", $replace, $pagina);
 
+//INSERISCE MESSAGGI DI ERRORRE O SUCCESSO
+$replace='';
+if(isset($_GET['err']))
+    $replace=implode(', ',$_GET['err']);
+$pagina = str_replace("['ErrMsg']", $replace, $pagina);
+
+$replace='';
+if(isset($_GET['suc']))
+    $replace=$_GET['suc'];
+$pagina = str_replace("['SucMsg']", $replace, $pagina);
 
 
 echo $pagina;
