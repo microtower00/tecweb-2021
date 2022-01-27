@@ -466,7 +466,12 @@ button:disabled{
 /*--------------------------------
 	Tabelle
 --------------------------------*/
-table, th, td{
+table{
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+}
+th, td{
 	border: 1px solid black;
 	border-collapse: collapse;
 	text-align: center;
@@ -531,7 +536,29 @@ table{
 #link-carrello{
 	text-align: right;
 	display: block;
+	position: static;	
+
+	text-decoration: none;
+
 }
+@media screen and (min-width: 700px) {
+	#link-carrello{
+		margin-bottom:-32px;
+		margin-right: calc(30% - 200px);
+	}
+}
+#link-carrello span{
+	font-size: 150%;
+	color: black;
+	font-weight: bold;
+
+	vertical-align:super;
+}
+#link-carrello img{
+	width:32px;
+	height:32px;
+}
+
 
 #form-shop{
 	margin: auto;

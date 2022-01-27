@@ -28,7 +28,7 @@ if(isset($_SESSION['Username'])){
     $result=$connessione->execQuery($sql);
     $pagina= str_replace(
         "['Numero-Skipass']", 
-        '<a href="carrello.php" id="link-carrello">Vai al carrello ('.$result->fetch_assoc()['num_skipass'].')</a>',
+        $result->fetch_assoc()['num_skipass'],
         $pagina);
     
     $pagina= str_replace("['ShopDisabled']", '', $pagina);

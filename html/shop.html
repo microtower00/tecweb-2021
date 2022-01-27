@@ -25,8 +25,12 @@
         </nav>
     </div>
     <main id="content">
+        <a id="link-carrello" href="carrello.php">
+            <img src="icon/shopping-cart.png" alt="Vai al carrello" width="32" height="32">
+            <span>['Numero-Skipass']</span>
+        </a>
         <h2 class="pageTitle">Compra gli skipass per le nostre piste</h2>
-        ['Numero-Skipass']
+        
         <form method="GET" action="php_vari/aggiungiSkipass.php" id="form-shop" onsubmit="return validaForm()" onchange="calcolaPrezzo()">
             <fieldset>
                 <legend>Periodo skipass</legend>
