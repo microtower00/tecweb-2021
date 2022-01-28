@@ -152,3 +152,8 @@ th,td{
     padding: 0;
     height: 4em;
 }
+
+#content{
+    padding-left: 1em;
+    padding-right: 1em;
+}

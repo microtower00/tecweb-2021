@@ -36,6 +36,8 @@ body{
 	min-height: calc(100% - 2.5em);
 
 	padding-bottom: 2.5em;
+
+	overflow-y: scroll;
 }
 /*#content{
 	min-height: 100% ;
