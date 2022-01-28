@@ -2,8 +2,9 @@
     display: none;
 }
 
-header{
-    display: none;
+img{
+    width: 80%;
+    height: 80%;
 }
 
 #sticky{
