@@ -31,10 +31,12 @@ if(isset($_SESSION['Username'])){
         $result->fetch_assoc()['num_skipass'],
         $pagina);
     
+    $pagina= str_replace("['CarrelloNascoto']",'',$pagina);
     $pagina= str_replace("['ShopDisabled']", '', $pagina);
 }else{
     //DISABILITA I PULSANTI DI AGGIUNTA AL CARRELLO
     $pagina= str_replace("['ShopDisabled']", 'disabled', $pagina);
+    $pagina= str_replace("['CarrelloNascoto']",'class="carrello-nascosto"',$pagina);
 
     $pagina= str_replace("['Numero-Skipass']", '', $pagina);
 }
@@ -82,6 +84,19 @@ $replace='';
 if(isset($_GET['suc']))
     $replace=$_GET['suc'];
 $pagina = str_replace("['SucMsg']", $replace, $pagina);
+
+//TABELLA PREZZI
+$sql="SELECT Prezzo FROM `Skipass` ORDER BY Tipo,Durata";
+$connessione = new DBAccess();
+$connessione->openDBConnection();  
+$res = $connessione->execQuery($sql);
+$prezzi=[];
+while($r = $res->fetch_assoc()){
+    $prezzi[]=number_format($r['Prezzo'],2,',',' ');
+}
+
+$find=["['i1']","['i3']","['i7']","['r1']","['r3']","['r7']"];
+$pagina = str_replace($find,$prezzi,$pagina);
 
 
 echo $pagina;
