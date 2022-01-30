@@ -1,3 +1,7 @@
+#sticky{
+    position: relative;
+}
+
 .pulsanteMenu {
     display: block;
 }

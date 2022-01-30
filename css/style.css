@@ -17,7 +17,7 @@ html{
 	font-size: 100%;
 	font-family: "Helvetica", sans-serif;
 	margin: auto;
-	background-color: var(--grigietto);
+	/*background-color: var(--grigietto);
 	/*max-width: 1024px;*/
 	scroll-behavior: smooth;
 	height: 100%;
@@ -33,11 +33,16 @@ html{
 body{
 	color : var(--nero);
 	background: center / cover no-repeat url("../img/funiviaSfondo.jpg");
+	background-attachment: fixed;
 	min-height: calc(100% - 2.5em);
 
-	padding-bottom: 2.5em;
+	/*padding-bottom: 2.5em;*/
 
 	overflow-y: scroll;
+
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 /*#content{
 	min-height: 100% ;
@@ -231,7 +236,6 @@ ol > li{
 #content{
 	margin:auto;
 	max-width: 1264px;
-	
 
 	margin-top: -8em;
 	padding: 8em 3em 1em;
@@ -240,6 +244,7 @@ ol > li{
 
 	background: var(--grigietto);
 
+	width: 80%;
 
 }
 
@@ -974,7 +979,7 @@ a.linkScroll{
 	display: block;
 	position:-webkit-sticky;
 	position: fixed;
-	bottom: 3em;
+	bottom: 7em;
 	left: .7rem;
 	width: 3.5rem;
 	height: 3.5rem;
@@ -1016,11 +1021,16 @@ footer{
 	padding: 1em;
 	/*height: 1em;*/
 
-	position: fixed;
-	bottom: 0px;
-	width: 100%;
-
 	vertical-align:middle;
+}
+
+footer div{
+	display: inline-flex;
+	padding: 1em;
+}
+
+footer div p{
+	padding: 1em;
 }
 
 img.imgValidCode{

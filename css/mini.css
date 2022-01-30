@@ -1,11 +1,17 @@
 html{
     font-size: 80%;
+    height: unset;
 }
 
 body{
+    display: block;
 	min-height: calc(100% - 4em);
     padding-bottom: 4em;
 }
+
+/*#breadcrumb{
+    width: 100%;
+}*/
 
 #menu{
     position: fixed;
@@ -89,10 +95,13 @@ body{
 
 a.linkScroll{
     bottom: 5em;
+    width: 3em;
+    height: 3em;
 }
+
 footer{
     
-	position: static;
+	/*position: static;*/
 	/*bottom: 0px;*/
 	width: auto;
 }
@@ -156,6 +165,7 @@ th,td{
 #content{
     padding-left: 1em;
     padding-right: 1em;
+    width: unset;
 }
 
 /**========TABELLA PREZZI==========*/
