@@ -83,6 +83,10 @@ header h1{
     width: 80%;
     margin: auto;
 }
+h1 a{
+	text-decoration: none;
+	color: #000;
+}
 
 #sticky{
 	position:-webkit-sticky;
