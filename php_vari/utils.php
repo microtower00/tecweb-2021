@@ -32,13 +32,13 @@ class Utils{
         $data = "<nav aria-label='Menu principale' id='menu'>
                 <h2>Valle Bianca Ski</h2>
                 <div class='pulsanteMenu' onclick='toggleMenu()'>
-                    
+                <a href='#' aria-label='Espandi il menu' aria-controls='ulMenu' aria-expanded='true'>
                         <span class='barra'></span>
                         <span class='barra'></span>
                         <span class='barra'></span>
-                    
+                        </a>
                 </div>
-                    <ul class='active'>
+                    <ul id='ulMenu' role='region' class='active'>
                         <li><a id='home' ['attrIndex']>Home</a></li>
                         <li><a id='info' ['attrChisiamo']>Chi siamo</a></li>
                         <li><a id='comprensorio' ['attrComprensorio']>Il nostro Comprensorio</a></li>
@@ -100,7 +100,7 @@ class Utils{
     }
 
     public static function addScrollBtn($html){
-        return str_replace("['BtnScroll']","<nav aria-label='Torna su'><a class='linkScroll' href='#top'>Torna all'inzio</a></nav>",$html);
+        return str_replace("['BtnScroll']","<nav aria-label='Torna su'><a class='linkScroll' href='#top'>Torna all'inizio</a></nav>",$html);
     }
 }
 

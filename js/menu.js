@@ -1,6 +1,10 @@
 
 function toggleMenu(){
     document.querySelector("#menu ul").classList.toggle("active")
+    if(document.querySelector(".pulsanteMenu a").getAttribute("aria-expanded")=="true")
+        document.querySelector(".pulsanteMenu a").setAttribute("aria-expanded","false");
+    else
+        document.querySelector(".pulsanteMenu a").setAttribute("aria-expanded","true");
 }
 
 function toggleScrollBtn(){
