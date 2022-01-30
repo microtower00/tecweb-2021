@@ -1,20 +1,160 @@
-.skip-nav{
-    display: none;
+* {
+	padding: 0;
+	margin: 0;
 }
 
-img{
-    width: 80%;
-    height: 80%;
+html, body{
+	font-size: 12pt;
+	font-family: "Times New Roman", Times, serif;
+    text-align: justify;
+	margin: auto;
 }
 
-#sticky{
-    display: none;
+nav{
+    display:none;
 }
-
-.linkScroll{
-    display: none;
+#breadcrumb{
+    display: block;
+}
+h1 a{
+    color: black;
+    text-decoration: none;
+}
+h1, h2, h3{
+    text-align: center;
 }
 
 footer{
+    width: 100%;
+    border-top: 1px solid black;
+    margin-top: 1em;
+    padding-top: 1em;
+    text-align: center;
+}
+footer img{
+    width: 7em;
+	height: auto;
+}
+footer > div > *{
+    display: inline;
+    vertical-align: middle;
+}
+
+/************************
+        TABELLE
+*************************/
+
+table{
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+
+    width:90%;
+    margin: auto;
+}
+
+th, td{
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	padding: 0.5em;
+}
+
+
+/************************************
+               HOME
+*************************************/
+#gridHome{
+	display: grid;
+	grid-template-columns:40% 1fr;
+	grid-template-areas: 
+		"t1 i1"
+		"i2 t2"
+		"t3 i3";
+	grid-gap: 35px;
+	justify-content: center;
+	margin: 2rem;
+}
+
+#gridHome > *{    
+    margin:auto;
+    max-height: 17em;
+    max-width: 100%;
+}
+
+#grid1Text{
+    grid-area: t1;
+}
+#grid1Img{
+    grid-area: i1;
+}
+#grid2Text{
+    grid-area: t2;
+}
+#grid2Img1{
+    grid-area: i2;
+}
+#grid3Text{
+    grid-area: t3;
+}
+#grid3Img{
+    grid-area: i3;
+}
+
+
+
+
+/*************************
+        CHI SIAMO
+**************************/
+.chisiamoDiv{
+    margin: 1em;
+}
+.gridChiSiamo{
+	display: grid;
+	grid-template-columns:25% 1fr;/*
+	grid-template-areas: 
+		""
+		""
+		"";*/
+	grid-gap: 15px;
+	justify-content: center;
+}
+.gridChiSiamo h3{
+    grid-column: 1 / span 2;
+    grid-row: auto;
+}
+.gridChiSiamo *{
+    width: 100%;
+    margin: auto;
+}
+
+
+
+
+/*******************************
+        COMPRENSORIO
+********************************/
+
+#mappaNascosta{
     display: none;
+}
+
+/**************************
+        DETTAGLI
+***************************/
+
+.pista{
+    margin: 1em 0;
+}
+.pista > div{
+    padding-left: 1em;
+}
+
+
+/*********************************
+        COME RAGGIUNGERCI
+**********************************/
+.categoriaArrivo{
+    padding: 1em;
 }
