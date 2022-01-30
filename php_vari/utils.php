@@ -32,11 +32,11 @@ class Utils{
         $data = "<nav aria-label='Menu principale' id='menu'>
                 <h2>Valle Bianca Ski</h2>
                 <div class='pulsanteMenu' onclick='toggleMenu()'>
-                <a href='#' role='button' aria-label='Espandi il menu' aria-controls='ulMenu' aria-expanded='true'>
+                <button aria-label='Espandi il menu' aria-controls='ulMenu' aria-expanded='true'>
                         <span class='barra'></span>
                         <span class='barra'></span>
                         <span class='barra'></span>
-                        </a>
+                        </button>
                 </div>
                     <ul id='ulMenu' role='region' class='active'>
                         <li><a id='home' ['attrIndex']>Home</a></li>
