@@ -42,6 +42,13 @@ $sql='SELECT tipo_skipass, durata_skipass, data_inizio, quantita, (Prezzo*quanti
         FROM Carrelli C JOIN Skipass S ON C.tipo_skipass=S.Tipo AND C.durata_skipass=S.durata 
         WHERE utente="'.$_SESSION["Username"].'";';
 $res=$connessione->execQuery($sql);
+
+if($res->num_rows==0)
+    $pagina= str_replace("['BtnDisabled']", 'disabled', $pagina);
+else
+    $pagina= str_replace("['BtnDisabled']", '', $pagina);
+
+
 while($row = $res->fetch_assoc()){
     $articolo_corrente=$articolo_singolo;
 
@@ -76,8 +83,21 @@ $sql = 'SELECT SUM(Prezzo*quantita) AS totale FROM Carrelli C
             JOIN Skipass S ON C.tipo_skipass=S.Tipo AND C.durata_skipass=S.durata
             WHERE utente="'.$_SESSION["Username"].'";';
 $tot=$connessione->execQuery($sql)->fetch_assoc()['totale'];
-$pagina= str_replace("['Totale']", $tot, $pagina);
+$pagina= str_replace("['Totale']", $tot ?: 0, $pagina);
 
+
+$replace='';
+if(isset($_GET['err']))
+    $replace='Errore nella prenotazione degli skipass ';
+$pagina = str_replace("['ErrMsg']", $replace, $pagina);
+
+$replace='';
+if(isset($_GET['suc'])){
+    $sql = 'SELECT Email FROM Utenti WHERE Username="'.$_SESSION["Username"].'";';
+    $result=$connessione->execQuery($sql)->fetch_assoc()['Email'];
+    $replace="Prenotazione effettuata correttamente, ricevuta inviata alla mail $result";
+}
+$pagina = str_replace("['SucMsg']", $replace, $pagina);
 
 echo $pagina
 ?>

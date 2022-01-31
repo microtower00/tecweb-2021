@@ -25,8 +25,13 @@ else{
 
     $connessione->execMultiQuery($sql);
 
-    echo $sql;
-    /*echo "<br/><br/>";
+    /*echo $sql;
+    echo "<br/><br/>";
     echo ($connessione->getErrors());*/
-    header('Location: ../carrello.php');
+
+    if($connessione->getErrorsNumber()==0){
+        header('Location: ../carrello.php?suc');
+    }else{
+        header('Location: ../carrello.php?err');
+    }
 }

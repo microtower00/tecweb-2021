@@ -51,7 +51,7 @@ $connessione->openDBConnection();
 if(isset($_SESSION['Username'])){
     if(valida()){
                 
-        if(isset($_GET['intero']) && isset($_GET['intero'])!=0){
+        if(isset($_GET['intero']) && $_GET['intero']!=0){
             echo "INTERI +".$_GET['intero'];
             $sql = 'INSERT INTO Carrelli(utente,tipo_skipass,durata_skipass,data_inizio,quantita)
                     VALUES  ("'.$_SESSION['Username'].'","Intero",'.$_GET['durata'].',"'.$_GET['data-inizio'].'",'.$_GET['intero'].');';
@@ -63,7 +63,7 @@ if(isset($_SESSION['Username'])){
             }
         }
 
-        if(isset($_GET['ridotto']) && isset($_GET['ridotto'])!=0){
+        if(isset($_GET['ridotto']) && $_GET['ridotto']!=0){
             echo "RIDOTTI +".$_GET['ridotto'];
             $sql = 'INSERT INTO Carrelli(utente,tipo_skipass,durata_skipass,data_inizio,quantita)
                     VALUES ("'.$_SESSION['Username'].'","Ridotto",'.$_GET['durata'].',"'.$_GET['data-inizio'].'",'.$_GET['ridotto'].')';
