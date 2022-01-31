@@ -21,7 +21,7 @@
         [Menu]
     
         <nav aria-label='breadcrumb' id="breadcrumb">
-            <p>Ti trovi in: <a href="index.php">Home</a> &gt;&gt; Shop</p>
+            <p>Ti trovi in: <a lang="en" href="index.php">Home</a> &gt;&gt; <span lang="en">Shop</span></p>
         </nav>
     </div>
     <main id="content">
@@ -29,12 +29,12 @@
             <img src="icon/shopping-cart.png" alt="Vai al carrello" width="64" height="64">
             <span>['Numero-Skipass']</span>
         </a>
-        <h2 class="pageTitle">Compra gli skipass per le nostre piste</h2>
+        <h2 class="pageTitle">Compra gli <span lang="en">skipass</span> per le nostre piste</h2>
         
         <form method="GET" action="php_vari/aggiungiSkipass.php" id="form-shop" onsubmit="return validaForm()" onchange="calcolaPrezzo()">
             <fieldset>
-                <legend>Periodo skipass</legend>
-                <label for="radio-group-durata">Durata skipass:</label>
+                <legend>Periodo <span lang="en">skipass</span></legend>
+                <label for="radio-group-durata">Durata <span lang="en">skipass</span>:</label>
                 <div  role="radiogroup" id="radio-group-durata">
                     <div>
                         <input type="radio" name="durata" value="1" id="1g" ['Checked-1g'] required/>
@@ -76,7 +76,7 @@
             </fieldset>
             <p class="error-message">['ErrMsg']</p>
             <p class="success-message">['SucMsg']</p>
-            <p>Prezzo corrente: <span id="prezzo-corrente">--</span>€ (da fare con js)</p>
+            <p>Prezzo corrente: <span id="prezzo-corrente">--</span>€</p>
             <div id="shop-submits">
                 <button type="submit" name="carrello" value="0" ['ShopDisabled']>AGGIUNGI AL CARRELLO</button>
                 <button type="submit" name="carrello" value="1" ['ShopDisabled']>AGGIUNGI E VAI AL CARRELLO</button> 
@@ -84,7 +84,7 @@
             
         </form>
         
-        <h2 class="pageTitle">I prezzi degli skipass</h2>
+        <h2 class="pageTitle">I prezzi degli <span lang="en">skipass</span></h2>
         <table id="tabella-prezzi">
             <thead>
                 <td id="blank-corner"></td>

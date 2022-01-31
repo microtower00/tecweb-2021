@@ -30,7 +30,7 @@ class Utils{
         $find = array("['attrIndex']","['attrChisiamo']","['attrComprensorio']","['attrMappa']","['attrShop']","['attrComeraggiungerci']","['LinkLogin']","['LinkDashboard']");
         $replace = array("href='index.php'","href='chisiamo.php'","href='comprensorio.php'","href='mappa.php'","href='shop.php'","href='comeRaggiungerci.php'","<li class='right'><a id='login' href='login.php' class='right'>Login</a></li>","");
         $data = "<nav aria-label='Menu principale' id='menu'>
-                <h2>Valle Bianca Ski</h2>
+                <h2>Valle Bianca <span lang='en'>Ski</span></h2>
                 <div class='pulsanteMenu' onclick='toggleMenu()'>
                 <button aria-label='Espandi il menu' aria-controls='ulMenu' aria-expanded='true'>
                         <span class='barra'></span>
@@ -39,11 +39,11 @@ class Utils{
                         </button>
                 </div>
                     <ul id='ulMenu' role='region' class='active'>
-                        <li><a id='home' ['attrIndex']>Home</a></li>
+                        <li><a id='home' ['attrIndex']><span lang='en'>Home</span></a></li>
                         <li><a id='info' ['attrChisiamo']>Chi siamo</a></li>
                         <li><a id='comprensorio' ['attrComprensorio']>Il nostro Comprensorio</a></li>
                         <li><a id='mappaIcon' ['attrMappa']>Mappa delle piste</a></li>
-                        <li><a id='shop' ['attrShop']>Compra skipass</a></li>
+                        <li><a id='shop' ['attrShop']>Compra <span lang='en'>skipass</span></a></li>
                         <li><a id='bus' ['attrComeraggiungerci']>Come raggiuncerci</a></li>
                             ['LinkLogin']
                             ['LinkDashboard']
@@ -71,14 +71,14 @@ class Utils{
                 $replace[5] = "class = 'active'";
                 break;
             case "login.php":
-                $replace[6] = "<li class='right'><a id='login' class='active right'>Login</a></li>";
+                $replace[6] = "<li class='right'><a id='login' class='active right'><span lang='en'>Login</span></a></li>";
                 break;
         }
 
         if(isset($_SESSION['Privilegi'])){
-            $replace[6] = "<li class='right'><a id='logout' href='logout.php' class='right'>Logout</a></li>";
+            $replace[6] = "<li class='right'><a id='logout' href='logout.php' class='right'><span lang='en'>Logout</span></a></li>";
             if(Utils::checkPriv()){
-                $replace[7]="<li ><a id='dashboard' href='dashboard.php' class=''>Dashboard Admin</a></li>";
+                $replace[7]="<li ><a id='dashboard' href='dashboard.php' class=''><span lang='en'>Dashboard Admin</span></a></li>";
             }
         }
             $data = str_replace($find,$replace,$data);
