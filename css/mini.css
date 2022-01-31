@@ -6,7 +6,7 @@ html{
 body{
     display: block;
 	min-height: calc(100% - 4em);
-    padding-bottom: 4em;
+    padding-bottom: 3.8em;
 }
 
 /*#breadcrumb{
