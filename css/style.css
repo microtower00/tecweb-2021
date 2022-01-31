@@ -773,6 +773,18 @@ table{
 	margin-right: auto;
 }
 
+#desc{
+	background-color: #A6C8F2;
+	text-align: center;
+	border: 3px solid #152b5a;
+	color: #000;
+	border-radius: 10px;
+	width: 80%;
+	margin: auto;
+	margin-top: 1em;
+	padding: 1em;
+}
+
 /*--------------------------------
 	Dashboard
 --------------------------------*/
