@@ -17,7 +17,7 @@ html{
 	font-size: 100%;
 	font-family: "Helvetica", sans-serif;
 	margin: auto;
-	/*background-color: var(--grigietto);
+	/*background-color: #cee9ff;
 	/*max-width: 1024px;*/
 	scroll-behavior: smooth;
 	height: 100%;
@@ -31,7 +31,7 @@ html{
 }
 
 body{
-	color : var(--nero);
+	color : black;
 	background: center / cover no-repeat url("../img/funiviaSfondo.jpg");
 	background-attachment: fixed;
 	min-height: calc(100% - 2.5em);
@@ -67,7 +67,7 @@ a.skip-nav{
 	border-radius: 0 0 .25rem .25rem;
 	background-color: black;
 	transition: transform 325ms;
-	color: var(--grigietto);
+	color: #cee9ff;
 }
 
 a.skip-nav:focus{
@@ -76,7 +76,7 @@ a.skip-nav:focus{
 
 header{
     text-align: center;
-	background-color: var(--grigietto);
+	background-color: #cee9ff;
 	/*position: sticky;
 	top: 0;*/
 }
@@ -93,13 +93,22 @@ h1 a{
 	color: #000;
 }
 
-#sticky{
-	position:-webkit-sticky;
-	position: sticky;
-	top: 0;
+
+#sticky {
+	position: relative;
 	margin-bottom:1em;
 	box-shadow: 0px 15px 10px -15px rgba(0,0,0,0.2);
 }
+@supports (position: sticky) {
+	#sticky{
+		position:-webkit-sticky;
+		position: sticky;
+		top: 0;
+	}
+}
+
+
+
 
 #menu{
 	box-sizing: border-box;
@@ -109,7 +118,7 @@ h1 a{
 	align-items: center;
 
 	font-size: 1.1em;
-	background-color:var(--azz1);
+	background-color:#4da5e0;
 
 	
 }
@@ -147,26 +156,26 @@ h1 a{
 	text-align: center;
 	padding: .6em;
 	display: flex;
-	color: var(--nero);
+	color: black;
 	height: 2.5em;
 	justify-content: center;
 	align-items: center;
 	border: solid #152b5a;
 	border-radius: 10px;
 	margin: 0 .2em 0;
-	background-color: var(--azz1);
+	background-color: #4da5e0;
 }
 
 #menu ul li a:visited{
 	border: none;
-	color: var(--blu);
-	background-color: var(--azz2);
+	color: #152b5a;
+	background-color: #62a9ec;
 }
 
 
 /* Links del menu*/
 #menu a.active{
-	background-color: var(--blu);
+	background-color: #152b5a;
 	color: white;
 }
 
@@ -200,7 +209,7 @@ h1 a{
 .pulsanteMenu span.barra{
 	height: 6px;
 	width: 100%;
-	background-color: var(--nero);
+	background-color: black;
 	border-radius: 10px;
 	display: block;
 	margin: 10px 0px 10px;
@@ -213,17 +222,17 @@ h1 a{
 	margin: 0;
     font-size: 1.1em;
 	padding: 0.3em 1.3em;
-	background-color:var(--bianco);
-	color:var(--nero);
+	background-color:white;
+	color:black;
 	text-align: left;
 }
 
 #breadcrumb a:link{
-	color: var(--blu1);
+	color: #25468d;
 }
 
 #breadcrumb a:visited{
-	color: var(--blu);
+	color: #152b5a;
 }
 
 /*=======================
@@ -242,7 +251,7 @@ ol > li{
 
 	box-shadow:0 0 15px 4px rgba(0,0,0,0.2);
 
-	background: var(--grigietto);
+	background: #cee9ff;
 
 	width: 80%;
 
@@ -276,7 +285,7 @@ img{
 .chisiamoDiv{
 	padding: 2rem;
 	margin:.5rem;
-	border: 1px solid var(--blu);
+	border: 1px solid #152b5a;
 	border-radius: 5px;
 }
 
@@ -314,23 +323,23 @@ figcaption.centerImg {
 	Home
 --------------------------------*/
 .homeTextElement{
-	background-color: var(--azz1);
+	background-color: #4da5e0;
 	text-align: center;
-	border: 3px solid var(--blu);
+	border: 3px solid #152b5a;
 	color: #000
 
 }
 
 blockquote {
-	background: var(--azz1);
-	border-left: 10px solid var(--blu);
+	background: #4da5e0;
+	border-left: 10px solid #152b5a;
 	margin: 1.5em 10px;
 	padding: 0.5em 10px;
 	quotes: "\201C""\201D""\2018""\2019";
 }
 
 blockquote:before {
-	color: var(--blu);
+	color: #152b5a;
 	content: open-quote;
 	font-size: 4em;
 	line-height: 0.1em;
@@ -449,7 +458,7 @@ button, input[type=button]{
 }
 
 #btnConfirm:hover{
-	background-color: var(--blu1);
+	background-color: #25468d;
 }
 button {
 	/* Rimuove apparenza di default 
@@ -459,7 +468,7 @@ button {
 	/*padding:10px;*/
 	margin:10px;
 	border:none;
-	background-color:var(--blu);
+	background-color:#152b5a;
 	color:#fff;
 	font-weight:600;
 	border-radius:5px;
@@ -501,7 +510,7 @@ th, td{
 }
 
 th{
-	background-color: var(--azz2);
+	background-color: #62a9ec;
 }
 
 tr:nth-child(even) {background: #CCC}
@@ -569,7 +578,7 @@ table{
 	margin-left: auto;
 
 
-	background-color: var(--blu);
+	background-color: #152b5a;
 	color:white;
 
 }
@@ -695,8 +704,8 @@ table{
 #shop-submits button{
 	flex: 1 10em;
 }
-#shop-submits button:hover{
-	background-color: var(--blu1);
+#shop-submits button:enabled:hover{
+	background-color: #25468d;
 }
 
 /*--------------------------------
@@ -743,8 +752,8 @@ table{
 	margin: auto;
 	margin-bottom: 10px;
 }
-#bottone-compra:hover{
-	background-color: var(--blu1);
+#bottone-compra:enabled:hover{
+	background-color: #25468d;
 }
 /*--------------------------------
 	Mappa
@@ -786,7 +795,7 @@ table{
 	-webkit-appearance:none;
 
 	border:none;
-	background-color:var(--blu);
+	background-color:#152b5a;
 	color:#fff;
 	font-weight:600;
 	border-radius:5px;
@@ -804,7 +813,7 @@ table{
 
 
 #gridA a:hover{
-	background-color: var(--blu1);
+	background-color: #25468d;
 }
 
 /*--------------------------------
@@ -824,13 +833,13 @@ table{
 }
 
 #gridButtons button:hover{
-	background-color: var(--blu1);
+	background-color: #25468d;
 }
 
 /*#form-comprensorio*/ fieldset{
 	padding: 1em;
 	margin: 1em;
-	border: 2px solid var(--blu);
+	border: 2px solid #152b5a;
 	border-radius: 10px;
 }
 
@@ -842,7 +851,7 @@ input[type=submit],input[type=reset]{
 	
 	/*padding:10px;*/
 	border:none;
-	background-color:var(--blu);
+	background-color:#152b5a;
 	color:#fff;
 	font-weight:600;
 	border-radius:5px;
@@ -861,14 +870,14 @@ input[type=reset]{
 }
 
 input[type=submit]:hover,input[type=reset]:hover{
-	background-color: var(--blu1);
+	background-color: #25468d;
 }
 /*=================		Come raggiungerci	==============================*/
 div.categoriaArrivo{
 	/*padding-top: .7em;*/
 	padding: 1.3rem;
 	margin:.5rem;
-	border: 1px solid var(--blu);
+	border: 1px solid #152b5a;
 	border-radius: 5px;
 }
 
@@ -888,7 +897,7 @@ div.categoriaArrivo{
 	margin-top:.7rem;
 
 	border:none;
-	background-color:var(--blu);
+	background-color:#152b5a;
 	color:#fff;
 	font-weight:600;
 	border-radius:4px;
@@ -990,9 +999,9 @@ a.linkScroll{
 	height: 3.5rem;
 
 	padding: .3rem;
-	background-color: var(--blu);
+	background-color: #152b5a;
 	border-radius: .25rem;
-	color: var(--grigietto);
+	color: #cee9ff;
 
 	background-image: url(../icon/icons8-thick-arrow-pointing-up-48.png);
     background-repeat: no-repeat;
@@ -1016,7 +1025,7 @@ a.linkScroll:focus{
 }
 
 footer{
-	background-color: var(--azz2);
+	background-color: #62a9ec;
 
 
 	clear: both;
@@ -1075,7 +1084,7 @@ a.notFound{
 	margin-right:auto;
 
 	border:none;
-	background-color:var(--blu);
+	background-color:#152b5a;
 	color:#fff;
 	font-weight:600;
 	border-radius:5px;
