@@ -21,26 +21,26 @@
         [Menu]
     
         <nav aria-label='breadcrumb' id="breadcrumb">
-            <p>Ti trovi in: <a href="index.php">Home</a> &gt;&gt; <a href="login.php">Login</a> &gt;&gt; Registrati</p>
+            <p>Ti trovi in: <a lang="en" href="index.php">Home</a> &gt;&gt; <a lang="en" href="login.php">Login</a> &gt;&gt; Registrati</p>
         </nav>
     </div>
     <main id="content">
         <h2 class="pageTitle">Registrazione</h2>
         <form class="formInput" action="" method="post">
             <p>Registrati inserendo i dati</p>
-            <label class='richiesto' for="usrInput">Username*</label>
+            <label lang="en" class='richiesto' for="usrInput">Username*</label>
             <input id="usrInput" type="text" name="username" placeholder="" value="['UsrVal']" onblur="checkUsername()" required><br>
 
-            <label class='richiesto' for="emailInput">Email*</label>
+            <label lang="en" class='richiesto' for="emailInput">Email*</label>
             <input id="emailInput" type="text" name="email" placeholder="" value="['EmailVal']" onblur="checkEmail()" required><br>
 
-            <label class='richiesto' for="ripetiEmail">Ripeti la mail*</label>
+            <label class='richiesto' for="ripetiEmail">Ripeti la <span lang="en">mail</span>*</label>
             <input id="ripetiEmail" type="text" name="ripetiEmail" value="" required><br>
 
-            <label class='richiesto' for="pwdInput">Password*</label>
+            <label lang="en" class='richiesto' for="pwdInput">Password*</label>
             <input id="pwdInput" type="password" name="password" placeholder="" onblur="checkPassword()" required><br> 
             
-            <label class='richiesto' for="pwdInput2">Ripeti la password*</label>
+            <label class='richiesto' for="pwdInput2">Ripeti la <span lang="en">password</span>*</label>
             <input id="pwdInput2" type="password" name="ripetiPassword" placeholder="" onblur="checkPassword()" required><br> 
             <p class='error-message' id='error'>['UsrMsg']</p>
             <button id="btnConfirm" type="submit">Registrati</button>

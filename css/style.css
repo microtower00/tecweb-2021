@@ -509,7 +509,7 @@ th, td{
 	padding: 0.5em;
 }
 
-th{
+thead th{
 	background-color: #62a9ec;
 }
 

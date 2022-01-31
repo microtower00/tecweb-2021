@@ -31,7 +31,7 @@
                     $stato = "Aperta";
                 }
                 
-                $listaPiste .= '<td scope="row"><a href="dettagli.php#' . $pista['numero'] . '">' . $pista['numero'] . '</a></td>
+                $listaPiste .= '<th scope="row"><a href="dettagli.php#' . $pista['numero'] . '">' . $pista['numero'] . '</a></th>
                                 <td>' . $pista['nome'] . '</td>
                                 <td>' . $pista['difficoltà'] . '</td>
                                 <td>' . $pista['lunghezza'] . '</td>
@@ -55,7 +55,7 @@
                     $stato = "Aperto";
                 }
                 
-                $listaImpianti .= '<td scope="row">' . $impianto['numero'] . '</td>
+                $listaImpianti .= '<th scope="row">' . $impianto['numero'] . '</th>
                                 <td>' . $impianto['nome'] . '</td>
                                 <td>' . $impianto['tipo'] . '</td>
                                 <td>' . $impianto['lunghezza'] . '</td>
