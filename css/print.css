@@ -158,3 +158,19 @@ th, td{
 .categoriaArrivo{
     padding: 1em;
 }
+
+/*********************************
+            CARRELLO
+**********************************/
+.articolo-carrello{
+    padding: .5em;
+}
+.articolo-carrello .intestazione{
+    font-weight: bold;
+}
+.articolo-carrello .corpo, .articolo-carrello .prezzo{
+    padding-left: 1em;
+}
+#totale{
+    font-weight: bold;    
+}

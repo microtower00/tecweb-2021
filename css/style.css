@@ -695,6 +695,9 @@ table{
 #shop-submits button{
 	flex: 1 10em;
 }
+#shop-submits button:hover{
+	background-color: var(--blu1);
+}
 
 /*--------------------------------
 	Carrello
@@ -740,7 +743,9 @@ table{
 	margin: auto;
 	margin-bottom: 10px;
 }
-
+#bottone-compra:hover{
+	background-color: var(--blu1);
+}
 /*--------------------------------
 	Mappa
 --------------------------------*/
