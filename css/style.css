@@ -1006,7 +1006,6 @@ h3#aereo{
 --------------------------------*/
 a.linkScroll{
 	display: block;
-	position:-webkit-sticky;
 	position: fixed;
 	bottom: 7em;
 	left: .7rem;
