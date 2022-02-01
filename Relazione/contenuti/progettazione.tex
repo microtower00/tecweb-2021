@@ -8,25 +8,61 @@ Grazie all'utilizzo di CSS3 abbiamo potuto svilupare una interfaccia con l'utili
 
 
 \subsection{Attori}
-Un fruitore del nostro sito web ricade sempre in una delle seguenti 3 categorie:
+Un fruitore del nostro sito web ricade sempre in una delle seguenti 3 categorie: Amministratore, Utente standard, Utente registrato.
 \subsubsection{Amministratore}
 È la categoria di utenti con più potere, può visitare l'area riservata da cui gestire i prezzi degli skipass e lo stato del comprensorio.
-È un account interamente dedicato all'amministrazione, non personale, e pertanto ci si aspetta un utilizzo prevalentemente da Desktop o Tablet. Per questo motivo abbiamo il link alla pagina Dashboard non è presente nella visualizzazione da Cellulare, ma è sempre raggiungibile al link noto per interventi straordinari.
+È un account interamente dedicato all'amministrazione, non personale, e pertanto ci si aspetta un utilizzo prevalentemente da Desktop o Tablet. Per questo motivo il link alla pagina Dashboard non è presente nella visualizzazione da Cellulare, ma è sempre raggiungibile al link noto per interventi straordinari.
 \subsubsection{Utente standard}
 Può usufruire di tutte le funzionalità del sito tranne la prenotazione degli skipass e l'amministrazione.
 \subsubsection{Utente registrato}
 Questa categoria di utenti ha la possibilità di prenotare online gli skipass, oltre a tutte quelle di un Utente standard
 
 \subsection{Struttura del sito}
+Il sito web del comprensorio ha una struttura piuttosto semplice, raggiungendo al massimo 3 livelli di profondità.
+Tutti i contenuti principali sono accessibili dal menu di navigazione primario: questo rende l'esperienza nel sito estremamente intuitiva e adatta alla fruizione in qualsiasi situazione, anche lungo il bordo di una pista da sci.
 
-\subsection{Menù e breadcrum}
+\subsubsection{Menù}
+Questo elemento costituisce il principale modo di navigare il sito web. Il menu è disponibile in 3 layout diversi a seconda della larghezza dello schermo con il quale viene visualizzato: semplice lista di links disposta orizzontalmente da \textbf{Desktop}, una lista comprimibile disposta verticalmente da \textbf{Tablet} e dei pulsanti con icone da \textbf{Mobile}.
+Il menu occupa in ogni caso tutta la larghezza dello schermo per sfruttarne al meglio le potenzialità, ed è pensato in modo da eliminare i link circolari.
+\paragraph{Implementazione}
+Per la realizzazione di un menu in grado di mutare forma, i links sono stati inseriti in un \verb|flexbox| così da poterne facilmente cambiare l'orientamento. Inoltre l'utilizzo di fogli di stile appositi ha consenito la visualizzazione differente e l'aggiunta di icone.
 
-\subsection{Contenuti}
+Per quanto riguarda il pulsante che permette di espandere e comprimere il menu nella visualizzazione intermedia, è stato realizzato mediante bottone e appositi tag di accessibilità, come \verb|aria-expanded|. Il comportamento è delegato al file JavaScript.
+\subsubsection{Breadcrumb}
+La breadcrumb del nostro sito è minimale ma svolge comunque un ruolo essenziale all`interno del sito, consentendo di sapere constantemente dove ci si trova ed i passaggi effettuati per arrivare in quel punto.
+\subsubsection{Contenuti}
+I contenuti del sito assolvono due compiti: informare potenziali clienti a riguardo del comprensorio, e fornire gli strumenti ai potenziali clienti per diventare dei clienti effettivi.
 
-\subsection{Shop}
+I contenuti delle pagine sono stati progettati in modo da avere sempre un'alternativa testuale per consentirne la fruizione da parte di tutte le categorie di utenti.
 
-\subsection{Dashboard}
+Ai fini della leggibilità e usabilità, la pagina "Mappa" è raggiungibile solamente nella visualizzazione desktop, mentre nei layout mobile `consultabile dalla pagina "Il nostro comprensorio".
+Negli schermi più piccoli non risultava pratico premere i link presenti sulla mappa, che pertanto diventa un immagine statica.
+\paragraph{Home} Nella pagina Home si trovano alcune immagini e dei brevi testi che cercano di stimolare la curiosità dell'utente.
+\paragraph{Chi siamo}
+In questa pagina viene riassunta la storia del Comprensorio Valle Bianca e delle persone che l'hanno reso quel che è
+\paragraph{Come raggiungerci}
+Qui si possono trovare le indicazioni per raggiungere le strutture in diversi modi: sono state scelte indicazioni in forma testuale piuttosto che sottoforma di mappa-interattiva per questioni di accessibilità
+\paragraph{Comprensorio}
+Nella pagina Comprensorio gli utenti possono visualizzare in ogni momento lo stato degli impianti e delle piste, e da dispositivi mobili consultare la mappa per orientarsi. Questa mappa non è accessibile a persone con disabilità visive, ma questo problema è mitigato dal fatto che i non vedenti accompagnati durante le discese sulle piste.
+\paragraph{Mappa}
+La pagina Mappa contiene un immagine che illustra schematicamente il comprensorio e presenta dei link in corrispondenza dei punti di interesse, che rimandano alla pagina Dettagli, dove  questi punti sono brevemente descritti
+\paragraph{Shop}
+La pagina "Shop" consente di visualizzare i prezzi degli skipass in vendita, e di aggiungere gli skipass desiderati al carrello, dove sarà possibile prenotarli. Queste funzionalità sono disponibili solo previa autenticazione.
+\paragraph{Dashboard}
+La pagina "Dashboard" consente l'accesso alle pagine di amministrazione per cambiare lo stato di impianti e piste, e per modificare le tariffe degli skipass.
+
 
 \subsection{Database}
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \rowcolor[HTML]{96FFFB} 
+        \textbf{Username} & \textbf{Password} \\ \hline
+        rcontin & caiquoogh3tha3Ce \\ \hline
+    \end{tabular}
+    \caption{Credenziali \href{http://tecweb.studenti.math.unipd.it/phpmyadmin}{phpMyAdmin}}
+\end{table}
+\includegraphics[width=\textwidth]{tabelle.png}
 \subsection{Accessibilità}
