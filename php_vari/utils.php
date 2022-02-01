@@ -38,7 +38,7 @@ class Utils{
                         <span class='barra'></span>
                         </button>
                 </div>
-                    <ul id='ulMenu' role='region' class='active'>
+                    <ul id='ulMenu' class='active'>
                         <li><a id='home' ['attrIndex']><span lang='en'>Home</span></a></li>
                         <li><a id='info' ['attrChisiamo']>Chi siamo</a></li>
                         <li><a id='comprensorio' ['attrComprensorio']>Il nostro Comprensorio</a></li>
