@@ -90,7 +90,8 @@ if(isset($_SESSION['Username'])){
     }else{
         $link_arg=$_SERVER['QUERY_STRING'];     
         $link_arg = preg_replace('~(\?|&)carrello=[^&]*~','$1',$link_arg);
-        $link_arg = $link_arg.'&'.http_build_query($err, 'err');
+        foreach($err as $e)
+            $link_arg = $link_arg.'&err[]='.$e;
         //var_dump($link_arg);
         header('Location: ../shop.php?'.$link_arg);
     }

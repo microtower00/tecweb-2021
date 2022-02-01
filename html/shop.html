@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="valle bianca, skipass, sci, snowboard">
+    <meta name="keywords" content="valle bianca, skipass, sci, giornaliero, prezzi">
+    <meta name="description" content="Acquista già online il tuo skipass per evitare fastidiose code una volta arrivati al comprensorio.">
     <title>Shop - Comprensorio Valle Bianca</title>
     
     ['Imports']
@@ -30,7 +31,7 @@
             <span>['Numero-Skipass']</span>
         </a>
         <h2 class="pageTitle">Compra gli <span lang="en">skipass</span> per le nostre piste</h2>
-        
+        ['ErrNotLogged']
         <form method="GET" action="php_vari/aggiungiSkipass.php" id="form-shop" onsubmit="return validaForm()" onchange="calcolaPrezzo()">
             <fieldset>
                 <legend>Periodo <span lang="en">skipass</span></legend>
@@ -50,8 +51,7 @@
                     </div>
                 </div>
                 <label for="data-inizio">Data inizio validità</label>
-                <input type="date" name="data-inizio" min="['DataOggi']" value="['DataInizioVal']" id="data-inizio"
-                    required>
+                <input type="date" name="data-inizio" min="['DataOggi']" value="['DataInizioVal']" id="data-inizio" required>
             </fieldset>
             <fieldset id="fs_num_skip">
                 <legend>Numero di persone</legend>

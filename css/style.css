@@ -47,10 +47,18 @@ body{
 	min-height: 100% ;
 }*/
 
+.warning-message{
+	color: darkred;
+	text-align: center;
+	font-size: 120%;
+}
+.warning-message::before, .warning-message::after{
+	content: "\26A0";
+	padding: 0 .5em;
+}
 .error-message{
 	color: darkred;
 }
-
 .success-message{
 	color: darkgreen;
 }
@@ -185,6 +193,10 @@ h1 a{
 /* Allinea a destra Login e Dashboard */
 #menu li.right{
 	margin-left: auto;
+}
+
+.spanFlex{
+	margin-left: 0.4em;
 }
 
 
@@ -351,7 +363,11 @@ blockquote p {
 }
 
 #gridHome{
+	display: -ms-grid;
 	display: grid;
+
+	-ms-grid-columns:1fr 1fr 1fr 1fr;
+	-ms-grid-rows:3fr 4fr 5fr;
 	grid-template-columns:1fr 1fr 1fr 1fr;
 	grid-template-areas: 
 		"r1c1 r1c2 r1c3 r1c4"
@@ -360,9 +376,15 @@ blockquote p {
 	grid-gap: 35px;
 	justify-content: center;
 	margin: 2rem;
+
 }
 
+
 #grid1Text{
+	-ms-grid-row: 1;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 2;
+
 	grid-column: r1c1/r1c2;
 	grid-row: 1;
 	margin: auto;
@@ -372,6 +394,10 @@ blockquote p {
 }
 
 #grid1Img{
+	-ms-grid-row: 1;
+	-ms-grid-column: 3;
+	-ms-grid-column-span: 2;
+
 	grid-column: r1c3/r1c4;
 	grid-row: 1;
 	margin: auto;
@@ -379,6 +405,10 @@ blockquote p {
 }
 
 #grid2Text{
+	-ms-grid-row: 2;
+	-ms-grid-column: 3;
+	-ms-grid-column-span: 2;
+
 	grid-column: r2c3/r2c4;
 	grid-row: 2;
 	margin: auto;
@@ -388,18 +418,19 @@ blockquote p {
 }
 
 #grid2Img1{
+	-ms-grid-row: 2;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 2;
+
 	grid-column: r2c1 / r2c2;
 	grid-row: 2;
 	margin: auto;
 }
 
-#grid2Img2{
-	/*grid-column: 3;
-	grid-row: 2;*/
-	margin: auto;
-}
-
 #grid3Text{
+	-ms-grid-row: 3;
+	-ms-grid-column: 1;
+
 	grid-column: r3c1;
 	grid-row: 3;
 	margin: auto;
@@ -410,11 +441,24 @@ blockquote p {
 }
 
 #grid3Img{
+	-ms-grid-row: 3;
+	-ms-grid-column: 2;
+	-ms-grid-column-span: 3;
+
 	grid-column: r3c2/r3c4;
 	grid-row: 3;
 	margin: auto;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS here */
+	#gridHome > div{
+		margin: 15px;
+	}
+	#gridHome > img{
+		padding: 15px;
+	}
+}
 
 /*--------------------------------
 	Login/Register/Forms
@@ -564,13 +608,10 @@ table{
 --------------------------------*/
 
 #link-carrello{
-	text-align: right;
-	display: block;
-	position: static;	
+	display: table;
 
 	text-decoration: none;
 
-	width: fit-content;
 	padding: .4em;
 	border-radius: 5px;
 
@@ -595,7 +636,6 @@ table{
 }
 #link-carrello img{
 	width:32px;
-	filter: invert(1);
 	height:32px;
 }
 #link-carrello.carrello-nascosto{
@@ -1029,13 +1069,13 @@ a.linkScroll{
 	z-index: 1;
 }
 
-a.linkScroll.active{
+a.linkScroll.active, a.linkScroll:focus{
 	transform: translateX(0);
 }
 
 a.linkScroll:focus{
 	border-color: rgb(253, 137, 60);
-	border-style: solid;
+	border-style: solid;			
 }
 
 footer{
