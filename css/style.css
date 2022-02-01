@@ -195,6 +195,10 @@ h1 a{
 	margin-left: auto;
 }
 
+.spanFlex{
+	margin-left: 0.4em;
+}
+
 
 .pulsanteMenu{
 	cursor: pointer;
