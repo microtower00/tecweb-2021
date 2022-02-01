@@ -87,13 +87,28 @@ header{
 	/*position: sticky;
 	top: 0;*/
 }
-
+header h1:hover{
+	transform: scale(.9);
+}
 header h1{
 	padding: .7rem;
+	display: inline-block;
+	line-height: 101;
+	overflow: hidden;
+	
 	font-family: "Bradley Hand ITC",sans-serif ;
-	transform: rotate(5deg);
-    width: 80%;
-    margin: auto;
+	/*transform: rotate(5deg);*/
+    margin: .7rem;
+	height: 3rem;
+
+	background-image: url("../img/Logo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+
+	-webkit-transition: transform 0.3s ease-in-out;
+  	transition: transform 0.3s ease-in-out;
+
 }
 h1 a{
 	text-decoration: none;
