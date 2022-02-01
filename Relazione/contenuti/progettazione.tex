@@ -53,6 +53,11 @@ La pagina "Dashboard" consente l'accesso alle pagine di amministrazione per camb
 
 
 \subsection{Database}
+Il database contiene al suo interno la liste delle piste e degli impianti, i vari tipi di skipass ed infine la lista degli utenti con gli skipass da loro prenotati o messi nel carrello.
+
+Gli utenti hanno uno username, una password (hashata con un salt) e una email, ad ogni utente è collegato un carrello (una lista di skipass) e diversi ordini già effettuati.
+
+Ogni skipass ha un tipo (Ridotto o Intero), una durata (giornaliero, 3 giorni o settimanale) ed un prezzo.
 
 \begin{table}[H]
     \centering
@@ -65,4 +70,28 @@ La pagina "Dashboard" consente l'accesso alle pagine di amministrazione per camb
     \caption{Credenziali \href{http://tecweb.studenti.math.unipd.it/phpmyadmin}{phpMyAdmin}}
 \end{table}
 \includegraphics[width=\textwidth]{tabelle.png}
+
+
+
 \subsection{Accessibilità}
+Per avere un alto livello di accessibilità sono stati utilizzati i tag semantici dell'HTML5, dove necessario gli attributi WAI-ARIA e seguito lo standard WCAG 2.0.
+\subsubsection{Separazione tra contenuto, presentazione e comportamento}
+All'interno del sito sono state tenute divise:
+\begin{itemize}
+    \item 
+        Il \textbf{contenuto} e la \textbf{struttura} sono stati codificati in HTML5 che a sua volta richiama i fogli di stile e gli script.;
+    \item 
+        La \textbf{presentazione} è definita in fogli di stile CSS3 multipli per adattarsi a qualsiasi tipo di dispositivo;
+    \item 
+        Il \textbf{comportamento} è sviluppato in JavaScript ed implementato in modo da rendere accessibili ed utilizzabili le pagine anche quando JavaScript disattivato.
+\end{itemize}
+
+\subsubsection{Navigazione}
+
+\subsubsection{Form}
+Al fine di mantenere accessibili tutti i form all'interno del sito, per ognuno di essi:
+\begin{itemize}
+    \item i valori immessi vengono controllati sia dal front-end utilizzando JavaScript che dal back-end con PHP con lo scopo di creare dei feedback di errore il più possibile utili all'utente ed in tempo reale;
+    \item ogni campo di input è accompagnato da un tag <label> che lo descrive;
+    \item in caso di successo dell'operazione a cui è collegato viene mostrato un feedback positivo.
+\end{itemize}
