@@ -24,7 +24,7 @@ Tutti i contenuti principali sono accessibili dal menu di navigazione primario: 
 \subsubsection{Menù}
 Questo elemento costituisce il principale modo di navigare il sito web. Il menu è disponibile in 3 layout diversi a seconda della larghezza dello schermo con il quale viene visualizzato: semplice lista di links disposta orizzontalmente da \textbf{Desktop}, una lista comprimibile disposta verticalmente da \textbf{Tablet} e dei pulsanti con icone da \textbf{Mobile}.
 Il menu occupa in ogni caso tutta la larghezza dello schermo per sfruttarne al meglio le potenzialità, ed è pensato in modo da eliminare i link circolari.
-\paragraph{Implementazione}
+\paragraph{Implementazione}\label{MenuPrinc}
 Per la realizzazione di un menu in grado di mutare forma, i links sono stati inseriti in un \verb|flexbox| così da poterne facilmente cambiare l'orientamento. Inoltre l'utilizzo di fogli di stile appositi ha consenito la visualizzazione differente e l'aggiunta di icone.
 
 Per quanto riguarda il pulsante che permette di espandere e comprimere il menu nella visualizzazione intermedia, è stato realizzato mediante bottone e appositi tag di accessibilità, come \verb|aria-expanded|. Il comportamento è delegato al file JavaScript.
@@ -43,7 +43,7 @@ In questa pagina viene riassunta la storia del Comprensorio Valle Bianca e delle
 \paragraph{Come raggiungerci}
 Qui si possono trovare le indicazioni per raggiungere le strutture in diversi modi: sono state scelte indicazioni in forma testuale piuttosto che sottoforma di mappa-interattiva per questioni di accessibilità
 \paragraph{Comprensorio}
-Nella pagina Comprensorio gli utenti possono visualizzare in ogni momento lo stato degli impianti e delle piste, e da dispositivi mobili consultare la mappa per orientarsi. Questa mappa non è accessibile a persone con disabilità visive, ma questo problema è mitigato dal fatto che i non vedenti accompagnati durante le discese sulle piste.
+Nella pagina Comprensorio gli utenti possono visualizzare in ogni momento lo stato degli impianti e delle piste, e da dispositivi mobili consultare la mappa per orientarsi. Questa mappa non è accessibile a persone con disabilità visive, ma questo problema è mitigato dal fatto che i non vedenti sono accompagnati durante le discese sulle piste.
 \paragraph{Mappa}
 La pagina Mappa contiene un immagine che illustra schematicamente il comprensorio e presenta dei link in corrispondenza dei punti di interesse, che rimandano alla pagina Dettagli, dove  questi punti sono brevemente descritti
 \paragraph{Shop}
@@ -51,14 +51,8 @@ La pagina "Shop" consente di visualizzare i prezzi degli skipass in vendita, e d
 \paragraph{Dashboard}
 La pagina "Dashboard" consente l'accesso alle pagine di amministrazione per cambiare lo stato di impianti e piste, e per modificare le tariffe degli skipass.
 
-
+\pagebreak
 \subsection{Database}
-Il database contiene al suo interno la liste delle piste e degli impianti, i vari tipi di skipass ed infine la lista degli utenti con gli skipass da loro prenotati o messi nel carrello.
-
-Gli utenti hanno uno username, una password (hashata con un salt) e una email, ad ogni utente è collegato un carrello (una lista di skipass) e diversi ordini già effettuati.
-
-Ogni skipass ha un tipo (Ridotto o Intero), una durata (giornaliero, 3 giorni o settimanale) ed un prezzo.
-
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|}
@@ -69,6 +63,13 @@ Ogni skipass ha un tipo (Ridotto o Intero), una durata (giornaliero, 3 giorni o 
     \end{tabular}
     \caption{Credenziali \href{http://tecweb.studenti.math.unipd.it/phpmyadmin}{phpMyAdmin}}
 \end{table}
+Il database contiene al suo interno la liste delle piste e degli impianti, i vari tipi di skipass ed infine la lista degli utenti con gli skipass da loro prenotati o messi nel carrello.
+
+Gli utenti hanno uno username, una password (hashata con un salt) e una email, ad ogni utente è collegato un carrello (una lista di skipass) e diversi ordini già effettuati.
+
+Ogni skipass ha un tipo (Ridotto o Intero), una durata (giornaliero, 3 giorni o settimanale) ed un prezzo.
+
+
 \includegraphics[width=\textwidth]{tabelle.png}
 
 
@@ -87,6 +88,23 @@ All'interno del sito sono state tenute divise:
 \end{itemize}
 
 \subsubsection{Navigazione}
+La navigazione interna al sito è l'elemento la cui accessibilità è essenziale: se non fosse accessibile, tutto il resto perderebbe di importanza.
+\paragraph{Link "Salta al contenuto"} Il link "Salta al contenuto" è un link che permette di spostare il focus dall'inizio della pagina direttamente al contenuto della stessa. Questo è uno strumento molto importante per chi fruisce del sito utilizzando solamente tastiera o dispositivi di input alternativi al mouse: la navigazione viene notevolmente velocizzata.
+
+Il link è visibile solamente quando ha il focus, ed è contenuto all'interno di un tag \verb|<nav>| per denotarne la pertinenza. Inoltre l'utilizzo di \verb|aria-label| ne consente una esplicitazione della funzione parte di eventuali screen reader.
+
+\paragraph{Menu principale}
+Il Menu principale è una lista di links che portano ai contenuti del sito web. Anche in questo caso, è stato utilizzato il tag semantico \verb|<nav>| e l'attributo \verb|aria-label|.
+
+È completamente navigabile senza l'ausilio del mouse, anche quando il menu risulta compresso, come nel caso del layout per schermi di medie dimensioni. Per assicurarsi che questo avvenga sono stati adottati i seguenti accorgimenti:
+\begin{itemize}
+    \item Uso di \verb|<button>|, che può prendere il focus da tastiera
+    \item Utilizzo di \verb|aria-expanded| per segnalare o meno se il menu collegato è aperto
+    \item \verb|aria-controls| per specificare che cosa si sta espandendo/comprimendo
+    \item \verb|aria-label| per dare un \textit{feedforward} sull'azione che sta per avvenire.
+\end{itemize}
+\paragraph{Link "Scroll to top"}
+Questo link ha funzione e realizzazione simili al link "Salta al contenuto". Permette di riportare il focus in cima alla pagina, è contenuto in un \verb|<nav>| e ha \verb|aria-label| per specificarne il comportamento.
 
 \subsubsection{Form}
 Al fine di mantenere accessibili tutti i form all'interno del sito, per ognuno di essi:
