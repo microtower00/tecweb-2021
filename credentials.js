@@ -1,6 +1,6 @@
 var charsPwd = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=.\-_*!?])([a-zA-Z0-9@#$%^&+=*.\-_!?]){8,}$|^$/;
 var charsUsr = /^[a-zA-Z0-9_\.]{5,20}$|^$/;
-var mailRegex = /^[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+$/;
+var mailRegex = /^[^@ \t\r\n.;:\\\/\[\]\{\}]+@[^@ \t\r\n.;:\\\/\[\]\{\}]+\.[^@ \t\r\n.;:\\\/\[\]\{\}]+$|^$/;
 
 function checkUsername(){
     //elem.focus() non va!!!
