@@ -572,13 +572,10 @@ table{
 --------------------------------*/
 
 #link-carrello{
-	text-align: right;
-	display: block;
-	position: static;	
+	display: table;
 
 	text-decoration: none;
 
-	width: fit-content;
 	padding: .4em;
 	border-radius: 5px;
 
@@ -603,7 +600,6 @@ table{
 }
 #link-carrello img{
 	width:32px;
-	filter: invert(1);
 	height:32px;
 }
 #link-carrello.carrello-nascosto{

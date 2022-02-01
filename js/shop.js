@@ -74,6 +74,16 @@ function calcolaPrezzo(){
     var n_int = document.getElementById("form-shop").elements["intero"].value
     var n_rid = document.getElementById("form-shop").elements["ridotto"].value
 
+    if(durata == undefined){ // IE
+        console.log("IE")
+        if(document.getElementById("1g").checked)
+            durata=1
+        else if(document.getElementById("3g").checked)
+            durata=3
+        else if(document.getElementById("7g").checked)
+            durata=7
+    }
+
     var p_int=0,p_rid=0
     p_int=prezzi['Intero'][durata]
     p_rid=prezzi['Ridotto'][durata]

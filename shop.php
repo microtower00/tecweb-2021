@@ -62,6 +62,8 @@ $pagina = str_replace($find, $replace, $pagina);
 $replace="";
 if(isset($_GET['data-inizio']))
     $replace=$_GET['data-inizio'];
+else
+    $replace= date('Y-m-d');
 $pagina = str_replace("['DataInizioVal']", $replace, $pagina);
 
 //RE-INSERISCE IL NUMERO DI SKI-PASS INTERI
