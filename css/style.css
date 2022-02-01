@@ -108,6 +108,7 @@ header h1{
 
 	-webkit-transition: transform 0.3s ease-in-out;
   	transition: transform 0.3s ease-in-out;
+	font-size: 3em;
 
 }
 h1 a{
