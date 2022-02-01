@@ -37,15 +37,15 @@
                 <label for="radio-group-durata">Durata <span lang="en">skipass</span>:</label>
                 <div  role="radiogroup" id="radio-group-durata">
                     <div>
-                        <input type="radio" name="durata" value="1" id="1g" ['Checked-1g'] required/>
+                        <input type="radio" name="durata" value="1" id="1g" ['Checked-1g'] required>
                         <label for="1g">Giornaliero </label>
                     </div>
                     <div>
-                        <input type="radio" name="durata" value="3" id="3g" ['Checked-3g'] required/>
+                        <input type="radio" name="durata" value="3" id="3g" ['Checked-3g'] required>
                         <label for="3g">Tre giorni </label>
                     </div>    
                     <div>
-                        <input type="radio" name="durata" value="7" id="7g" ['Checked-7g'] required/>
+                        <input type="radio" name="durata" value="7" id="7g" ['Checked-7g'] required>
                         <label for="7g">Settimanale </label>
                     </div>
                 </div>
@@ -59,16 +59,16 @@
                     <label id="lbl-intero" for="intero" >Intero </label>
                     <div class="custom-number-input-unloaded">
                         <input type="button" class="left" onclick="removeOne('intero')" value="Togli 1 skipass con tariffa intera"><!-- commento per togliere lo spazio
-                        --><input type="number" min="0" value="['InteroVal']"  id="intero" name="intero" required/><!--
-                        --><input type="button" class="right" onclick="addOne('intero')" value="Aggiungi 1 skipass con tariffa intera"/>
+                        --><input type="number" min="0" value="['InteroVal']"  id="intero" name="intero" required><!--
+                        --><input type="button" class="right" onclick="addOne('intero')" value="Aggiungi 1 skipass con tariffa intera">
                     </div>
                 </div>
                 <div>
                     <label id="lbl-ridotto" for="ridotto" >Ridotto </label>
                     <div class="custom-number-input-unloaded">
-                        <input type="button" class="left" onclick="removeOne('ridotto')" value="Togli 1 skipass con tariffa ridotta"/><!-- commento per togliere lo spazio
-                        --><input type="number" min="0" value="['RidottoVal']" id="ridotto" name="ridotto"/><!--
-                        --><input type="button" class="right" onclick="addOne('ridotto')" value="Aggiungi 1 skipass con tariffa ridotta"/>
+                        <input type="button" class="left" onclick="removeOne('ridotto')" value="Togli 1 skipass con tariffa ridotta"><!-- commento per togliere lo spazio
+                        --><input type="number" min="0" value="['RidottoVal']" id="ridotto" name="ridotto"><!--
+                        --><input type="button" class="right" onclick="addOne('ridotto')" value="Aggiungi 1 skipass con tariffa ridotta">
                     </div>
                 </div>
                 <p id="ns-errors" class="error-message"></p>
@@ -87,23 +87,27 @@
         <h2 class="pageTitle">I prezzi degli <span lang="en">skipass</span></h2>
         <table id="tabella-prezzi">
             <thead>
-                <td id="blank-corner"></td>
-                <th scope="col">Gioranliero</th>
-                <th scope="col">3 giorni</th>
-                <th scope="col">Settimanale</th>
+                <tr>
+                    <td id="blank-corner"></td>
+                    <th scope="col">Gioranliero</th>
+                    <th scope="col">3 giorni</th>
+                    <th scope="col">Settimanale</th>
+                </tr>
             </thead>
-            <tr>
-                <th scope="row">Intero</th>
-                <td data-title="Giornaliero"><span id="intero-1">['i1']</span>€</td>
-                <td data-title="3 giorni"><span id="intero-3">['i3']</span>€</td>
-                <td data-title="Settimanale"><span id="intero-7">['i7']</span>€</td>
-            </tr>
-            <tr>
-                <th scope="row">Ridotto</th>
-                <td data-title="Giornaliero"><span id="ridotto-1">['r1']</span>€</td>
-                <td data-title="3 giorni"><span id="ridotto-3">['r3']</span>€</td>
-                <td data-title="Settimanale"><span id="ridotto-7">['r7']</span>€</td>
-            </tr>
+            <tbody>
+                <tr>
+                    <th scope="row">Intero</th>
+                    <td data-title="Giornaliero"><span id="intero-1">['i1']</span>€</td>
+                    <td data-title="3 giorni"><span id="intero-3">['i3']</span>€</td>
+                    <td data-title="Settimanale"><span id="intero-7">['i7']</span>€</td>
+                </tr>
+                <tr>
+                    <th scope="row">Ridotto</th>
+                    <td data-title="Giornaliero"><span id="ridotto-1">['r1']</span>€</td>
+                    <td data-title="3 giorni"><span id="ridotto-3">['r3']</span>€</td>
+                    <td data-title="Settimanale"><span id="ridotto-7">['r7']</span>€</td>
+                </tr>
+            </tbody>
         </table>
     </main>
     ['BtnScroll']
