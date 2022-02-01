@@ -47,10 +47,18 @@ body{
 	min-height: 100% ;
 }*/
 
+.warning-message{
+	color: darkred;
+	text-align: center;
+	font-size: 120%;
+}
+.warning-message::before, .warning-message::after{
+	content: "\26A0";
+	padding: 0 .5em;
+}
 .error-message{
 	color: darkred;
 }
-
 .success-message{
 	color: darkgreen;
 }
@@ -1030,13 +1038,13 @@ a.linkScroll{
 	z-index: 1;
 }
 
-a.linkScroll.active{
+a.linkScroll.active, a.linkScroll:focus{
 	transform: translateX(0);
 }
 
 a.linkScroll:focus{
 	border-color: rgb(253, 137, 60);
-	border-style: solid;
+	border-style: solid;			
 }
 
 footer{

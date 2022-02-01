@@ -30,11 +30,13 @@ if(isset($_SESSION['Username'])){
         "['Numero-Skipass']", 
         $result->fetch_assoc()['num_skipass'],
         $pagina);
-    
+
+    $pagina= str_replace("['ErrNotLogged']", '', $pagina);
     $pagina= str_replace("['CarrelloNascoto']",'',$pagina);
     $pagina= str_replace("['ShopDisabled']", '', $pagina);
 }else{
     //DISABILITA I PULSANTI DI AGGIUNTA AL CARRELLO
+    $pagina= str_replace("['ErrNotLogged']", '<p class="warning-message">Non è possibile aggiungere skipass al carrello se non si è autenticati</p>', $pagina);
     $pagina= str_replace("['ShopDisabled']", 'disabled', $pagina);
     $pagina= str_replace("['CarrelloNascoto']",'class="carrello-nascosto"',$pagina);
 
