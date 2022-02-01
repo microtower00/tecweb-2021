@@ -69,11 +69,11 @@ body{
     background-image: url(../icon/icons8-biglietto-60_bianca.png);
 }
 
-#menu #bus{
+#menu #come-raggiungerci{
     background-image: url(../icon/icons8-autobus-60_nera.png);
 }
 
-#menu #bus.active{
+#menu #come-raggiungerci.active{
     background-image: url(../icon/icons8-autobus-60_bianca.png);
 }
 
