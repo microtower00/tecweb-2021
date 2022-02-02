@@ -35,20 +35,18 @@
         <form method="GET" action="php_vari/aggiungiSkipass.php" id="form-shop" onsubmit="return validaForm()" onchange="calcolaPrezzo()">
             <fieldset>
                 <legend>Periodo <span lang="en">skipass</span></legend>
-                <div  aria-labelledby="durata" role="radiogroup" id="radio-group-durata">
-                    <label id="durata">Durata <span lang="en">skipass</span>:</label>
-                    <div>
-                        <input type="radio" name="durata" value="1" id="1g" ['Checked-1g'] required>
-                        <label for="1g">Giornaliero </label>
-                    </div>
-                    <div>
-                        <input type="radio" name="durata" value="3" id="3g" ['Checked-3g'] required>
-                        <label for="3g">Tre giorni </label>
-                    </div>    
-                    <div>
-                        <input type="radio" name="durata" value="7" id="7g" ['Checked-7g'] required>
-                        <label for="7g">Settimanale </label>
-                    </div>
+                <p>Durata <span lang="en">skipass</span>:</p>
+                <div>
+                    <input type="radio" name="durata" value="1" id="1g" ['Checked-1g'] required>
+                    <label for="1g">Giornaliero </label>
+                </div>
+                <div>
+                    <input type="radio" name="durata" value="3" id="3g" ['Checked-3g'] required>
+                    <label for="3g">Tre giorni </label>
+                </div>    
+                <div>
+                    <input type="radio" name="durata" value="7" id="7g" ['Checked-7g'] required>
+                    <label for="7g">Settimanale </label>
                 </div>
                 <label for="data-inizio">Data inizio validità</label>
                 <input type="date" name="data-inizio" min="['DataOggi']" value="['DataInizioVal']" id="data-inizio" required>
@@ -85,7 +83,7 @@
         </form>
         
         <h2 class="pageTitle">I prezzi degli <span lang="en">skipass</span></h2>
-        <table id="tabella-prezzi">
+        <table id="tabella-prezzi" summary="Prezzo degli skipass in base al tipo e alla durata">
             <thead>
                 <tr>
                     <td id="blank-corner"></td>

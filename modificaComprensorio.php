@@ -82,8 +82,8 @@
                 if ($pista['stato'] == 0) {
                     $stato = "Chiusa";
                     $listaPisteChiuse .= '<tr>';
-                    $listaPisteChiuse .= '<td><input type="checkbox" name="piste[]" value="' . $pista['numero'] . '" /></td>
-                                <td>' . $pista['numero'] . '</td>
+                    $listaPisteChiuse .= '<td><input type="checkbox" id="p' . $pista['numero'] . '" name="piste[]" value="' . $pista['numero'] . '" /></td>
+                                <td><label for="p' . $pista['numero'] . '">' . $pista['numero'] . '</label></td>
                                 <td>' . $pista['nome'] . '</td>
                                 <td>' . $pista['difficoltà'] . '</td>
                                 <td>' . $stato . '</td>';  
@@ -91,8 +91,8 @@
                 } else {
                     $stato = "Aperta";
                     $listaPisteAperte .= '<tr>';
-                    $listaPisteAperte .= '<td><input type="checkbox" name="piste[]" value="' . $pista['numero'] . '" /></td>
-                                <td>' . $pista['numero'] . '</td>
+                    $listaPisteAperte .= '<td><input type="checkbox" id="p' . $pista['numero'] . '" name="piste[]" value="' . $pista['numero'] . '" /></td>
+                                <td><label for="p' . $pista['numero'] . '">' . $pista['numero'] . '</label></td>
                                 <td>' . $pista['nome'] . '</td>
                                 <td>' . $pista['difficoltà'] . '</td>
                                 <td>' . $stato . '</td>';  
@@ -120,8 +120,8 @@
                 if ($impianto['stato'] == 0) {
                     $stato = "Chiuso";
                     $listaImpiantiChiusi .= '<tr>';
-                    $listaImpiantiChiusi .= '<td><input type="checkbox" name="impianti[]" value="' . $impianto['numero'] . '" /></td>
-                                <td>' . $impianto['numero'] . '</td>
+                    $listaImpiantiChiusi .= '<td><input type="checkbox" id="i' . $impianto['numero'] . '" name="impianti[]" value="' . $impianto['numero'] . '" /></td>
+                                <td><label for="i' . $impianto['numero'] . '">' . $impianto['numero'] . '</label></td>
                                 <td>' . $impianto['nome'] . '</td>
                                 <td>' . $impianto['tipo'] . '</td>
                                 <td>' . $stato . '</td>';  
@@ -129,8 +129,8 @@
                 } else {
                     $stato = "Aperto";
                     $listaImpiantiAperti .= '<tr>';
-                    $listaImpiantiAperti .= '<td><input type="checkbox" name="impianti[]" value="' . $impianto['numero'] . '" /></td>
-                                <td>' . $impianto['numero'] . '</td>
+                    $listaImpiantiAperti .= '<td><input type="checkbox" id="i' . $impianto['numero'] . '" name="impianti[]" value="' . $impianto['numero'] . '" /></td>
+                                <td><label for="i' . $impianto['numero'] . '">' . $impianto['numero'] . '</label></td>
                                 <td>' . $impianto['nome'] . '</td>
                                 <td>' . $impianto['tipo'] . '</td>
                                 <td>' . $stato . '</td>';  
