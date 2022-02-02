@@ -21,13 +21,11 @@ html{
 	/*max-width: 1024px;*/
 	scroll-behavior: smooth;
 	height: 100%;
-	
-	/*NON FUNZIONA*/
-	@media (prefers-reduced-motion: reduce) {
+}
+@media (prefers-reduced-motion: reduce) {
+	html{
 		scroll-behavior: auto;
 	}
-
-
 }
 
 body{
