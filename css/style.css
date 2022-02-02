@@ -595,7 +595,7 @@ thead *{
 	background-color: #62a9ec;
 }
 
-tr:nth-child(even) {background: #CCC}
+tr:nth-child(even) {background: #E0E0E0}
 tr:nth-child(odd) {background: #FFF}
 
 table{
