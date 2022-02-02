@@ -1,6 +1,8 @@
 # tecweb-2021
 Sito web accessibile, creato come assignment per il corso di Tecnologie Web
 
+[![Ashutosh's github activity graph](https://activity-graph.herokuapp.com/graph?username=microtower00&theme=github)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
 ## Pagine da creare:
 - Home
 - Chi siamo/Storia
