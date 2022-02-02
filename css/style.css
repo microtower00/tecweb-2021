@@ -1143,7 +1143,7 @@ footer div{
 }
 
 footer div p{
-	padding: 1em;
+	padding: .5em;
 }
 
 footer a, #desc a{
@@ -1155,7 +1155,8 @@ footer a, #desc a{
 }
 
 img.imgValidCode{
-	width: 7em;
+	max-height: 2.5em;
+	width: auto;
 	height: auto;
 }
 
