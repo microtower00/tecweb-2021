@@ -19,7 +19,6 @@ function toggleScrollBtn(){
 function mapWithJS(){
     document.getElementById("desc").innerHTML="<p>La mappa è interattiva, andando con il puntatore sopra il numero leggerai il nome della pista o dell'impianto. In aggiunta cliccando su un numero di una pista potrai leggere una piccola descrizione di quest'ultima.</p><p>Se ci fossero problemi e la mappa risulta non accessibile, il comprensorio è facilmente consultabile nella nostra pagina: <a href='comprensorio.php'>Il nostro comprensorio</a></p>";
     
-    //Non funziona, cambia il valore e aggiunge i link, ma i link sono in posizione sbalgiata
     document.getElementById("mappa").setAttribute("usemap","#mappaValle");
     $('img[usemap]').rwdImageMaps();
 }

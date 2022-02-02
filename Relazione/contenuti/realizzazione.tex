@@ -17,6 +17,7 @@ La realizzazione del progetto è stata così suddivisa tra i membri del gruppo:
     \item Contin Riccardo:
         \begin{itemize}
             \item Impostazione iniziale menù, breadcrumb e "Home";
+            \item Definizione e popolamento delle tabelle "Piste" e "Impianti" del DB;
             \item Pagine HTML/PHP: "Il nostro comprensorio", "Mappa delle piste", "Dashboard Admin", "Modifica Comprensorio";
             \item PHP: dbRicky.php;
             \item JS: modificaComprensorio.js e js per la mappa;
@@ -70,3 +71,34 @@ La breadcrumb resta comunque visibile per dare maggiore contesto alla pagina una
 Alcune pagine data la loro natura non sono state adattate per la stampa, queste pagine sono: shop, modificaComprensorio, modificaPrezzi e le pagine relative al processo di autenticazione.
 
 \subsection{Comportamento}
+
+Per quanto riguarda l'utilizzo di JavaScript abbiamo cercato di implementare delle funzionalità che permettessero di rendere il sito migliore dal punto di vista funzionale ed estetico.
+Questo però non va ad influire sull'utilizzo del sito, infatti nel caso in cui JavaScript non funzionasse o comunque non fosse disponibile il sito non perderebbe funzionalità, ma solo qualche dettaglio.
+
+Le funzionalità implementate con JavaScript sono:
+\begin{itemize}
+    \item Permettere apertura e chiusura del menù da tablet premendo sul bottone menù;
+    \item Permettere la comparsa e la scomparsa del bottone per tornare all'inizio della pagina in base alla posizione della pagina in cui ci troviamo;
+    \item Controllo di username, password e email lato client;
+    \item Ridimensionamento della map per poter mantenere i numeri dell'immagine presente nella pagina mappa come link alla pagina dettagli in caso di ridimensionamento dell'immagine, grazie ad uno script open source;
+    \item Nascondere e mostrare i fieldset di interesse nella pagina modificaComprensorio;
+    \item Nel form dello shop, validare i dati inseriti, funzionamento dei bottoni +/- e calcolo del prezzo totale in tempo reale.
+\end{itemize}
+
+Ovviamente tutto questo è separato dai contenuti in rispettivi file js contenuti nella cartella js per appunto mantenere una separazione fondamentale.
+
+\subsection{PHP}
+
+Oltre ai placeholder descritti precedentemente, l'utilizzo di PHP ci ha permesso diverse cose:
+\begin{itemize}
+    \item Collegamento al database che ci ha permesso di eseguire delle query di inserimento/eliminazione/modifica ma anche la possibilità
+        di inserire nelle pagine i contenuti del database grazie ai segnaposti presenti nei file html;
+    \item Controllo delle sessioni per distinguere i privilegi tra gli utenti;
+    \item Controllare dati inseriti e gestione degli errori lato server.
+\end{itemize}
+
+I file PHP sono stati divisi:
+\begin{itemize}
+    \item File che visualizzano i contenuti includendo i file html direttamente nella radice;
+    \item File di utilità dentro la cartella php\textunderscore vari.
+\end{itemize}
