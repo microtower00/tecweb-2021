@@ -87,9 +87,10 @@ header{
 	/*position: sticky;
 	top: 0;*/
 }
-header h1:hover{
+header h1:hover:not(.noAnimation){
 	transform: scale(.9);
 }
+
 header h1{
 	padding: .7rem;
 	display: inline-block;
