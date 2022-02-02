@@ -16,7 +16,7 @@ nav{
 #breadcrumb{
     display: block;
 }
-h1 a{
+header a{
     color: black;
     text-decoration: none;
 }
@@ -31,14 +31,15 @@ footer{
     padding-top: 1em;
     text-align: center;
 }
-footer img{
+footer div{display:none}
+/*footer img{
     width: 7em;
 	height: auto;
 }
 footer > div > *{
     display: inline;
     vertical-align: middle;
-}
+}*/
 
 /************************
         TABELLE
@@ -151,6 +152,15 @@ th, td{
     padding-left: 1em;
 }
 
+/*************************
+        MAPPA
+**************************/
+
+#mappa{
+    width: 100%;
+    height: auto;
+	margin-top: 1em;
+}
 
 /*********************************
         COME RAGGIUNGERCI
