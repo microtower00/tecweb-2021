@@ -1,5 +1,29 @@
 \section{Validazione e testing}
+Per assicurarci della compatibilità con il più ampio spettro di dispositivi abbiamo eseguito test dell'interfaccia e del funzionamento su tutti i browser e sistemi operativi a nostra disposizione: Google Chrome, Mozilla Firefox sono stati testati su Windows e Ubuntu, Edge e Internet Explorer su Windows, Google Chrome su android.
+Il supporto per il browser IE non era inizialmente previsto, ma è stato per quanto possibile reso disponibile: il sito ha alcuni difetti grafici ma funziona tuttavia correttamente. Questo problema è trascurabile data lo scarso share di mercato posseduto dal browser e il suo largamente preannunciato \textit{retirement}.
+
 
 \subsection{Validazione}
+Per la validazione del pagine web, è stato utilizzato \href{https://validator.w3.org/}{il validatore ufficiale di w3c}.
+Allo stesso modo, per la validazione dei fogli di stile è stato utilizzato \href{https://jigsaw.w3.org/css-validator/}{il validatore ufficiale di w3c}
+
+
+Alcuni errori vengono segnalati dal validatore CSS: questi riguardano alcune proprietà utilizzate per massimizzare la retrocompatibilità, e si è deciso di trascurarli per questo motivo.
 
 \subsection{Testing}
+Il testing è stato effettuato con lo scopo di rilevare e migliorare le funzionalità e l'accessibilità del sito web.
+Il testing ha compreso:
+\begin{itemize}
+    \item Utilizzo proprio ed improprio dei punti di interazione con il backend (Login, Registrazione, Shop e Dashboard)
+    \item Controllo della trasformazione elegante (a scopo di verificare la compatibilità con diverse dimensioni di schermi)
+    \item Controllo dei contrasti
+    \item Controllo dell'adesione alle regole WCAG
+    \item Test di Drue Miller con utilizzo di un simulatore di screen reader
+\end{itemize}
+
+Alcuni di questi controlli sono stati eseguiti manualmente, mentre altri sono stati eseguiti con l'ausilio della modalità sviluppatore o di estensioni per il browser.
+Le estensioni utilizzate sono: \begin{itemize}
+    \item \href{https://addons.mozilla.org/en-US/firefox/addon/ainspector-wcag/}{AInspector WCAG}
+    \item \href{https://addons.mozilla.org/en-US/firefox/addon/wcag-contrast-checker/}{WCAG Color contrast checker}
+    \item Inserite quelle che avete utilizzato voi
+\end{itemize}
