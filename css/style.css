@@ -87,9 +87,10 @@ header{
 	/*position: sticky;
 	top: 0;*/
 }
-header h1:hover{
+header h1:hover:not(.noAnimation){
 	transform: scale(.9);
 }
+
 header h1{
 	padding: .7rem;
 	display: inline-block;
@@ -1179,6 +1180,7 @@ h3.notFound{
 }
 
 a.notFound{
+	text-decoration: none;
 	display: block;
 
 	appearance:none;
@@ -1196,6 +1198,10 @@ a.notFound{
 	border-radius:5px;
 	width:20%;
 	height: 35px;
+}
+
+a.notFound:hover{
+	background-color: #25468d;
 }
 
 
