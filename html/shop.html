@@ -35,8 +35,8 @@
         <form method="GET" action="php_vari/aggiungiSkipass.php" id="form-shop" onsubmit="return validaForm()" onchange="calcolaPrezzo()">
             <fieldset>
                 <legend>Periodo <span lang="en">skipass</span></legend>
-                <div  role="radiogroup" id="radio-group-durata">
-                    <p>Durata <span lang="en">skipass</span>:</p>
+                <div  aria-labelled-by="durata" role="radiogroup" id="radio-group-durata">
+                    <label id="durata">Durata <span lang="en">skipass</span>:</label>
                     <div>
                         <input type="radio" name="durata" value="1" id="1g" ['Checked-1g'] required>
                         <label for="1g">Giornaliero </label>
