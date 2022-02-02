@@ -999,6 +999,10 @@ div.categoriaArrivo{
 	height: 25px;
 }
 
+.categoriaArrivo a:hover{
+	background-color: #25468d;
+}
+
 h3#auto{
 	background: no-repeat url(../icon/auto.png);
 	background-size: contain;
