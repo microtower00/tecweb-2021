@@ -1141,6 +1141,14 @@ footer div p{
 	padding: 1em;
 }
 
+footer a, #desc a{
+	color:#00006b;
+}
+
+#desc a:visited{
+	color:#35006b;
+}
+
 img.imgValidCode{
 	width: 7em;
 	height: auto;
