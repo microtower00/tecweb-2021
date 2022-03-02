@@ -209,3 +209,12 @@ th,td{
     font-weight: bold;
     padding-right: .5em;
 }
+
+/*======================
+    Modifica comprensorio
+========================*/
+
+#cambia-descrizione input[type="submit"]{
+    width : 80%;
+    margin: .1em 10%;
+}

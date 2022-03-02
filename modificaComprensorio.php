@@ -62,7 +62,7 @@
             } elseif(isset($_GET['cambiaD'])){
                 $nuovaDesc = filter_var($_GET["nuova-descrizione"], FILTER_SANITIZE_STRING);
                 $connessione->execQuery("UPDATE Piste SET descrizione='$nuovaDesc' WHERE numero=".$_GET['numero-pista'].";");
-                $messaggio="Operazione completata correttamente, cambiata la descrizione della pista". $_GET['numero-pista'];
+                $messaggio="Operazione completata correttamente, cambiata la descrizione della pista ". $_GET['numero-pista'];
             }
             $connessione->closeConnection();
         } else {
