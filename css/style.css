@@ -936,6 +936,16 @@ area.areaI{
 	border: 2px solid #152b5a;
 	border-radius: 10px;
 }
+#cambia-descrizione > *:not(legend){
+	box-sizing: border-box;
+	width : 80%;
+	margin: .1em 10%;
+}
+#cambia-descrizione textarea{
+	min-height: 5em;
+	padding: 2px;
+	resize: vertical;
+}
 
 input[type=submit],input[type=reset]{
 	cursor: pointer;

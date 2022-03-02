@@ -103,7 +103,7 @@
                                 <td>' . $stato . '</td>';  
                                 $listaPisteAperte .= '</tr>'; 
                 }       
-                $selectPiste .= '<option value="'.$pista['numero'].'">'.$pista['numero'].'</option>';      
+                $selectPiste .= '<option value="'.$pista['numero'].'">'.$pista['numero'].' - '.$pista['nome'].'</option>';      
             }
             $listaPisteAperte .= '</tbody>';
             $listaPisteChiuse .= '</tbody>';
