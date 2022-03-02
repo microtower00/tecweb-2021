@@ -942,11 +942,20 @@ area.areaI{
 	border: 2px solid #152b5a;
 	border-radius: 10px;
 }
+
 #cambia-descrizione > *:not(legend){
 	box-sizing: border-box;
+}
+
+#cambia-descrizione select,#cambia-descrizione label[for=numero-pista] {
+	width : 40%;
+	margin: .1em 30%;
+}
+#cambia-descrizione textarea,#cambia-descrizione label[for=nuova-descrizione] {
 	width : 80%;
 	margin: .1em 10%;
 }
+
 #cambia-descrizione textarea{
 	min-height: 5em;
 	padding: 2px;

@@ -214,7 +214,7 @@ th,td{
     Modifica comprensorio
 ========================*/
 
-#cambia-descrizione input[type="submit"]{
+#cambia-descrizione select, #cambia-descrizione label[for=numero-pista], #cambia-descrizione input[type="submit"]{
     width : 80%;
     margin: .1em 10%;
 }
