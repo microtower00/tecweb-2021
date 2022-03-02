@@ -929,7 +929,7 @@ area.areaI{
 #descButton{
 	grid-column: 1 / span 2;
 	padding: .3em;
-	width: 40%;
+	width: 45%;
 }
 
 #gridButtons button:hover{
