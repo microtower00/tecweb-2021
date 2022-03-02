@@ -28,7 +28,7 @@
     $listaImpiantiChiusi = "";
 
     $messaggio="";
-    if (isset($_GET['apriP']) || isset($_GET['chiudiP']) || isset($_GET['apriI']) || isset($_GET['chiudiI'])) {
+    if (isset($_GET['apriP']) || isset($_GET['chiudiP']) || isset($_GET['apriI']) || isset($_GET['chiudiI']) || isset($_GET['cambiaD'])) {
         $connessione = new DBAccess();
         $connessioneOK = $connessione->openDBConnection();
 
@@ -52,13 +52,17 @@
                     $connessione->updateState('Impianti',$impianto,1);
                     $messaggio="Operazione completata correttamente, uno o più impianti sono stati aperti.";
                 }
-            } else {
+            } elseif (isset($_GET['chiudiI'])) {
                 $impianti = isset($_GET['impianti']) ? $_GET['impianti'] : array();
                 foreach($impianti as $impianto) {
                     echo $impianto;
                     $connessione->updateState('Impianti',$impianto,0);
                     $messaggio="Operazione completata correttamente, uno o più impianti sono stati chiusi.";
                 }
+            } elseif(isset($_GET['cambiaD'])){
+                $nuovaDesc = filter_var($_GET["nuova-descrizione"], FILTER_SANITIZE_STRING);
+                $connessione->execQuery("UPDATE Piste SET descrizione='$nuovaDesc' WHERE numero=".$_GET['numero-pista'].";");
+                $messaggio="Operazione completata correttamente, cambiata la descrizione della pista". $_GET['numero-pista'];
             }
             $connessione->closeConnection();
         } else {
@@ -78,6 +82,7 @@
         if ($piste != null) {
             $listaPisteAperte = '<tbody>';
             $listaPisteChiuse = '<tbody>';
+            $selectPiste = '';
             foreach ($piste as $pista) {               
                 if ($pista['stato'] == 0) {
                     $stato = "Chiusa";
@@ -97,7 +102,8 @@
                                 <td>' . $pista['difficoltà'] . '</td>
                                 <td>' . $stato . '</td>';  
                                 $listaPisteAperte .= '</tr>'; 
-                }                                  
+                }       
+                $selectPiste .= '<option value="'.$pista['numero'].'">'.$pista['numero'].'</option>';      
             }
             $listaPisteAperte .= '</tbody>';
             $listaPisteChiuse .= '</tbody>';
@@ -158,8 +164,8 @@
     }
 
 
-    $find = array("['PisteChiuse']","['PisteAperte']","['ImpiantiChiusi']","['ImpiantiAperti']","['Imports']");
-    $replace = array($listaPisteChiuse,$listaPisteAperte,$listaImpiantiChiusi,$listaImpiantiAperti,Utils::globalImports());
+    $find = array("['PisteChiuse']","['PisteAperte']","['ImpiantiChiusi']","['ImpiantiAperti']", "['SelectPiste']","['Imports']");
+    $replace = array($listaPisteChiuse,$listaPisteAperte,$listaImpiantiChiusi,$listaImpiantiAperti,$selectPiste,Utils::globalImports());
     $paginaHTML = str_replace($find, $replace, $paginaHTML);
 
     echo $paginaHTML;
