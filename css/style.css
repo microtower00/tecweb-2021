@@ -950,6 +950,10 @@ area.areaI{
 	padding: 2px;
 	resize: vertical;
 }
+#cambia-descrizione input[type="submit"]{
+	width: 15em;
+	margin:.1em calc(50% - 7em);
+}
 
 input[type=submit],input[type=reset]{
 	cursor: pointer;
