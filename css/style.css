@@ -926,6 +926,10 @@ area.areaI{
 	width: 80%;
 }
 
+#descButton{
+	grid-column: 1 / span 2;
+}
+
 #gridButtons button:hover{
 	background-color: #25468d;
 }

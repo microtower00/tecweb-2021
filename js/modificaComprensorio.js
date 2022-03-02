@@ -3,6 +3,7 @@ function nascondiForm() {
     document.getElementById('piste-aperte').style.display="none";
     document.getElementById('impianti-chiusi').style.display="none";
     document.getElementById('impianti-aperti').style.display="none";
+    document.getElementById('cambia-descrizione').style.display="none";
 }
 
 function mostraFieldset(idInput) {
@@ -14,6 +15,7 @@ function mostraFieldset(idInput) {
         document.getElementById('piste-aperte').style.display="none";
         document.getElementById('impianti-chiusi').style.display="none";
         document.getElementById('impianti-aperti').style.display="none";
+        document.getElementById('cambia-descrizione').style.display="none";
         document.getElementById(idInput).style.display="block";
     }
     
