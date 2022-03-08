@@ -27,7 +27,7 @@
     $listaImpiantiAperti = "";
     $listaImpiantiChiusi = "";
 
-    $messaggio="";
+    $messaggio='<p id="feedback"></p>';
     if (isset($_GET['apriP']) || isset($_GET['chiudiP']) || isset($_GET['apriI']) || isset($_GET['chiudiI']) || isset($_GET['cambiaD'])) {
         $connessione = new DBAccess();
         $connessioneOK = $connessione->openDBConnection();
@@ -37,36 +37,45 @@
                 $piste = isset($_GET['piste']) ? $_GET['piste'] : array();
                 foreach($piste as $pista) {
                     $connessione->updateState('Piste',$pista,1);
-                    $messaggio="Operazione completata correttamente, una o più piste sono state aperte.";
+                    $messaggio='<p id="feedback" class="success-message">Operazione completata correttamente, una o più piste sono state aperte.</p>';
                 }
             } elseif (isset($_GET['chiudiP'])) {
                 $piste = isset($_GET['piste']) ? $_GET['piste'] : array();
                 foreach($piste as $pista) {
                     $connessione->updateState('Piste',$pista,0);
-                    $messaggio="Operazione completata correttamente, una o più piste sono state chiuse.";
+                    $messaggio='<p id="feedback" class="success-message">Operazione completata correttamente, una o più piste sono state chiuse.</p>';
                 }
             } elseif (isset($_GET['apriI'])) {
                 $impianti = isset($_GET['impianti']) ? $_GET['impianti'] : array();
                 foreach($impianti as $impianto) {
                     echo $impianto;
                     $connessione->updateState('Impianti',$impianto,1);
-                    $messaggio="Operazione completata correttamente, uno o più impianti sono stati aperti.";
+                    $messaggio='<p id="feedback" class="success-message">Operazione completata correttamente, uno o più impianti sono stati aperti.</p>';
                 }
             } elseif (isset($_GET['chiudiI'])) {
                 $impianti = isset($_GET['impianti']) ? $_GET['impianti'] : array();
                 foreach($impianti as $impianto) {
                     echo $impianto;
                     $connessione->updateState('Impianti',$impianto,0);
-                    $messaggio="Operazione completata correttamente, uno o più impianti sono stati chiusi.";
+                    $messaggio='<p id="feedback" class="success-message">Operazione completata correttamente, uno o più impianti sono stati chiusi.</p>';
                 }
             } elseif(isset($_GET['cambiaD'])){
-                $nuovaDesc = filter_var($_GET["nuova-descrizione"], FILTER_SANITIZE_STRING);
-                $connessione->execQuery("UPDATE Piste SET descrizione='$nuovaDesc' WHERE numero=".$_GET['numero-pista'].";");
-                $messaggio="Operazione completata correttamente, cambiata la descrizione della pista ". $_GET['numero-pista'];
+                $nuovaDesc=$_GET["nuova-descrizione"];
+                if(strlen($nuovaDesc)>0 && strlen($nuovaDesc)<=500){
+                    $nuovaDesc = filter_var($nuovaDesc, FILTER_SANITIZE_STRING | FILTER_SANITIZE_ADD_SLASHES);
+                    $connessione->execQuery("UPDATE Piste SET descrizione='$nuovaDesc' WHERE numero=".$_GET['numero-pista'].";");
+                    if($connessione->getAffectedRows()>0){
+                        $messaggio='<p id="feedback" class="success-message">Operazione completata correttamente, cambiata la descrizione della pista '. $_GET['numero-pista'].'.</p>';
+                    }else{
+                        $messaggio = '<p id="feedback" class="error-message">Errore nella modifica della descrizione, riprovare.</p>';
+                    }
+                }else{
+                    $messaggio = '<p id="feedback" class="error-message">Lunghezza della nuova descrizione non valida: non vuota e di massimo 500 caratteri.</p>';
+                }
             }
             $connessione->closeConnection();
         } else {
-            $messaggio = "Operazione fallita";
+            $messaggio = '<p id="feedback" class="error-message">Operazione fallita</p>';
         }
     }
     $paginaHTML = str_replace("['Messaggio']",$messaggio,$paginaHTML);
