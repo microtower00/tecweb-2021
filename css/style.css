@@ -914,6 +914,10 @@ area.areaI{
 	modificaComprensorio
 --------------------------------*/
 
+fieldset:focus{
+	outline:none;
+}
+
 #gridButtons{
 	display: grid;
     grid-template-columns: 1fr 1fr;
@@ -995,6 +999,15 @@ input[type=reset]{
 input[type=submit]:hover,input[type=reset]:hover{
 	background-color: #25468d;
 }
+
+input[type=submit]:disabled{
+	border: 1px solid #999999;
+	background-color: #cccccc;
+	color: #666666;
+
+	cursor: default;
+}
+
 /*=================		Come raggiungerci	==============================*/
 div.categoriaArrivo{
 	/*padding-top: .7em;*/
