@@ -23,7 +23,7 @@
         [Menu]
     
         <nav aria-label='breadcrumb' id="breadcrumb">
-            <p>Ti trovi in: <a lang="en" href="index.php">Home</a> &gt;&gt; <a lang="en" href="dashboard.php">Dashboard</a> &gt;&gt; Comprensorio</p>
+            <p>Ti trovi in: <a lang="en" href="index.php">Home</a> &gt;&gt; <a lang="en" href="dashboard.php">Dashboard</a> &gt;&gt; Modifica comprensorio</p>
         </nav>
     </div>
 
@@ -39,7 +39,7 @@
         </div>
 
         <form method="GET" action="modificaComprensorio.php" id="form-comprensorio">
-            <fieldset id="piste-chiuse">
+            <fieldset id="piste-chiuse" tabindex="0">
                 <legend>Piste chiuse</legend>
                 <p>Apri piste:</p>
                 <div  role="checkbox" id="checkbox-group-aperturaPiste" aria-label="piste-chiuse" aria-checked="false">
@@ -60,7 +60,7 @@
                 <input type="submit" name="apriP" value="Apri pista/e">
                 <input type="reset" name="annulla" value="Annulla">
             </fieldset>
-            <fieldset id="piste-aperte">
+            <fieldset id="piste-aperte" tabindex="0">
                 <legend>Piste aperte</legend>
                 <p>Chiudi piste:</p>
                 <div  role="checkbox" id="checkbox-group-chiusuraPiste" aria-label="piste-aperte" aria-checked="false">
@@ -81,7 +81,7 @@
                 <input type="submit" name="chiudiP" value="Chiudi pista/e">
                 <input type="reset" name="annulla" value="Annulla">
             </fieldset>
-            <fieldset id="impianti-chiusi">
+            <fieldset id="impianti-chiusi" tabindex="0">
                 <legend>Impianti chiusi</legend>
                 <p>Apri impianti:</p>
                 <div  role="checkbox" id="checkbox-group-aperturaImpianti" aria-label="impianti-chiusi" aria-checked="false">
@@ -102,7 +102,7 @@
                 <input type="submit" name="apriI" value="Apri impianto/i">
                 <input type="reset" name="annulla" value="Annulla">
             </fieldset>
-            <fieldset id="impianti-aperti">
+            <fieldset id="impianti-aperti" tabindex="0">
                 <legend>Impianti aperti</legend>
                 <p>Chiudi impianti:</p>
                 <div  role="checkbox" id="checkbox-group-chiusuraImpianti" aria-label="impianti-aperti" aria-checked="false">
@@ -123,15 +123,15 @@
                 <input type="submit" name="chiudiI" value="Chiudi impianto/i">
                 <input type="reset" name="annulla" value="Annulla">
             </fieldset>
-            <fieldset id="cambia-descrizione">
+            <fieldset id="cambia-descrizione" tabindex="0">
                 <legend>Cambia descrizione di una pista</legend>
                 <label for="numero-pista">Pista:</label>
                 <select name="numero-pista" id="numero-pista">
                     ['SelectPiste']
                 </select>
                 <label for="nuova-descrizione">Nuova descrizione:</label>
-                <textarea name="nuova-descrizione" id="nuova-descrizione"></textarea>
-                <input type="submit" name="cambiaD" value="Cambia descrizione">
+                <textarea name="nuova-descrizione" id="nuova-descrizione" onchange="checkDescrizione()"></textarea>
+                <input type="submit" name="cambiaD" id="cambiaD" value="Cambia descrizione">
             </fieldset>
         </form>
 
